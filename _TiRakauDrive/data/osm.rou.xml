@@ -16,8 +16,6 @@
 	<route id="TiRakau1Left" edges="122089583#0 122089583#1 122089583#1-AddedOffRampEdge" />
 	
 	<route id="BotanyIntesectionRightDown" edges="619526566" />
-	<route id="BotanyIntersectionLeftDown" edges="620377506.61" />
-	<route id="BotanyIntersectionUpRight" edges="122089525.34" />
 	<route id="BotanyIntersectionLeftUp" edges="547625727" />
 	<route id="BotanyIntesectionLeftExit" edges="122089526" />
 	<route id="BotanyIntesectionRightExit" edges="122089528#1" />
@@ -28,4 +26,13 @@
 	
 	<route id="BotanySouth" edges="620377506" />
 	<route id="BotanyExitRight" edges="gneE2" />
+	<route id="BotanyExitLeft" edges="620377506.61" />
+
+	<route id="TiIrirangiSouth" edges="547625725" />
+	<route id="TiIrirangiEnterLeft" edges="28592678" />
+	<route id="TiIrirangiEnterRight" edges="28597169" />
+	
+	<route id="TiIrirangiNorth" edges="620377515" />
+	<route id="TiIrirangiExitLeft" edges="28592666" />
+	<route id="TiIrirangiExitRight" edges="122089525.34" />
 </routes>

@@ -77,7 +77,12 @@ def run():
     """execute the TraCI control loop"""
     step = 0
     # we start with phase 2 where EW has green
-    traci.trafficlight.setPhase("cluster_1707799581_314056954_5931861577", 0)
+    traci.trafficlight.setPhase("cluster_1707799581_314056954_5931861577", 2)
+    traci.simulationStep()
+    N = 6
+    for i in range(N):
+	    traci.trafficlight.setPhase("cluster_1707799581_314056954_5931861577", N)
+	    traci.simulationStep()
 
     traci.close()
     sys.stdout.flush()

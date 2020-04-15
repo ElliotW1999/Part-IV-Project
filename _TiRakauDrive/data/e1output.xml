@@ -1,17 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!-- generated on 04/15/20 13:57:51 by Eclipse SUMO GUI Version 1.5.0
+<!-- generated on 04/15/20 14:35:56 by Eclipse SUMO GUI Version 1.5.0
 <configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/sumoConfiguration.xsd">
 
     <input>
-        <net-file value="data/osm.net.xml"/>
-        <route-files value="data/osm.rou.xml"/>
-        <additional-files value="data/osm.det.xml"/>
+        <net-file value="C:\Users\Elliot\Documents\GitHub\P4Project\_TiRakauDrive\data\osm.net.xml"/>
+        <route-files value="C:\Users\Elliot\Documents\GitHub\P4Project\_TiRakauDrive\data\osm.rou.xml"/>
+        <additional-files value="C:\Users\Elliot\Documents\GitHub\P4Project\_TiRakauDrive\data\osm.det.xml"/>
     </input>
-
-    <output>
-        <tripinfo-output value="tripinfo.xml"/>
-    </output>
 
     <time>
         <begin value="0"/>
@@ -21,9 +17,5 @@
         <verbose value="true"/>
         <no-step-log value="true"/>
     </report>
-
-    <traci_server>
-        <remote-port value="57042"/>
-    </traci_server>
 
 </configuration>

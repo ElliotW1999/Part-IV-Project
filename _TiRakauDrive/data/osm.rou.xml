@@ -1,9 +1,10 @@
 <routes>
+
 	<route id="TiRakau0Right" edges="619523290#0 619523290#1 619523288" />
 	<route id="TiRakau0Left" edges="619523287#0 619523287#1" />
 	
 	<route id="TeKohaNorth" edges="-628341438#1 -628341438#0" />
-	<route id="TeKohaExitLeft" edges="628341440" />
+	<route id="TeKohaExitLeft" edges="gneE6" />
 	<route id="TeKohaExitRight" edges="-61645695" />
 	
 	<route id="TeKohaSouth" edges="628341438#0 628341438#1" />

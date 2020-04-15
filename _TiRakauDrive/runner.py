@@ -68,15 +68,8 @@ guiShape="passenger"/>
                     vehNr, i), file=routes)
                 vehNr += 1
         print("</routes>", file=routes)
+		
 
-# The program looks like this
-#    <tlLogic id="0" type="static" programID="0" offset="0">
-# the locations of the tls are      NESW
-#        <phase duration="31" state="GrGr"/>
-#        <phase duration="6"  state="yryr"/>
-#        <phase duration="31" state="rGrG"/>
-#        <phase duration="6"  state="ryry"/>
-#    </tlLogic>
 
 
 # needs work
@@ -84,18 +77,8 @@ def run():
     """execute the TraCI control loop"""
     step = 0
     # we start with phase 2 where EW has green
-    traci.trafficlight.setPhase("0", 2)
-    while traci.simulation.getMinExpectedNumber() > 0:
-        traci.simulationStep()
-        if traci.trafficlight.getPhase("0") == 2:
-            # we are not already switching
-            if traci.inductionloop.getLastStepVehicleNumber("0") > 0:
-                # there is a vehicle from the north, switch
-                traci.trafficlight.setPhase("0", 3)
-            else:
-                # otherwise try to keep green for EW
-                traci.trafficlight.setPhase("0", 2)
-        step += 1
+    traci.trafficlight.setPhase("cluster_1707799581_314056954_5931861577", 0)
+
     traci.close()
     sys.stdout.flush()
 
@@ -120,7 +103,7 @@ if __name__ == "__main__":
         sumoBinary = checkBinary('sumo-gui')
 
     # first, generate the route file for this simulation
-    generate_routefile()
+    #generate_routefile()
 
     # this is the normal way of using traci. sumo is started as a
     # subprocess and then the python script connects and runs

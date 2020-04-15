@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!-- generated on 04/15/20 14:37:53 by Eclipse SUMO netedit Version 1.5.0
+<!-- generated on 04/16/20 04:44:48 by Eclipse SUMO netedit Version 1.5.0
 <configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/netconvertConfiguration.xsd">
 
     <input>
-        <sumo-net-file value="C:\Users\Elliot\Documents\GitHub\P4Project\_TiRakauDrive\data\osm.net.xml"/>
+        <sumo-net-file value="C:\Users\josha\Documents\GitHub\Part-IV-Project\_TiRakauDrive\data\osm.net.xml"/>
     </input>
 
     <output>
-        <output-file value="C:\Users\Elliot\Documents\GitHub\P4Project\_TiRakauDrive\data\osm.net.xml"/>
+        <output-file value="C:\Users\josha\Documents\GitHub\Part-IV-Project\_TiRakauDrive\data\osm.net.xml"/>
         <output.street-names value="true"/>
     </output>
 
@@ -1753,6 +1753,7 @@
         <phase duration="2"  state="GGrrrrrrrG" name="C"/>
         <phase duration="5"  state="yyrrrrrrry" name="C-D"/>
         <phase duration="2"  state="rrrrrGGGGG" name="D"/>
+        <phase duration="4"  state="rrrrrGGGyy" name="D-A"/>
     </tlLogic>
     <tlLogic id="cluster_25953432_313863435_313863521_314053282" type="actuated" programID="0" offset="0">
         <phase duration="4"  state="rGrrGr" name="A"/>
@@ -1768,6 +1769,7 @@
         <phase duration="2"  state="rrrrGG" name="F1"/>
         <phase duration="4"  state="rrrryy" name="F1-F2"/>
         <phase duration="2"  state="rGGrrr" name="F2"/>
+        <phase duration="4"  state="rGyrrr" name="F2-A"/>
     </tlLogic>
     <tlLogic id="cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525" type="actuated" programID="0" offset="0">
         <phase duration="5"  state="rrGrrrGr" name="A"/>
@@ -1785,12 +1787,20 @@
         <phase duration="5"  state="rrGGrrrr" name="G1"/>
         <phase duration="5"  state="rryyrrrr" name="G1-G2"/>
         <phase duration="5"  state="rrrrrrGG" name="G2"/>
+        <phase duration="5"  state="rrrrrrGy" name="G2-A"/>
     </tlLogic>
     <tlLogic id="cluster_25977367_6226727262" type="actuated" programID="0" offset="0">
-        <phase duration="41" state="GGrrrrG" minDur="5" maxDur="50"/>
-        <phase duration="4"  state="yyrrrry"/>
-        <phase duration="41" state="rrGGGGr" minDur="7" maxDur="50"/>
-        <phase duration="4"  state="rryyyyr"/>
+        <phase duration="12" state="rGrrr" name="A"/>
+        <phase duration="4"  state="rGGrr" name="B"/>
+        <phase duration="4"  state="ryyrr" name="B-C"/>
+        <phase duration="2"  state="rrrGr" name="C"/>
+        <phase duration="4"  state="rrryr" name="C-D"/>
+        <phase duration="2"  state="Grrrr" name="D"/>
+        <phase duration="4"  state="yrrrr" name="D-E1"/>
+        <phase duration="2"  state="rGGrr" name="E1"/>
+        <phase duration="4"  state="ryyrr" name="E1-E2"/>
+        <phase duration="2"  state="rrrGr" name="E2"/>
+        <phase duration="4"  state="rrryr" name="E2-A"/>
     </tlLogic>
     <tlLogic id="cluster_313863436_6226727259" type="actuated" programID="0" offset="0">
         <phase duration="5"  state="Grrrr" name="A"/>
@@ -1804,6 +1814,7 @@
         <phase duration="6"  state="rrGrr" name="E1"/>
         <phase duration="5"  state="rryrr" name="E1-E2"/>
         <phase duration="2"  state="GGrrr" name="E2"/>
+        <phase duration="5"  state="Gyrrr" name="E2-A"/>
     </tlLogic>
 
     <junction id="117331015" type="priority" x="655.45" y="1051.48" incLanes="620377502#0_0 620377502#0_1 620377502#0_2" intLanes=":117331015_0_0 :117331015_0_1 :117331015_0_2" shape="660.21,1050.84 650.73,1052.36 660.12,1050.36">
@@ -2330,7 +2341,7 @@
     <connection from="28597169" to="620377494" fromLane="1" toLane="1" via=":314060727_1_1" dir="s" state="M"/>
     <connection from="28641508" to="620377518" fromLane="0" toLane="0" via=":314796110_0_0" dir="s" state="m"/>
     <connection from="28641521" to="624439643" fromLane="0" toLane="0" via=":cluster_25977367_6226727262_0_0" tl="cluster_25977367_6226727262" linkIndex="0" dir="s" state="o"/>
-    <connection from="28641521" to="624439643" fromLane="1" toLane="1" via=":cluster_25977367_6226727262_0_1" tl="cluster_25977367_6226727262" linkIndex="1" dir="s" state="o"/>
+    <connection from="28641521" to="624439643" fromLane="1" toLane="1" via=":cluster_25977367_6226727262_0_1" tl="cluster_25977367_6226727262" linkIndex="0" dir="s" state="o"/>
     <connection from="547625727" to="122089526" fromLane="0" toLane="0" via=":cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525_0_0" tl="cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525" linkIndex="0" dir="s" state="o"/>
     <connection from="547625727" to="122089526" fromLane="1" toLane="1" via=":cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525_0_1" tl="cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525" linkIndex="0" dir="s" state="o"/>
     <connection from="547625727" to="122089526" fromLane="2" toLane="2" via=":cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525_0_2" tl="cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525" linkIndex="0" dir="s" state="o"/>
@@ -2440,10 +2451,10 @@
     <connection from="620377517" to="620377517.54" fromLane="1" toLane="1" via=":gneJ3_1_1" dir="s" state="M"/>
     <connection from="620377517" to="620377517.54" fromLane="2" toLane="2" via=":gneJ3_1_2" dir="s" state="M"/>
     <connection from="620377517" to="620377517.54" fromLane="2" toLane="3" via=":gneJ3_1_3" dir="s" state="M"/>
-    <connection from="620377517.54" to="624439645" fromLane="0" toLane="0" via=":cluster_25977367_6226727262_2_0" tl="cluster_25977367_6226727262" linkIndex="2" dir="s" state="O"/>
-    <connection from="620377517.54" to="624439645" fromLane="1" toLane="1" via=":cluster_25977367_6226727262_2_1" tl="cluster_25977367_6226727262" linkIndex="3" dir="s" state="O"/>
-    <connection from="620377517.54" to="624439645" fromLane="2" toLane="2" via=":cluster_25977367_6226727262_2_2" tl="cluster_25977367_6226727262" linkIndex="4" dir="s" state="O"/>
-    <connection from="620377517.54" to="624439643" fromLane="3" toLane="0" via=":cluster_25977367_6226727262_5_0" tl="cluster_25977367_6226727262" linkIndex="5" dir="r" state="O"/>
+    <connection from="620377517.54" to="624439645" fromLane="0" toLane="0" via=":cluster_25977367_6226727262_2_0" tl="cluster_25977367_6226727262" linkIndex="1" dir="s" state="O"/>
+    <connection from="620377517.54" to="624439645" fromLane="1" toLane="1" via=":cluster_25977367_6226727262_2_1" tl="cluster_25977367_6226727262" linkIndex="1" dir="s" state="O"/>
+    <connection from="620377517.54" to="624439645" fromLane="2" toLane="2" via=":cluster_25977367_6226727262_2_2" tl="cluster_25977367_6226727262" linkIndex="1" dir="s" state="O"/>
+    <connection from="620377517.54" to="624439643" fromLane="3" toLane="0" via=":cluster_25977367_6226727262_5_0" tl="cluster_25977367_6226727262" linkIndex="2" dir="r" state="O"/>
     <connection from="620377518" to="28573047" fromLane="0" toLane="0" via=":313863768_0_0" dir="L" state="M"/>
     <connection from="620377518" to="28573047" fromLane="0" toLane="1" via=":313863768_1_0" dir="L" state="M"/>
     <connection from="620377518" to="159605088" fromLane="0" toLane="0" via=":313863768_2_0" dir="s" state="M"/>
@@ -2460,7 +2471,7 @@
     <connection from="66457665" to="665260214#0" fromLane="0" toLane="0" via=":804893114_1_0" dir="s" state="m"/>
     <connection from="665260212" to="619526564#1" fromLane="0" toLane="0" via=":cluster_313863436_6226727259_6_0" tl="cluster_313863436_6226727259" linkIndex="4" dir="l" state="o"/>
     <connection from="665260212" to="619526564#1" fromLane="1" toLane="1" via=":cluster_313863436_6226727259_7_0" tl="cluster_313863436_6226727259" linkIndex="4" dir="l" state="o"/>
-    <connection from="665260213" to="681812570#0" fromLane="0" toLane="0" via=":cluster_25977367_6226727262_6_0" tl="cluster_25977367_6226727262" linkIndex="6" dir="s" state="o"/>
+    <connection from="665260213" to="681812570#0" fromLane="0" toLane="0" via=":cluster_25977367_6226727262_6_0" tl="cluster_25977367_6226727262" linkIndex="3" dir="s" state="o"/>
     <connection from="669665011" to="7635630#0" fromLane="0" toLane="0" via=":6271182078_0_0" dir="s" state="M"/>
     <connection from="669665011" to="7635630#0" fromLane="0" toLane="1" via=":6271182078_0_1" dir="s" state="M"/>
     <connection from="669665011" to="7635630#0" fromLane="1" toLane="2" via=":6271182078_0_2" dir="s" state="M"/>

@@ -1324,14 +1324,20 @@ out4220_0_arr = (site4220_l8 + site4220_l12);
 in4221_0_arr = (site4221_l1 + site4221_l2 + site4221_l3 + site4221_l4 + site4221_l5);
 xEast = in4221_0_arr - out4220_0_arr;        % detectors 13,14
 xSouth = x - xEast;                          % detector 15
-% reduce demand for site 4221 so xEast has positive values only
-site4221_l3 = site4221_l3 - min(xEast,0);
+
+% increase demand from site 4220 so xSouth has positive values only
+site4220_l8 = site4220_l8 - min(xSouth,0); % -(-x) = +x
+% increase demand to site 4221 so xEast has positive values only
+site4221_l3 = site4221_l3 - min(xEast,0); % -(-x) = +x, therefore loop3 has more vehicles detected
+out4220_0_arr = (site4220_l8 + site4220_l12);
 in4221_0_arr = (site4221_l1 + site4221_l2 + site4221_l3 + site4221_l4 + site4221_l5);
+
 xEast = in4221_0_arr - out4220_0_arr;        % detectors 13,14
 % split into two lanes
 det13 = round(xEast/2)
 det14 = xEast - det13
-det15 = max((x - xEast),0)                 % detector 15
+det15 = x - xEast                          % detector 15
+
 
 
 

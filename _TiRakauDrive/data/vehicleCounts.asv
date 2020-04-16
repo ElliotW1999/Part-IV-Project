@@ -1307,66 +1307,42 @@ site4221_l18 = [0     1     1     0     0     1    11    18    24    16    17   
 % 4220 1,2,4-6,8,10,11-15
 % 4221 1-5,6,11,12,17,18
 
-% 4235 to 4219 (east)
-% 4219 5,6,7,8,9,10 - 4235 1,2,3,4,6,7
-out4219_0_arr = (site4219_l5 + site4219_l6 + site4219_l7 + site4219_l8 + site4219_l9 + site4219_l10);
-in4235_0_arr = (site4235_l1 + site4235_l2 + site4235_l3 + site4235_l6 + site4235_l7);
-sink4235east = out4219_0_arr - in4235_0_arr
-
-% 4219 detectors 7,8,13,14,20 - 4220 detectors 11-12 + x
-out4219_1_arr = (site4219_l7 + site4219_l8 + site4219_l13 + site4219_l14 + site4219_l20);
-into4220_0_arr = (site4220_l11 + site4220_l12);
-
-x = out4219_1_arr - into4220_0_arr; %x = 4220 detectors 13,14,15
-
-% 4220 detectors 8,12-14 - 4221 detectors 1-5
-out4220_0_arr = (site4220_l8 + site4220_l12);
-in4221_0_arr = (site4221_l1 + site4221_l2 + site4221_l3 + site4221_l4 + site4221_l5);
-xEast = in4221_0_arr - out4220_0_arr;        % detectors 13,14
-xSouth = x - xEast;                          % detector 15
-% reduce demand for site 4221 so xEast has positive values only
-site4221_l3 = site4221_l3 - min(xEast,0);
-in4221_0_arr = (site4221_l1 + site4221_l2 + site4221_l3 + site4221_l4 + site4221_l5);
-xEast = in4221_0_arr - out4220_0_arr;        % detectors 13,14
-% split into two lanes
-det13 = round(xEast/2)
-det14 = xEast - det13
-det15 = max((x - xEast),0)                 % detector 15
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-% 4219 to 4235 (west)
 % 4235 detectors 8,9,10,11 - 4219 detectors 3,4,15,16,17,21
 into4219_0_arr = site4219_l3 + site4219_l4 + site4219_l15 + site4219_l16 + site4219_l17 + site4219_l21;
+into4219_0 = sum(sum(into4219_0_arr));
 out4235_0_arr = site4235_l8 + site4235_l9 + site4235_l10 + site4235_l11;
-site4235to4219 = out4235_0_arr - into4219_0_arr;
-sink4235 = out4235_0_arr - into4219_0_arr;
+out4235_0 = sum(sum(out4235_0_arr));
+site4235to4219 = out4235_0 - into4219_0;
+disp(['4235 to 4219 is ',num2str(site4235to4219)])
+disp((site4235to4219/into4219_0));
+test = into4219_0_arr - out4235_0_arr
+
+% 4219 5,6,7,8,9,10 - 4235 1,2,3,4,6,7
+site4219to4235 = (site4219_l5 + site4219_l6 + site4219_l7 + site4219_l8 + site4219_l9 + site4219_l10) - (site4235_l1 + site4235_l2 + site4235_l3 + site4235_l4 + site4235_l6 + site4235_l7);
+disp([num2str(sum(sum(site4219to4235))),' leave the system'])
+disp('There is a road to the Hub')
+
+% 4219 detectors 7,8,13,14,20 - 4220 detectors 11-15
+out4219_1 = sum(sum(site4219_l7 + site4219_l8 + site4219_l13 + site4219_l14 + site4219_l20));
+into4220_0 = sum(sum(site4220_l11 + site4220_l12 + site4220_l13 + site4220_l14 + site4220_l15));
+site4219to4220 = out4219_1 - into4220_0;
+disp(['4219 to 4220 (east) is ',num2str(site4219to4220)])
+disp((site4219to4220/into4220_0));
 
 %4220 d13-15 use data from a different day
+
 % 4220 detectors 10,4-6,1,2 - 4219 15-19,22
 site4220to4219 = (site4220_l1 + site4220_l2 + site4220_l4 + site4220_l5 + site4220_l6 + site4220_l10) - (site4219_l15 + site4219_l16 + site4219_l17 + site4219_l18 + site4219_l19 + site4219_l22);
-%disp(['4220 to 4219 is ',num2str(sum(sum(site4220to4219)))])
+disp(['4220 to 4219 is ',num2str(sum(sum(site4220to4219)))])
+
+% 4220 detectors 8,12-14 - 4221 detectors 1-5
+site4220to4221 = (site4220_l8 + site4220_l12 + site4220_l13 + site4220_l14) - (site4221_l1 + site4221_l2 + site4221_l3 + site4221_l4 + site4221_l5);
+disp(['4220 to 4221 is ',num2str(sum(sum(site4220to4221)))])
 
 % 4221 detectors 6,11,12,17,18 - 4220 detectors 3-7
 site4221to4220 = (site4221_l6 + site4221_l11 + site4221_l12 + site4221_l17 + site4221_l18) - (site4220_l3 + site4220_l4 + site4220_l5 + site4220_l6 + site4220_l7); 
-%disp(['4221 to 4220 is ',num2str(sum(sum(site4221to4220)))])
+disp(['4221 to 4220 is ',num2str(sum(sum(site4221to4220)))])
 
 
-%disp('There is a road to the Hub')
+
 

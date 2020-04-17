@@ -70,19 +70,17 @@ guiShape="passenger"/>
         print("</routes>", file=routes)
 		
 
-
-
 # needs work
 def run():
     """execute the TraCI control loop"""
     step = 0
     # we start with phase 2 where EW has green
-    traci.trafficlight.setPhase("cluster_1707799581_314056954_5931861577", 2)
-    traci.simulationStep()
-    N = 6
-    for i in range(N):
-	    traci.trafficlight.setPhase("cluster_1707799581_314056954_5931861577", N)
-	    traci.simulationStep()
+    traci.trafficlight.setPhase("cluster_1707799581_314056954_5931861577", 4) # site 4235, phase C
+    while traci.simulation.getMinExpectedNumber() > 0:
+        traci.simulationStep()
+        if traci.trafficlight.getPhase("cluster_1707799581_314056954_5931861577") == 6:
+	        traci.trafficlight.setPhase("cluster_1707799581_314056954_5931861577", 3)
+        step += 1
 
     traci.close()
     sys.stdout.flush()

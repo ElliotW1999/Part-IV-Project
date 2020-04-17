@@ -1313,32 +1313,54 @@ out4219_0_arr = (site4219_l5 + site4219_l6 + site4219_l7 + site4219_l8 + site421
 in4235_0_arr = (site4235_l1 + site4235_l2 + site4235_l3 + site4235_l6 + site4235_l7);
 sink4235east = out4219_0_arr - in4235_0_arr
 
-% 4219 detectors 7,8,13,14,20 - 4220 detectors 11-12 + x
+% 4219 detectors 7,8,13,14,20 = 4220 detectors 11-12 + x
 out4219_1_arr = (site4219_l7 + site4219_l8 + site4219_l13 + site4219_l14 + site4219_l20);
 into4220_0_arr = (site4220_l11 + site4220_l12);
 
 x = out4219_1_arr - into4220_0_arr; %x = 4220 detectors 13,14,15
 
-% 4220 detectors 8,12-14 - 4221 detectors 1-5
+% 4220 detectors 8,12-14 + xEast = 4221 detectors 1-5
+% get xSouth from x and xEast
 out4220_0_arr = (site4220_l8 + site4220_l12);
 in4221_0_arr = (site4221_l1 + site4221_l2 + site4221_l3 + site4221_l4 + site4221_l5);
 xEast = in4221_0_arr - out4220_0_arr;        % detectors 13,14
 xSouth = x - xEast;                          % detector 15
 
-% increase demand from site 4220 so xSouth has positive values only
+% increase demand from site 4220 loop 8 so xSouth has positive values only
 site4220_l8 = site4220_l8 - min(xSouth,0); % -(-x) = +x
-% increase demand to site 4221 so xEast has positive values only
+% increase demand to site 4221 loop 3 so xEast has positive values only
 site4221_l3 = site4221_l3 - min(xEast,0); % -(-x) = +x, therefore loop3 has more vehicles detected
 out4220_0_arr = (site4220_l8 + site4220_l12);
 in4221_0_arr = (site4221_l1 + site4221_l2 + site4221_l3 + site4221_l4 + site4221_l5);
 
 xEast = in4221_0_arr - out4220_0_arr;        % detectors 13,14
 % split into two lanes
-det13 = round(xEast/2)
-det14 = xEast - det13
-det15 = x - xEast                          % detector 15
+det13 = round(xEast/2);
+det14 = xEast - det13;
+det15 = x - xEast     ;                     % detector 15
 
+% West
+% 4221 detectors 6,11,12,17,18 + diff = 4220 detectors 3-7
+out4221_9_arr = (site4221_l6 + site4221_l11 + site4221_l12 + site4221_l17 + site4221_l18);
+in4220_9_arr = (site4220_l3 + site4220_l4 + site4220_l5 + site4220_l6 + site4220_l7);
+diff = in4220_9_arr - out4221_9_arr;
+% -x means 4220 has x fewer vehicles, therefore 4220 must increase demand
+site4220_l3 = site4220_l3 - min(diff,0);
+site4221_l11 = site4221_l11 + max(diff,0);
+out4221_9_arr = (site4221_l6 + site4221_l11 + site4221_l12 + site4221_l17 + site4221_l18);
+in4220_9_arr = (site4220_l3 + site4220_l4 + site4220_l5 + site4220_l6 + site4220_l7);
+diff = in4220_9_arr - out4221_9_arr; % this should equal 0
 
+% 4220 detectors 10,4-6,1,2 + diff = 4219 15-19,22
+in4220_8_arr = (site4220_l1 + site4220_l2 + site4220_l4 + site4220_l5 + site4220_l6 + site4220_l10);
+out4219_8_arr = (site4219_l15 + site4219_l16 + site4219_l17 + site4219_l18 + site4219_l19 + site4219_l22);
+diff = in4220_8_arr - out4219_8_arr;
+% -x means 4219 has x fewer vehicles, therefore 4220 must increase demand
+site4219_l22 = site4219_l22 + max(diff,0);
+site4220_l10 = site4220_l10 - min(diff,0);
+in4220_8_arr = (site4220_l1 + site4220_l2 + site4220_l4 + site4220_l5 + site4220_l6 + site4220_l10);
+out4219_8_arr = (site4219_l15 + site4219_l16 + site4219_l17 + site4219_l18 + site4219_l19 + site4219_l22);
+diff = in4220_8_arr - out4219_8_arr;
 
 
 
@@ -1364,14 +1386,8 @@ out4235_0_arr = site4235_l8 + site4235_l9 + site4235_l10 + site4235_l11;
 site4235to4219 = out4235_0_arr - into4219_0_arr;
 sink4235 = out4235_0_arr - into4219_0_arr;
 
-%4220 d13-15 use data from a different day
-% 4220 detectors 10,4-6,1,2 - 4219 15-19,22
-site4220to4219 = (site4220_l1 + site4220_l2 + site4220_l4 + site4220_l5 + site4220_l6 + site4220_l10) - (site4219_l15 + site4219_l16 + site4219_l17 + site4219_l18 + site4219_l19 + site4219_l22);
-%disp(['4220 to 4219 is ',num2str(sum(sum(site4220to4219)))])
 
-% 4221 detectors 6,11,12,17,18 - 4220 detectors 3-7
-site4221to4220 = (site4221_l6 + site4221_l11 + site4221_l12 + site4221_l17 + site4221_l18) - (site4220_l3 + site4220_l4 + site4220_l5 + site4220_l6 + site4220_l7); 
-%disp(['4221 to 4220 is ',num2str(sum(sum(site4221to4220)))])
+
 
 
 %disp('There is a road to the Hub')

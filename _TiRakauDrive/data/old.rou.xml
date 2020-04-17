@@ -1,0 +1,39 @@
+<routes>
+
+	<route id="TiRakau0Right" edges="619523290#0 619523290#1 619523288" />
+	<route id="TiRakau0Left" edges="619523287#0 619523287#1" />
+	
+	<route id="TeKohaNorth" edges="-628341438#1 -628341438#0" />
+	<route id="TeKohaExitLeft" edges="gneE6" />
+	<route id="TeKohaExitRight" edges="-61645695" />
+	
+	<route id="TeKohaSouth" edges="628341438#0 628341438#1" />
+	<route id="TeKohaEnterRight" edges="61645695" />
+	<route id="TeKohaEnterLeft" edges="620377490" />
+	
+	<route id="TeKohaIntesectionLeft" edges="619523286" />
+	
+	<route id="TiRakau1Right" edges="619526570#0 619526570#1 620377514#1 619526569#1 619526568 619526567" />
+	<route id="TiRakau1Left" edges="122089583#0 122089583#1 122089583#1-AddedOffRampEdge" />
+	
+	<route id="BotanyIntesectionRightDown" edges="619526566" />
+	<route id="BotanyIntersectionLeftUp" edges="547625727" />
+	<route id="BotanyIntesectionLeftExit" edges="122089526" />
+	<route id="BotanyIntesectionRightExit" edges="122089528#1" />
+	
+	<route id="BotanyNorth" edges="620377502#0 620377502#1 620377501#0" />
+	<route id="BotanyEnterRight" edges="gneE1 gneE1.31" />
+	<route id="BotanyEnterLeft" edges="620377496" />
+	
+	<route id="BotanySouth" edges="620377506" />
+	<route id="BotanyExitRight" edges="gneE2" />
+	<route id="BotanyExitLeft" edges="620377506.61" />
+
+	<route id="TiIrirangiSouth" edges="547625725" />
+	<route id="TiIrirangiEnterLeft" edges="28592678" />
+	<route id="TiIrirangiEnterRight" edges="28597169" />
+	
+	<route id="TiIrirangiNorth" edges="620377515" />
+	<route id="TiIrirangiExitLeft" edges="28592666" />
+	<route id="TiIrirangiExitRight" edges="122089525.34" />
+</routes>

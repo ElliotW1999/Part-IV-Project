@@ -42,7 +42,8 @@
     <e1Detector file="e1output.xml" freq="60" friendlyPos="x" id="site4220_6" lane="619526563_2" pos="32"/>
     <e1Detector file="e1output.xml" freq="60" friendlyPos="x" id="site4220_7" lane="619526563_3" pos="32"/>
     <e1Detector file="e1output.xml" freq="60" friendlyPos="x" id="site4220_8" lane="28641508_0" pos="2"/>
-
+	<e1Detector file="e1output.xml" freq="60" friendlyPos="x" id="site4220_9" lane="gneE11_0" pos="2"/>
+    <e1Detector file="e1output.xml" freq="60" friendlyPos="x" id="site4220_10" lane="gneE11_1" pos="2"/>
     <e1Detector file="e1output.xml" freq="60" friendlyPos="x" id="site4220_11" lane="gneE3_0" pos="2"/>	
     <e1Detector file="e1output.xml" freq="60" friendlyPos="x" id="site4220_12" lane="620377517.54_0" pos="2"/>
     <e1Detector file="e1output.xml" freq="60" friendlyPos="x" id="site4220_13" lane="620377517.54_1" pos="2"/>

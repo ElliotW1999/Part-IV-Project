@@ -1675,7 +1675,77 @@ east4220 = east4219 - E4219toN4220 - E4219toS4220 + site4220_l8(17:18,6)
 E4220toN4221 = site4221_l1(17:18,6) + site4221_l2(17:18,6) 
 E4220toS4221 = site4221_l4(17:18,6) + site4221_l5(17:18,6) 
 
-east4221 = 
+east4221 = east4220 - E4220toN4221 - E4220toS4221
+
+% all the lane detectors for traffic going west from 4221 (right-most) site
+west4221 = site4221_l17(17:18,6) + site4221_l18(17:18,6) + site4221_l11(17:18,6) + site4221_l12(17:18,6) + site4221_l6(17:18,6);
+SW4221ratio = (site4221_l17(17:18,6) + site4221_l18(17:18,6))./west4221;
+NW4221ratio = site4221_l6(17:18,6)./west4221;
+WW4221ratio = (site4221_l11(17:18,6) + site4221_l12(17:18,6))./west4221;
+% the proportion of traffic from chapel rd(southbound 4221) to north shops (4220 northbound)
+S4221toN4220 = round(SW4221ratio.*site4220_l7(17:18,6))
+% the proportion of traffic from northbound 4221 to 4220 northbound
+N4221toN4220 = round(NW4221ratio.*site4220_l7(17:18,6))
+W4221toN4220 = round(WW4221ratio.*site4220_l7(17:18,6))
+
+S4221toS4220 = round(SW4221ratio.*site4220_l3(17:18,6))
+N4221toS4220 = round(NW4221ratio.*site4220_l3(17:18,6))
+W4221toS4220 = round(WW4221ratio.*site4220_l3(17:18,6))
+
+
+% all the lane detectors for traffic going west from 4220 (3rd) site
+west4220 = site4220_l10(17:18,6) + site4220_l1(17:18,6) + site4220_l2(17:18,6) + site4220_l4(17:18,6) + site4220_l5(17:18,6) + site4220_l6(17:18,6);
+SW4220ratio = site4220_l10(17:18,6)./west4220;
+NW4220ratio = (site4220_l1(17:18,6) + site4220_l2(17:18,6))./west4220;
+WW4220ratio = (site4220_l4(17:18,6) + site4220_l5(17:18,6) + site4220_l6(17:18,6))./west4220;
+% the proportion of traffic from north shops(southbound 4220) to north shops (4219 northbound)
+S4220toN4219 = round(SW4220ratio.*(site4219_l18(17:18,6) + site4219_l19(17:18,6)))
+% the proportion of traffic from northbound 4220 to 4219 northbound
+N4220toN4219 = round(NW4220ratio.*(site4219_l18(17:18,6) + site4219_l19(17:18,6)))
+% for the traffic from 4220 west to 4219 northbound, find how much of that traffic is from 4221 southbound, north, and west
+S4221toN4219 = round( SW4221ratio .*WW4220ratio.*(site4219_l18(17:18,6) + site4219_l19(17:18,6)))
+N4221toN4219 = round( NW4221ratio .*WW4220ratio.*(site4219_l18(17:18,6) + site4219_l19(17:18,6)))
+W4221toN4219 = round( WW4221ratio .*WW4220ratio.*(site4219_l18(17:18,6) + site4219_l19(17:18,6)))
+
+%again for 4219 south
+S4220toS4219 = round(SW4220ratio.*site4219_l22(17:18,6))
+N4220toS4219 = round(NW4220ratio.*site4219_l22(17:18,6))
+% for the traffic from 4220 west to 4219 south, find how much of that traffic is from 4221 southbound, north, and west
+S4221toS4219 = round( SW4221ratio .*WW4220ratio.*site4219_l22(17:18,6))
+N4221toS4219 = round( NW4221ratio .*WW4220ratio.*site4219_l22(17:18,6))
+W4221toS4219 = round( WW4221ratio .*WW4220ratio.*site4219_l22(17:18,6))
+
+
+% all the lane detectors for traffic going west from 4219 (2nd) site
+west4219 = site4219_l21(17:18,6) + site4219_l15(17:18,6) + site4219_l16(17:18,6) + site4219_l17(17:18,6) + site4219_l3(17:18,6) + site4219_l4(17:18,6);
+SW4219ratio = (site4219_l3(17:18,6) + site4219_l4(17:18,6))./west4219;
+NW4219ratio = site4219_l21(17:18,6)./west4219;
+WW4219ratio = (site4219_l15(17:18,6) + site4219_l16(17:18,6) + site4219_l17(17:18,6))./west4219;
+% the proportion of traffic from southbound 4219 to 4235 southbound
+S4219toS4235 = round(SW4219ratio.*site4235_l8(17:18,6))
+N4219toS4235 = round(SW4219ratio.*site4235_l8(17:18,6))
+% for the traffic from 4219 west to 4235 south, find how much of that traffic is from 4221 southbound, north, and west
+S4221toS4235 = round( SW4221ratio .*WW4220ratio.*WW4219ratio.*site4235_l8(17:18,6))
+N4221toS4235 = round( NW4221ratio .*WW4220ratio.*WW4219ratio.*site4235_l8(17:18,6))
+W4221toS4235 = round( WW4221ratio .*WW4220ratio.*WW4219ratio.*site4235_l8(17:18,6))
+% for the traffic from 4219 west to 4235 south, find how much of that traffic is from 4220 southbound, north
+S4220toS4235 = round( SW4220ratio               .*WW4219ratio.*site4235_l8(17:18,6))
+N4220toS4235 = round( NW4220ratio               .*WW4219ratio.*site4235_l8(17:18,6))
+
+% 4235 west
+S4219toW4235 = round(SW4219ratio.* (site4235_l9(17:18,6) + site4235_l10(17:18,6) + site4235_l11(17:18,6)) )
+N4219toW4235 = round(NW4219ratio.* (site4235_l9(17:18,6) + site4235_l10(17:18,6) + site4235_l11(17:18,6)) )
+% from 4221
+S4221toS4235 = round( SW4221ratio .*WW4220ratio.*WW4219ratio.*site4235_l8(17:18,6))
+N4221toS4235 = round( NW4221ratio .*WW4220ratio.*WW4219ratio.*site4235_l8(17:18,6))
+W4221toS4235 = round( WW4221ratio .*WW4220ratio.*WW4219ratio.*site4235_l8(17:18,6))
+
+
+
+
+
+
+
 
 
 

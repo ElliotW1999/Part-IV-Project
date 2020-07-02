@@ -489,10 +489,25 @@ def run():
         traci.simulationStep()
 		# for each intersection
 		#	for each loop detector
-		#		if activated, increment loopCounter by 1
-		#		if phase is green, set loopCounter to 0
-		#	if max(intersection_loopCounter) is not in active phase
-		#		if active phase is 
+		#		getTimeSinceDetection
+		#	if active phase is not transition phase, and max(intersection_loopCounter) is not in current phase
+		#		transition to phase for max(intersection_loopCounter)
+
+
+		
+		site4235_detectors = []
+		lanesForPhases_s4235 = {	# key = phase, values = lanes with green lights
+			"1" : [1, 2, 3, 9, 10, 11],
+			"3" : [1, 2, 3, 4],
+			"5" : [6, 7],
+			"7" : [],
+		}
+		for i in range(1,12)
+			site4235_detectors.append(traci.inductionloop.getTimeSinceDetection("site4235_" + str(i)))
+		site4235_phase = traci.trafficlight.getPhase("cluster_1707799581_314056954_5931861577") # I think phase indexing starts at 1
+		if ((site4235_phase%3) == 1): # if not a transition phase
+			if  
+		
         #if traci.trafficlight.getPhase("cluster_1707799581_314056954_5931861577") == 6:
             #traci.trafficlight.setPhase("cluster_1707799581_314056954_5931861577", 3)
         step += 1

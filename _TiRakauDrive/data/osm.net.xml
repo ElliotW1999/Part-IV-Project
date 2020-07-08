@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!-- generated on 07/08/20 16:44:54 by Eclipse SUMO netedit Version 1.5.0
+<!-- generated on 07/08/20 21:24:02 by Eclipse SUMO netedit Version 1.5.0
 <configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/netconvertConfiguration.xsd">
 
     <input>
-        <sumo-net-file value="C:\Users\josha\Documents\GitHub\Part-IV-Project\_TiRakauDrive\data\osm.net.xml"/>
+        <sumo-net-file value="C:\Users\Elliot\Documents\GitHub\P4Project\_TiRakauDrive\data\osm.net.xml"/>
     </input>
 
     <output>
-        <output-file value="C:\Users\josha\Documents\GitHub\Part-IV-Project\_TiRakauDrive\data\osm.net.xml"/>
+        <output-file value="C:\Users\Elliot\Documents\GitHub\P4Project\_TiRakauDrive\data\osm.net.xml"/>
         <output.street-names value="true"/>
     </output>
 
@@ -1685,21 +1685,21 @@
     </edge>
 
     <tlLogic id="cluster_1707799581_314056954_5931861577" type="actuated" programID="0" offset="0">
-        <phase duration="1"  state="rrGGGGGGrr" name="A"/>
-        <phase duration="1"  state="rrrrrGGGGG" name="B"/>
-        <phase duration="1"  state="GGrrrrrrrG" name="C"/>
-        <phase duration="1"  state="rryyyGGGrr" name="A-B-1"/>
-        <phase duration="6"  state="rrrrrGGGrr" name="A-B-2"/>
-        <phase duration="11" state="rryyyyyyrr" name="A-C-1"/>
-        <phase duration="2"  state="rrrrrrrrrr" name="A-C-2"/>
-        <phase duration="11" state="rrrrrGGGyy" name="B-A-1"/>
-        <phase duration="6"  state="rrrrrGGGrr" name="B-A-2"/>
-        <phase duration="11" state="rrrrryyyyy" name="B-C-1"/>
-        <phase duration="2"  state="rrrrrrrrrr" name="B-C-2"/>
-        <phase duration="11" state="yyrrrrrrry" name="C-A-1"/>
-        <phase duration="2"  state="rrrrrrrrrr" name="C-A-2"/>
-        <phase duration="2"  state="yyrrrrrrry" name="C-B-1"/>
-        <phase duration="2"  state="rrrrrrrrrr" name="C-B-2"/>
+        <phase duration="180" state="rrGGGGGGrr" minDur="5" name="A"/>
+        <phase duration="180" state="rrrrrGGGGG" name="B"/>
+        <phase duration="180" state="GGrrrrrrrG" name="C"/>
+        <phase duration="4"  state="rryyyGGGrr" name="A-B-1"/>
+        <phase duration="3"  state="rrrrrGGGrr" name="A-B-2"/>
+        <phase duration="4"  state="rryyyyyyrr" name="A-C-1"/>
+        <phase duration="3"  state="rrrrrrrrrr" name="A-C-2"/>
+        <phase duration="4"  state="rrrrrGGGyy" name="B-A-1"/>
+        <phase duration="3"  state="rrrrrGGGrr" name="B-A-2"/>
+        <phase duration="4"  state="rrrrryyyyy" name="B-C-1"/>
+        <phase duration="3"  state="rrrrrrrrrr" name="B-C-2"/>
+        <phase duration="4"  state="yyrrrrrrry" name="C-A-1"/>
+        <phase duration="3"  state="rrrrrrrrrr" name="C-A-2"/>
+        <phase duration="4"  state="yyrrrrrrry" name="C-B-1"/>
+        <phase duration="3"  state="rrrrrrrrrr" name="C-B-2"/>
     </tlLogic>
     <tlLogic id="cluster_25953432_313863435_313863521_314053282" type="actuated" programID="0" offset="0">
         <phase duration="11" state="rGrrGr" name="A"/>

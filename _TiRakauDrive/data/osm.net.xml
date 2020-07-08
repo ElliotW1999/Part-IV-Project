@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!-- generated on 07/08/20 21:24:02 by Eclipse SUMO netedit Version 1.5.0
+<!-- generated on 07/09/20 01:11:52 by Eclipse SUMO netedit Version 1.5.0
 <configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/netconvertConfiguration.xsd">
 
     <input>
-        <sumo-net-file value="C:\Users\Elliot\Documents\GitHub\P4Project\_TiRakauDrive\data\osm.net.xml"/>
+        <sumo-net-file value="C:\Users\josha\Documents\GitHub\Part-IV-Project\_TiRakauDrive\data\osm.net.xml"/>
     </input>
 
     <output>
-        <output-file value="C:\Users\Elliot\Documents\GitHub\P4Project\_TiRakauDrive\data\osm.net.xml"/>
+        <output-file value="C:\Users\josha\Documents\GitHub\Part-IV-Project\_TiRakauDrive\data\osm.net.xml"/>
         <output.street-names value="true"/>
     </output>
 
@@ -1912,7 +1912,7 @@
         <phase duration="3"  state="rrrrGrrr" name="B"/>
         <phase duration="6"  state="GGGGrrrr" name="C"/>
         <phase duration="3"  state="rrrrGGrr" name="D"/>
-        <phase duration="37" state="rrrGrGrr" name="E"/>
+        <phase duration="37" state="rrrGGrrr" name="E"/>
         <phase duration="3"  state="yyyrrrrr" name="A-B-1"/>
         <phase duration="2"  state="rrrrrrrr" name="A-B-2"/>
         <phase duration="5"  state="GGGrrrrr" name="A-C-1"/>

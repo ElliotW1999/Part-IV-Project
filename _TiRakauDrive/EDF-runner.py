@@ -122,19 +122,20 @@ def generate_routefile():
     
     
     with open("data/osm.rou.xml", "w") as routes: 
-        print("""<routes>""", file=routes)
+        print("""<routes>
+		<vType id="type1" lcStrategic="100" lcKeepRight="100" lcSpeedGain="100" lcCooperative="1" lcSublane="100" />""", file=routes)
 
-        for route in routesList:             # print route list       
-                print('        <route id="r%s" edges="%s" />' % (
+        for route in routesList:             													# print route list       
+                print('    <route id="r%s" edges="%s" />' % (
                     route[0], route[1]), file=routes)
 
         vehNr = 0
         N = 300  # number of time steps per interval (5 min)
         for i in range(2):
             for j in range(N):
-                for route in routesList:  #print vehicle density for each interval for each route                   
-                    if random.uniform(0, 1) < (route[i+2]/300):
-                        print('    <vehicle id="%s_%d" route="r%s" depart="%d" />' % (
+                for route in routesList:  														#print vehicle density for each interval for each route                   
+                    if random.uniform(0, 1) < (route[i+2]/300):#type currently does not work
+                        print('    <vehicle id="%s_%d" type="type1" route="r%s" depart="%d" />' % (
                             route[0], vehNr, route[0], (i*N)+j), file=routes)
                         vehNr += 1
                         
@@ -146,20 +147,22 @@ def generate_routefile():
 def run():
     """execute the TraCI control loop"""
     step = 0
+    YELLOW_PHASE = 4
+    RED_PHASE = 2
     traci.trafficlight.setPhase("cluster_1707799581_314056954_5931861577", 0)
     site4235_detector_delay = []     
     site4235_LOOP_COUNT = 11 
-    for i in range(0, site4235_LOOP_COUNT+1): # initiliaze array of 0s
+    for i in range(0, site4235_LOOP_COUNT+1): 													# initiliaze array of 0s
         site4235_detector_delay.append(0)
-    lanesForPhases_s4235 = {        # key = phase, values = lanes with green lights
-        0 : [1, 2, 3, 9, 10, 11],   #A      
-        1 : [1, 2, 3, 4],           #B
-        2 : [6, 7]                  #C
+    lanesForPhases_s4235 = {        															# key = phase, values = lanes with green lights
+        0 : [1, 2, 3, 9, 10, 11],   															#A      
+        1 : [1, 2, 3, 4],           															#B
+        2 : [6, 7]                  															#C
     }   
     
     site4219_detector_delay = []     
     site4219_LOOP_COUNT = 21
-    site4219_ignored_phases = [20, 21, 22]  # could automate this I guess? if not in dict
+    site4219_ignored_phases = [20, 21, 22]# could automate this I guess? if not in dict
     for i in range(0, site4219_LOOP_COUNT+1): # initiliaze array of 0s
         site4219_detector_delay.append(0)
     laneGroupsForPhases_s4219 = {        # key = phase, values = lanes with green lights
@@ -244,7 +247,6 @@ def run():
         # add in other traffic lightsite4219_phase = traci.trafficlight.getPhase("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525")
         #static edf algo
         
-        
         # ----------------------------------------------------------------------SITE 4235--------------------------------------------------------------------------------------------------
         site4235_phase = traci.trafficlight.getPhase("cluster_1707799581_314056954_5931861577") # phase indexing starts at 0 
         for i in range(1,site4235_LOOP_COUNT):                                                  # for each loop detector
@@ -252,7 +254,6 @@ def run():
                 if int(traci.inductionloop.getLastStepVehicleNumber("site4235_" + str(i))) > 0 or site4235_detector_delay[i] > 0:      # if getLastStepVehicleNumber>0, 
                     site4235_detector_delay[i] = site4235_detector_delay[i] + 1                 # increment loopDetectorDelay
                 
-        print(site4235_detector_delay)##for debugging purposes
         if (site4235_phase in lanesForPhases_s4235.keys()):                 # if not a transition phase
             activeTraffic = 99 
             
@@ -305,10 +306,10 @@ def run():
                             
         else:                                                                                       #   if active phase is transition phase
             
-            if transitionCounter < 4:           # while lights are still yellow
+            if transitionCounter < YELLOW_PHASE:           # while lights are still yellow
                 for i in lanesForPhases_s4235[site4235_prev_phase]:
                     site4235_detector_delay[i] = 0  
-            elif transitionCounter == 6:
+            elif transitionCounter == YELLOW_PHASE + RED_PHASE:
                 traci.trafficlight.setPhase("cluster_1707799581_314056954_5931861577", site4235_next_phase) #change to next phase
             transitionCounter = transitionCounter + 1
                 #add for case where lights change with no traffic?
@@ -345,5 +346,5 @@ if __name__ == "__main__":
     # this is the normal way of using traci. sumo is started as a
     # subprocess and then the python script connects and runs
     traci.start([sumoBinary, "-c", "data/osm.sumocfg",
-                             "--tripinfo-output", "tripinfoEDF.xml"])
+                             "--tripinfo-output", "tripinfoEDF.xml", "--no-internal-links"])
     run()

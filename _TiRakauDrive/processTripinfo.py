@@ -1,6 +1,6 @@
 import matplotlib.pyplot as plt
 
-tripdata = open("tripinfo.xml", "r")
+tripdata = open("tripinfoEDF.xml", "r")
 timeLoss = []
 for line in tripdata:
     line = line.split(' ')

@@ -242,64 +242,8 @@ def run():
         #
         
         # add in other traffic lightsite4219_phase = traci.trafficlight.getPhase("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525")
-        static edf algo
-		YELLOW_PHASE = 4
-		RED_PHASE = 2
-		for i in range(1,site4219_LOOP_COUNT):                                                  # for each loop detector
-            if i not in site4219_ignored_phases:                                                    # ignore lanes 
-                if int(traci.inductionloop.getLastStepVehicleNumber("site4219_" + str(i))) > 0 or site4219_detector_delay[i] > 0:      # if getLastStepVehicleNumber>0, 
-                    site4219_detector_delay[i] = site4219_detector_delay[i] + 1                 # increment loopDetectorDelay
-					
-        if (site4219_phase in laneGroupsForPhases_s4219.keys()):                 # if not a transition phase
-            
-			for i in range(0,len(activeTraffic_s4219)):
-				activeTraffic_s4219[i] = 99
-            
-            for group in laneGroupsForPhases_s4219[site4219_phase]:
-				for lane in laneGroups_s4219[group]:
-					site4219_detector_delay[lane] = 0                                                  # reset loopDetectorDelay for loops in current phase
-					if int(traci.inductionloop.getTimeSinceDetection("site4235_" + str(i))) < activeTraffic_s4219[group]:
-						activeTraffic_s4219[group] = int(traci.inductionloop.getTimeSinceDetection("site4235_" + str(i)))
-			
-			for group in laneGroupsForPhases_s4219[site4219_phase]:										# for each active group	
-				for lane in laneGroups_s4219[group]:													# for each active lane in each group
-					if activeTraffic[lane] > 4:                                                         # if no active traffic through lane, switch to transition phase for max(loopDetectorDelay)
-					transitionCounter = 0
-					site4235_prev_phase = site4219_phase
-					# build next phase
-					if site4219_detector_delay.index(max(site4219_detector_delay)) in laneGroups_s4219[0]: #either phase A or C for next phase, compare conflicting lanes:
-						#surely this can be improved
-						if (site4219_detector_delay[1] > site4219_detector_delay[13] and site4219_detector_delay[1] > site4219_detector_delay[14]) or (site4219_detector_delay[2] > site4219_detector_delay[13] and site4219_detector_delay[2] > site4219_detector_delay[14]):
-							site4219_next_phase = 0                                                     #A
-							# cannot be B-A as lanes 1/2 are active in B and so lanes 1/2 would == 0
-							if site4235_phase == 2:
-								traci.trafficlight.setPhase("cluster_1707799581_314056954_5931861577", 31)   #change to C-A
-							elif site4235_phase == 3:
-								traci.trafficlight.setPhase("cluster_1707799581_314056954_5931861577", 43)   #change to D-A
-							elif site4235_phase == 4:
-								traci.trafficlight.setPhase("cluster_1707799581_314056954_5931861577", 55)   #change to E-A
-							elif site4235_phase == 5:
-								traci.trafficlight.setPhase("cluster_1707799581_314056954_5931861577", 67)   #change to F-A
-							elif site4235_phase == 6:
-								traci.trafficlight.setPhase("cluster_1707799581_314056954_5931861577", 79)   #change to G-A
-						else:
-							site4219_next_phase = 2                                                     #C
-							# cannot be G-C as lanes 13/14 are active
-							if site4235_phase == 0:
-								traci.trafficlight.setPhase("cluster_1707799581_314056954_5931861577", 9)   #change to A-C
-							elif site4235_phase == 1:
-								traci.trafficlight.setPhase("cluster_1707799581_314056954_5931861577", 21)   #change to B-C
-							elif site4235_phase == 3:
-								traci.trafficlight.setPhase("cluster_1707799581_314056954_5931861577", 47)   #change to D-C
-							elif site4235_phase == 4:
-								traci.trafficlight.setPhase("cluster_1707799581_314056954_5931861577", 59)   #change to E-C
-							elif site4235_phase == 5:
-								traci.trafficlight.setPhase("cluster_1707799581_314056954_5931861577", 83)   #change to F-C
-					elif site4219_detector_delay.index(max(site4219_detector_delay)) in laneGroups_s4219[1]: # lanes 1 or 2, either phase A or B, compare conflicting lanes:
-						if (site4219_detector_delay[11] > site4219_detector_delay[3] and site4219_detector_delay[11] > site4219_detector_delay[4]) or (site4219_detector_delay[12] > site4219_detector_delay[3] and site4219_detector_delay[12] > site4219_detector_delay[4]):
-							site4219_next_phase = 0                                                     #A
-							# cannot be B-A as lanes 1/2 are active in B
-							
+        #static edf algo
+        
         
         # ----------------------------------------------------------------------SITE 4235--------------------------------------------------------------------------------------------------
         site4235_phase = traci.trafficlight.getPhase("cluster_1707799581_314056954_5931861577") # phase indexing starts at 0 

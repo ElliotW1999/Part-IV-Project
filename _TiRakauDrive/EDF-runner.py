@@ -242,7 +242,10 @@ def run():
         #
         
         # add in other traffic lightsite4219_phase = traci.trafficlight.getPhase("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525")
-        for i in range(1,site4219_LOOP_COUNT):                                                  # for each loop detector
+        static edf algo
+		YELLOW_PHASE = 4
+		RED_PHASE = 2
+		for i in range(1,site4219_LOOP_COUNT):                                                  # for each loop detector
             if i not in site4219_ignored_phases:                                                    # ignore lanes 
                 if int(traci.inductionloop.getLastStepVehicleNumber("site4219_" + str(i))) > 0 or site4219_detector_delay[i] > 0:      # if getLastStepVehicleNumber>0, 
                     site4219_detector_delay[i] = site4219_detector_delay[i] + 1                 # increment loopDetectorDelay
@@ -294,8 +297,7 @@ def run():
 				elif site4219_detector_delay.index(max(site4219_detector_delay)) in laneGroups_s4219[1]: # lanes 1 or 2, either phase A or B, compare conflicting lanes:
 					if (site4219_detector_delay[1] > site4219_detector_delay[3] and site4219_detector_delay[1] > site4219_detector_delay[4]) or (site4219_detector_delay[2] > site4219_detector_delay[3] and site4219_detector_delay[2] > site4219_detector_delay[4]):
 					
-						
-			
+							
         
         # ----------------------------------------------------------------------SITE 4235--------------------------------------------------------------------------------------------------
         site4235_phase = traci.trafficlight.getPhase("cluster_1707799581_314056954_5931861577") # phase indexing starts at 0 

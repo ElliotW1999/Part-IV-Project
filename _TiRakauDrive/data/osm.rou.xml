@@ -1,5 +1,5 @@
 <routes>
-		<vType id="type1" lcStrategic="100" lcKeepRight="100" lcSpeedGain="100" lcCooperative="1" lcSublane="100" />
+        <vType id="type1" lcStrategic="100" lcKeepRight="100" lcSpeedGain="100" lcCooperative="1" lcSublane="100" />
     <route id="rse4235" edges="619523290#0 619523290#1 619523288 61645695 628341438#0 628341438#1" />
     <route id="rnw4235" edges="-628341438#1 -628341438#0 gneE6 619523287#0.17 619523287#1" />
     <route id="rnorth4219" edges="620377515  122089525 122089525.34 620377496 620377502#0 620377502#1 620377501#0" />

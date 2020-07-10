@@ -240,7 +240,8 @@ def run():
             if waitTime_s4219 == 180:
                 switchPhase = True
             
-            if switchPhase:                                             
+            if switchPhase == True:
+                print("switching phase")
                 transitionCounter = 0
                 switchPhase = False 
                 # build new phase

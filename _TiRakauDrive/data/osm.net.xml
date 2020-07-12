@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!-- generated on 07/12/20 11:31:18 by Eclipse SUMO netedit Version 1.5.0
+<!-- generated on 07/12/20 18:17:23 by Eclipse SUMO netedit Version 1.5.0
 <configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/netconvertConfiguration.xsd">
 
     <input>
@@ -1653,17 +1653,15 @@
     </edge>
 
     <tlLogic id="313863797" type="static" programID="0" offset="0">
-        <phase duration="99" state="GGrr" name="A"/>
-        <phase duration="4"  state="yyrr" name="A-B-1"/>
-        <phase duration="2"  state="rrrr" name="A-B-2"/>
-        <phase duration="99" state="rrGG" name="B"/>
-        <phase duration="4"  state="rryy" name="B-A-1"/>
-        <phase duration="2"  state="rrrr" name="B-A-2"/>
+        <phase duration="185" state="ggGG" name="A"/>
+        <phase duration="6"  state="yyGG" name="A-B-1"/>
+        <phase duration="185" state="rrGG" name="B"/>
+        <phase duration="6"  state="rrgg" name="B-A-1"/>
     </tlLogic>
     <tlLogic id="5861321343" type="static" programID="0" offset="0">
         <phase duration="185" state="ggGG" name="A"/>
-        <phase duration="4"  state="yyGG" name="A-B-1"/>
-        <phase duration="185" state="rrGG" name="A-B-2"/>
+        <phase duration="6"  state="yyGG" name="A-B-1"/>
+        <phase duration="185" state="rrGG" name="B"/>
         <phase duration="6"  state="rrgg" name="B-A-1"/>
     </tlLogic>
     <tlLogic id="cluster_1707799581_314056954_5931861577" type="actuated" programID="0" offset="0">
@@ -1684,71 +1682,71 @@
         <phase duration="3"  state="rrrrrrrrrr" name="C-B-2"/>
     </tlLogic>
     <tlLogic id="cluster_25953432_313863435_313863521_314053282" type="actuated" programID="0" offset="0">
-        <phase duration="11" state="rGrrGr" name="A"/>
-        <phase duration="11" state="rrrrGG" name="B"/>
-        <phase duration="11" state="rGGrrr" name="C"/>
-        <phase duration="11" state="rrrGrr" name="D"/>
-        <phase duration="11" state="Grrrrr" name="E"/>
-        <phase duration="11" state="rrGrrG" name="F"/>
-        <phase duration="11" state="ryrrGr" name="A-B-1"/>
-        <phase duration="6"  state="rrrrGr" name="A-B-2"/>
-        <phase duration="11" state="rGrryr" name="A-C-1"/>
-        <phase duration="6"  state="rGrrrr" name="A-C-2"/>
-        <phase duration="11" state="ryrryr" name="A-D-1"/>
+        <phase duration="185" state="rGrrGr" name="A"/>
+        <phase duration="185" state="rrrrGG" name="B"/>
+        <phase duration="185" state="rGGrrr" name="C"/>
+        <phase duration="185" state="rrrGrr" name="D"/>
+        <phase duration="185" state="Grrrrr" name="E"/>
+        <phase duration="185" state="rrGrrG" name="F"/>
+        <phase duration="4"  state="ryrrGr" name="A-B-1"/>
+        <phase duration="2"  state="rrrrGr" name="A-B-2"/>
+        <phase duration="4"  state="rGrryr" name="A-C-1"/>
+        <phase duration="2"  state="rGrrrr" name="A-C-2"/>
+        <phase duration="4"  state="ryrryr" name="A-D-1"/>
         <phase duration="2"  state="rrrrrr" name="A-D-2"/>
-        <phase duration="2"  state="ryrryr" name="A-E-1"/>
+        <phase duration="4"  state="ryrryr" name="A-E-1"/>
         <phase duration="2"  state="rrrrrr" name="A-E-2"/>
-        <phase duration="2"  state="ryrryr" name="A-F-1"/>
+        <phase duration="4"  state="ryrryr" name="A-F-1"/>
         <phase duration="2"  state="rrrrrr" name="A-F-2"/>
-        <phase duration="2"  state="rrrrGy" name="B-A-1"/>
-        <phase duration="6"  state="rrrrGr" name="B-A-2"/>
-        <phase duration="11" state="rrrryy" name="B-C-1"/>
+        <phase duration="4"  state="rrrrGy" name="B-A-1"/>
+        <phase duration="2"  state="rrrrGr" name="B-A-2"/>
+        <phase duration="4"  state="rrrryy" name="B-C-1"/>
         <phase duration="2"  state="rrrrrr" name="B-C-2"/>
-        <phase duration="2"  state="rrrryy" name="B-D-1"/>
+        <phase duration="4"  state="rrrryy" name="B-D-1"/>
         <phase duration="2"  state="rrrrrr" name="B-D-2"/>
-        <phase duration="2"  state="rrrryy" name="B-E-1"/>
+        <phase duration="4"  state="rrrryy" name="B-E-1"/>
         <phase duration="2"  state="rrrrrr" name="B-E-2"/>
-        <phase duration="2"  state="rrrryG" name="B-F-1"/>
-        <phase duration="6"  state="rrrrrG" name="B-F-2"/>
-        <phase duration="11" state="rGyrrr" name="C-A-1"/>
+        <phase duration="4"  state="rrrryG" name="B-F-1"/>
+        <phase duration="2"  state="rrrrrG" name="B-F-2"/>
+        <phase duration="4"  state="rGyrrr" name="C-A-1"/>
         <phase duration="2"  state="rGrrrr" name="C-A-2"/>
-        <phase duration="2"  state="ryyrrr" name="C-B-1"/>
+        <phase duration="4"  state="ryyrrr" name="C-B-1"/>
         <phase duration="2"  state="rrrrrr" name="C-B-2"/>
-        <phase duration="2"  state="ryyrrr" name="C-D-1"/>
+        <phase duration="4"  state="ryyrrr" name="C-D-1"/>
         <phase duration="2"  state="rrrrrr" name="C-D-2"/>
-        <phase duration="2"  state="ryyrrr" name="C-E-1"/>
+        <phase duration="4"  state="ryyrrr" name="C-E-1"/>
         <phase duration="2"  state="rrrrrr" name="C-E-2"/>
-        <phase duration="2"  state="ryGrrr" name="C-F-1"/>
-        <phase duration="6"  state="rrGrrr" name="C-F-2"/>
-        <phase duration="11" state="rrryrr" name="D-A-1"/>
+        <phase duration="4"  state="ryGrrr" name="C-F-1"/>
+        <phase duration="2"  state="rrGrrr" name="C-F-2"/>
+        <phase duration="4"  state="rrryrr" name="D-A-1"/>
         <phase duration="2"  state="rrrrrr" name="D-A-2"/>
-        <phase duration="2"  state="rrryrr" name="D-B-1"/>
+        <phase duration="4"  state="rrryrr" name="D-B-1"/>
         <phase duration="2"  state="rrrrrr" name="D-B-2"/>
-        <phase duration="2"  state="rrryrr" name="D-C-1"/>
+        <phase duration="4"  state="rrryrr" name="D-C-1"/>
         <phase duration="2"  state="rrrrrr" name="D-C-2"/>
-        <phase duration="2"  state="rrryrr" name="D-E-1"/>
+        <phase duration="4"  state="rrryrr" name="D-E-1"/>
         <phase duration="2"  state="rrrrrr" name="D-E-2"/>
-        <phase duration="2"  state="rrryrr" name="D-F-1"/>
+        <phase duration="4"  state="rrryrr" name="D-F-1"/>
         <phase duration="2"  state="rrrrrr" name="D-F-2"/>
-        <phase duration="2"  state="yrrrrr" name="E-A-1"/>
+        <phase duration="4"  state="yrrrrr" name="E-A-1"/>
         <phase duration="2"  state="rrrrrr" name="E-A-2"/>
-        <phase duration="2"  state="yrrrrr" name="E-B-1"/>
+        <phase duration="4"  state="yrrrrr" name="E-B-1"/>
         <phase duration="2"  state="rrrrrr" name="E-B-2"/>
-        <phase duration="2"  state="yrrrrr" name="E-C-1"/>
+        <phase duration="4"  state="yrrrrr" name="E-C-1"/>
         <phase duration="2"  state="rrrrrr" name="E-C-2"/>
-        <phase duration="2"  state="yrrrrr" name="E-D-1"/>
+        <phase duration="4"  state="yrrrrr" name="E-D-1"/>
         <phase duration="2"  state="rrrrrr" name="E-D-2"/>
-        <phase duration="2"  state="yrrrrr" name="E-F-1"/>
+        <phase duration="4"  state="yrrrrr" name="E-F-1"/>
         <phase duration="2"  state="rrrrrr" name="E-F-2"/>
-        <phase duration="2"  state="rryrry" name="F-A-1"/>
+        <phase duration="4"  state="rryrry" name="F-A-1"/>
         <phase duration="2"  state="rrrrrr" name="F-A-2"/>
-        <phase duration="2"  state="rryrrG" name="F-B-1"/>
-        <phase duration="6"  state="rrrrrG" name="F-B-2"/>
-        <phase duration="11" state="rrGrry" name="F-C-1"/>
-        <phase duration="6"  state="rrGrrr" name="F-C-2"/>
-        <phase duration="11" state="rryrry" name="F-D-1"/>
+        <phase duration="4"  state="rryrrG" name="F-B-1"/>
+        <phase duration="2"  state="rrrrrG" name="F-B-2"/>
+        <phase duration="4"  state="rrGrry" name="F-C-1"/>
+        <phase duration="2"  state="rrGrrr" name="F-C-2"/>
+        <phase duration="4"  state="rryrry" name="F-D-1"/>
         <phase duration="2"  state="rrrrrr" name="F-D-2"/>
-        <phase duration="2"  state="rryrry" name="F-E-1"/>
+        <phase duration="4"  state="rryrry" name="F-E-1"/>
         <phase duration="2"  state="rrrrrr" name="F-E-2"/>
     </tlLogic>
     <tlLogic id="cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525" type="actuated" programID="0" offset="0">
@@ -1845,50 +1843,50 @@
         <phase duration="2"  state="rrrrrrrrrrrrrrrrr" name="G-F-2"/>
     </tlLogic>
     <tlLogic id="gneJ41" type="static" programID="0" offset="0">
-        <phase duration="27" state="GGGrrrGGGrrr" name="A"/>
-        <phase duration="3"  state="rrrrrrGGGGGG" name="B"/>
-        <phase duration="27" state="GGGGrrrrrrrr" name="C"/>
-        <phase duration="3"  state="rrrrGGrrrrrr" name="D"/>
-        <phase duration="27" state="rrrGrrrrrGrr" name="E"/>
-        <phase duration="3"  state="yyyrrrGGGrrr" name="A-B-1"/>
-        <phase duration="6"  state="rrrrrrGGGrrr" name="A-B-2"/>
-        <phase duration="3"  state="GGGrrryyyrrr" name="A-C-1"/>
-        <phase duration="6"  state="GGGrrrrrrrrr" name="A-C-2"/>
-        <phase duration="3"  state="yyyrrryyyrrr" name="A-D-1"/>
+        <phase duration="185" state="GGGrrrGGGrrr" name="A"/>
+        <phase duration="185" state="rrrrrrGGGGGG" name="B"/>
+        <phase duration="185" state="GGGGrrrrrrrr" name="C"/>
+        <phase duration="185" state="rrrrGGrrrrrr" name="D"/>
+        <phase duration="185" state="rrrGrrrrrGrr" name="E"/>
+        <phase duration="4"  state="yyyrrrGGGrrr" name="A-B-1"/>
+        <phase duration="2"  state="rrrrrrGGGrrr" name="A-B-2"/>
+        <phase duration="4"  state="GGGrrryyyrrr" name="A-C-1"/>
+        <phase duration="2"  state="GGGrrrrrrrrr" name="A-C-2"/>
+        <phase duration="4"  state="yyyrrryyyrrr" name="A-D-1"/>
         <phase duration="2"  state="rrrrrrrrrrrr" name="A-D-2"/>
-        <phase duration="2"  state="yyyrrryyyrrr" name="A-E-1"/>
+        <phase duration="4"  state="yyyrrryyyrrr" name="A-E-1"/>
         <phase duration="2"  state="rrrrrrrrrrrr" name="A-E-2"/>
-        <phase duration="2"  state="rrrrrrGGGyyy" name="B-A-1"/>
-        <phase duration="6"  state="rrrrrrGGGrrr" name="B-A-2"/>
-        <phase duration="3"  state="rrrrrryyyyyy" name="B-C-1"/>
+        <phase duration="4"  state="rrrrrrGGGyyy" name="B-A-1"/>
+        <phase duration="2"  state="rrrrrrGGGrrr" name="B-A-2"/>
+        <phase duration="4"  state="rrrrrryyyyyy" name="B-C-1"/>
         <phase duration="2"  state="rrrrrrrrrrrr" name="B-C-2"/>
-        <phase duration="2"  state="rrrrrryyyyyy" name="B-D-1"/>
+        <phase duration="4"  state="rrrrrryyyyyy" name="B-D-1"/>
         <phase duration="2"  state="rrrrrrrrrrrr" name="B-D-2"/>
-        <phase duration="2"  state="rrrrrryyyGyy" name="B-E-1"/>
-        <phase duration="6"  state="rrrrrrrrrGrr" name="B-E-2"/>
-        <phase duration="3"  state="GGGyrrrrrrrr" name="C-A-1"/>
-        <phase duration="6"  state="GGGrrrrrrrrr" name="C-A-2"/>
-        <phase duration="3"  state="yyyyrrrrrrrr" name="C-B-1"/>
+        <phase duration="4"  state="rrrrrryyyGyy" name="B-E-1"/>
+        <phase duration="2"  state="rrrrrrrrrGrr" name="B-E-2"/>
+        <phase duration="4"  state="GGGyrrrrrrrr" name="C-A-1"/>
+        <phase duration="2"  state="GGGrrrrrrrrr" name="C-A-2"/>
+        <phase duration="4"  state="yyyyrrrrrrrr" name="C-B-1"/>
         <phase duration="2"  state="rrrrrrrrrrrr" name="C-B-2"/>
-        <phase duration="2"  state="yyyyrrrrrrrr" name="C-D-1"/>
+        <phase duration="4"  state="yyyyrrrrrrrr" name="C-D-1"/>
         <phase duration="2"  state="rrrrrrrrrrrr" name="C-D-2"/>
-        <phase duration="2"  state="yyyGrrrrrrrr" name="C-E-1"/>
-        <phase duration="6"  state="rrrGrrrrrrrr" name="C-E-2"/>
-        <phase duration="3"  state="rrrryyrrrrrr" name="D-A-1"/>
+        <phase duration="4"  state="yyyGrrrrrrrr" name="C-E-1"/>
+        <phase duration="2"  state="rrrGrrrrrrrr" name="C-E-2"/>
+        <phase duration="4"  state="rrrryyrrrrrr" name="D-A-1"/>
         <phase duration="2"  state="rrrrrrrrrrrr" name="D-A-2"/>
-        <phase duration="2"  state="rrrryyrrrrrr" name="D-B-1"/>
+        <phase duration="4"  state="rrrryyrrrrrr" name="D-B-1"/>
         <phase duration="2"  state="rrrrrrrrrrrr" name="D-B-2"/>
-        <phase duration="2"  state="rrrryyrrrrrr" name="D-C-1"/>
+        <phase duration="4"  state="rrrryyrrrrrr" name="D-C-1"/>
         <phase duration="2"  state="rrrrrrrrrrrr" name="D-C-2"/>
-        <phase duration="2"  state="rrrryyrrrrrr" name="D-E-1"/>
+        <phase duration="4"  state="rrrryyrrrrrr" name="D-E-1"/>
         <phase duration="2"  state="rrrrrrrrrrrr" name="D-E-2"/>
-        <phase duration="2"  state="rrryrrrrryrr" name="E-A-1"/>
+        <phase duration="4"  state="rrryrrrrryrr" name="E-A-1"/>
         <phase duration="2"  state="rrrrrrrrrrrr" name="E-A-2"/>
-        <phase duration="6"  state="rrryrrrrrGrr" name="E-B-1"/>
-        <phase duration="6"  state="rrrrrrrrrGrr" name="E-B-2"/>
-        <phase duration="3"  state="rrrGrrrrryrr" name="E-C-1"/>
-        <phase duration="6"  state="rrrGrrrrrrrr" name="E-C-2"/>
-        <phase duration="3"  state="rrryrrrrryrr" name="E-D-1"/>
+        <phase duration="4"  state="rrryrrrrrGrr" name="E-B-1"/>
+        <phase duration="2"  state="rrrrrrrrrGrr" name="E-B-2"/>
+        <phase duration="4"  state="rrrGrrrrryrr" name="E-C-1"/>
+        <phase duration="2"  state="rrrGrrrrrrrr" name="E-C-2"/>
+        <phase duration="4"  state="rrryrrrrryrr" name="E-D-1"/>
         <phase duration="2"  state="rrrrrrrrrrrr" name="E-D-2"/>
     </tlLogic>
 

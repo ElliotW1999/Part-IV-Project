@@ -331,8 +331,8 @@ def run():
                     if activeTraffic_s4221[group] < MINIMUM_TRAFFIC_ACTIVITY:
                         switchPhase_s4221 = False
             
-            if earliestDeadlineGroup_s4221 in lanesForGroupsForPhases_s4221[phase_s4221]:
-                switchPhase_s4221 = False
+            #if earliestDeadlineGroup_s4221 in lanesForGroupsForPhases_s4221[phase_s4221]:
+            #    switchPhase_s4221 = False
             if earliestDeadline_s4221 == 0:
                 switchPhase_s4221 = False 
                 
@@ -429,8 +429,8 @@ def run():
                 if activeTraffic_s4220[group] < MINIMUM_TRAFFIC_ACTIVITY:
                     switchPhase_s4220 = False
             
-            if earliestDeadlineGroup_s4220 in lanesForGroupsForPhases_s4220[phase_s4220]:
-                switchPhase_s4220 = False
+            #if earliestDeadlineGroup_s4220 in lanesForGroupsForPhases_s4220[phase_s4220]:
+            #    switchPhase_s4220 = False
             if earliestDeadline_s4220 == 0:
                 switchPhase_s4220 = False 
                 
@@ -522,8 +522,8 @@ def run():
                     switchPhase_s4219 = False
                    
             
-            if earliestDeadlineGroup_s4219 in lanesForGroupsForPhases_s4219[phase_s4219]:
-                switchPhase_s4219 = False
+            #if earliestDeadlineGroup_s4219 in lanesForGroupsForPhases_s4219[phase_s4219]:
+            #    switchPhase_s4219 = False
             if earliestDeadline_s4219 == 0:
                 switchPhase_s4219 = False 
                 

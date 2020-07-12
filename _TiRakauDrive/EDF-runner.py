@@ -326,14 +326,10 @@ def run():
                 if earliestDeadline_s4221 in lanesForGroups_s4221[group]:
                     earliestDeadlineGroup_s4221 = group
                     
-            for group in conflictingGroups_s4221[earliestDeadlineGroup_s4221]:                            # do not switch phase if any conflicting lane has traffic, all inactive groups automatically are 99
-                if group != 0:                
+            for group in lanesForGroupsForPhases_s4221[phase_s4221]:                            # do not switch phase if any conflicting lane has traffic, all inactive groups automatically are 99
+                if group != 0:
                     if activeTraffic_s4221[group] < MINIMUM_TRAFFIC_ACTIVITY:
                         switchPhase_s4221 = False
-                    
-            for group in lanesForGroupsForPhases_s4221[phase_s4221]:                            # do not switch phase if any conflicting lane has traffic, all inactive groups automatically are 99
-                if activeTraffic_s4221[group] < MINIMUM_TRAFFIC_ACTIVITY:
-                    switchPhase_s4221 = False
             
             if earliestDeadlineGroup_s4221 in lanesForGroupsForPhases_s4221[phase_s4221]:
                 switchPhase_s4221 = False
@@ -429,10 +425,6 @@ def run():
                 if earliestDeadline_s4220 in lanesForGroups_s4220[group]:
                     earliestDeadlineGroup_s4220 = group
                     
-            for group in conflictingGroups_s4220[earliestDeadlineGroup_s4220]:                            # do not switch phase if any conflicting lane has traffic, all inactive groups automatically are 99
-                if activeTraffic_s4220[group] < MINIMUM_TRAFFIC_ACTIVITY:
-                    switchPhase_s4220 = False
-                    
             for group in lanesForGroupsForPhases_s4220[phase_s4220]:                            # do not switch phase if any conflicting lane has traffic, all inactive groups automatically are 99
                 if activeTraffic_s4220[group] < MINIMUM_TRAFFIC_ACTIVITY:
                     switchPhase_s4220 = False
@@ -524,9 +516,6 @@ def run():
                 if earliestDeadline_s4219 in lanesForGroups_s4219[group]:
                     earliestDeadlineGroup_s4219 = group
                     
-            for group in conflictingGroups_s4219[earliestDeadlineGroup_s4219]:                            # do not switch phase if any conflicting lane has traffic, all inactive groups automatically are 99
-                if activeTraffic_s4219[group] < MINIMUM_TRAFFIC_ACTIVITY:
-                    switchPhase_s4219 = False
             
             for group in lanesForGroupsForPhases_s4219[phase_s4219]:                            # do not switch phase if any conflicting lane has traffic, all inactive groups automatically are 99
                 if activeTraffic_s4219[group] < MINIMUM_TRAFFIC_ACTIVITY:

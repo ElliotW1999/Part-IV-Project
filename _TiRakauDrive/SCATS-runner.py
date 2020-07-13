@@ -377,602 +377,614 @@ def run():
     while step <= 600:
         traci.simulationStep()
         if step == 0:
-            traci.trafficlight.setPhase("cluster_1707799581_314056954_5931861577", A_4235)
-            traci.trafficlight.setPhaseDuration("cluster_1707799581_314056954_5931861577",100)
-        if step == 60:
-            traci.trafficlight.setPhase("cluster_1707799581_314056954_5931861577", AB1_4235)
-            traci.trafficlight.setPhaseDuration("cluster_1707799581_314056954_5931861577",o2r)
-        if step == 64:
-            traci.trafficlight.setPhase("cluster_1707799581_314056954_5931861577", AB2_4235)
-            traci.trafficlight.setPhaseDuration("cluster_1707799581_314056954_5931861577",r2g)
-        if step == 66:
             traci.trafficlight.setPhase("cluster_1707799581_314056954_5931861577", B_4235)
-            traci.trafficlight.setPhaseDuration("cluster_1707799581_314056954_5931861577",15)
-        if step == 81:
-            traci.trafficlight.setPhase("cluster_1707799581_314056954_5931861577", BC1_4235)
-            traci.trafficlight.setPhaseDuration("cluster_1707799581_314056954_5931861577",o2r)
-        if step == 85:
-            traci.trafficlight.setPhase("cluster_1707799581_314056954_5931861577", BC2_4235)
-            traci.trafficlight.setPhaseDuration("cluster_1707799581_314056954_5931861577",r2g)
-        if step == 87:
-            traci.trafficlight.setPhase("cluster_1707799581_314056954_5931861577", C_4235)
-            traci.trafficlight.setPhaseDuration("cluster_1707799581_314056954_5931861577",10)
-        if step == 97:
-            traci.trafficlight.setPhase("cluster_1707799581_314056954_5931861577", CB1_4235)
-            traci.trafficlight.setPhaseDuration("cluster_1707799581_314056954_5931861577",o2r)
-        if step == 101:
-            traci.trafficlight.setPhase("cluster_1707799581_314056954_5931861577", CB2_4235)
-            traci.trafficlight.setPhaseDuration("cluster_1707799581_314056954_5931861577",r2g)
-        if step == 103:
-            traci.trafficlight.setPhase("cluster_1707799581_314056954_5931861577", B_4235)
-            traci.trafficlight.setPhaseDuration("cluster_1707799581_314056954_5931861577",16)
-        if step == 119:
+            traci.trafficlight.setPhaseDuration("cluster_1707799581_314056954_5931861577",6)
+        if step == 6:
             traci.trafficlight.setPhase("cluster_1707799581_314056954_5931861577", BA1_4235)
             traci.trafficlight.setPhaseDuration("cluster_1707799581_314056954_5931861577",o2r)
-        if step == 123:
+        if step == 10:
             traci.trafficlight.setPhase("cluster_1707799581_314056954_5931861577", BA2_4235)
             traci.trafficlight.setPhaseDuration("cluster_1707799581_314056954_5931861577",r2g)
-        if step == 125:
+        if step == 12:
             traci.trafficlight.setPhase("cluster_1707799581_314056954_5931861577", A_4235)
-            traci.trafficlight.setPhaseDuration("cluster_1707799581_314056954_5931861577",74)
-        if step == 199:
+            traci.trafficlight.setPhaseDuration("cluster_1707799581_314056954_5931861577",75)
+        if step == 87:
             traci.trafficlight.setPhase("cluster_1707799581_314056954_5931861577", AB1_4235)
             traci.trafficlight.setPhaseDuration("cluster_1707799581_314056954_5931861577",o2r)
-        if step == 203:
+        if step == 91:
             traci.trafficlight.setPhase("cluster_1707799581_314056954_5931861577", AB2_4235)
             traci.trafficlight.setPhaseDuration("cluster_1707799581_314056954_5931861577",r2g)
-        if step == 205:
+        if step == 93:
             traci.trafficlight.setPhase("cluster_1707799581_314056954_5931861577", B_4235)
             traci.trafficlight.setPhaseDuration("cluster_1707799581_314056954_5931861577",15)
-        if step == 220:
+        if step == 108:
             traci.trafficlight.setPhase("cluster_1707799581_314056954_5931861577", BC1_4235)
+            traci.trafficlight.setPhaseDuration("cluster_1707799581_314056954_5931861577",o2r)
+        if step == 112:
+            traci.trafficlight.setPhase("cluster_1707799581_314056954_5931861577", BC2_4235)
+            traci.trafficlight.setPhaseDuration("cluster_1707799581_314056954_5931861577",r2g)
+        if step == 114:
+            traci.trafficlight.setPhase("cluster_1707799581_314056954_5931861577", C_4235)
+            traci.trafficlight.setPhaseDuration("cluster_1707799581_314056954_5931861577",12)
+        if step == 126:
+            traci.trafficlight.setPhase("cluster_1707799581_314056954_5931861577", CB1_4235)
+            traci.trafficlight.setPhaseDuration("cluster_1707799581_314056954_5931861577",o2r)
+        if step == 130:
+            traci.trafficlight.setPhase("cluster_1707799581_314056954_5931861577", CB2_4235)
+            traci.trafficlight.setPhaseDuration("cluster_1707799581_314056954_5931861577",r2g)
+        if step == 132:
+            traci.trafficlight.setPhase("cluster_1707799581_314056954_5931861577", B_4235)
+            traci.trafficlight.setPhaseDuration("cluster_1707799581_314056954_5931861577",32)
+        if step == 164:
+            traci.trafficlight.setPhase("cluster_1707799581_314056954_5931861577", BA1_4235)
+            traci.trafficlight.setPhaseDuration("cluster_1707799581_314056954_5931861577",o2r)
+        if step == 168:
+            traci.trafficlight.setPhase("cluster_1707799581_314056954_5931861577", BA2_4235)
+            traci.trafficlight.setPhaseDuration("cluster_1707799581_314056954_5931861577",r2g)
+        if step == 170:
+            traci.trafficlight.setPhase("cluster_1707799581_314056954_5931861577", A_4235)
+            traci.trafficlight.setPhaseDuration("cluster_1707799581_314056954_5931861577",50)
+        if step == 220:
+            traci.trafficlight.setPhase("cluster_1707799581_314056954_5931861577", AB1_4235)
             traci.trafficlight.setPhaseDuration("cluster_1707799581_314056954_5931861577",o2r)
         if step == 224:
-            traci.trafficlight.setPhase("cluster_1707799581_314056954_5931861577", BC2_4235)
+            traci.trafficlight.setPhase("cluster_1707799581_314056954_5931861577", AB2_4235)
             traci.trafficlight.setPhaseDuration("cluster_1707799581_314056954_5931861577",r2g)
         if step == 226:
+            traci.trafficlight.setPhase("cluster_1707799581_314056954_5931861577", B_4235)
+            traci.trafficlight.setPhaseDuration("cluster_1707799581_314056954_5931861577",15)
+        if step == 241:
+            traci.trafficlight.setPhase("cluster_1707799581_314056954_5931861577", BC1_4235)
+            traci.trafficlight.setPhaseDuration("cluster_1707799581_314056954_5931861577",o2r)
+        if step == 245:
+            traci.trafficlight.setPhase("cluster_1707799581_314056954_5931861577", BC2_4235)
+            traci.trafficlight.setPhaseDuration("cluster_1707799581_314056954_5931861577",r2g)
+        if step == 247:
             traci.trafficlight.setPhase("cluster_1707799581_314056954_5931861577", C_4235)
-            traci.trafficlight.setPhaseDuration("cluster_1707799581_314056954_5931861577",8)
-        if step == 234:
+            traci.trafficlight.setPhaseDuration("cluster_1707799581_314056954_5931861577",14)
+        if step == 261:
             traci.trafficlight.setPhase("cluster_1707799581_314056954_5931861577", CB1_4235)
             traci.trafficlight.setPhaseDuration("cluster_1707799581_314056954_5931861577",o2r)
-        if step == 238:
+        if step == 265:
             traci.trafficlight.setPhase("cluster_1707799581_314056954_5931861577", CB2_4235)
             traci.trafficlight.setPhaseDuration("cluster_1707799581_314056954_5931861577",r2g)
-        if step == 240:
+        if step == 267:
+            traci.trafficlight.setPhase("cluster_1707799581_314056954_5931861577", B_4235)
+            traci.trafficlight.setPhaseDuration("cluster_1707799581_314056954_5931861577",13)
+        if step == 280:
+            traci.trafficlight.setPhase("cluster_1707799581_314056954_5931861577", BA1_4235)
+            traci.trafficlight.setPhaseDuration("cluster_1707799581_314056954_5931861577",o2r)
+        if step == 284:
+            traci.trafficlight.setPhase("cluster_1707799581_314056954_5931861577", BA2_4235)
+            traci.trafficlight.setPhaseDuration("cluster_1707799581_314056954_5931861577",r2g)
+        if step == 286:
+            traci.trafficlight.setPhase("cluster_1707799581_314056954_5931861577", A_4235)
+            traci.trafficlight.setPhaseDuration("cluster_1707799581_314056954_5931861577",74)
+        if step == 360:
+            traci.trafficlight.setPhase("cluster_1707799581_314056954_5931861577", AB1_4235)
+            traci.trafficlight.setPhaseDuration("cluster_1707799581_314056954_5931861577",o2r)
+        if step == 364:
+            traci.trafficlight.setPhase("cluster_1707799581_314056954_5931861577", AB2_4235)
+            traci.trafficlight.setPhaseDuration("cluster_1707799581_314056954_5931861577",r2g)
+        if step == 366:
+            traci.trafficlight.setPhase("cluster_1707799581_314056954_5931861577", B_4235)
+            traci.trafficlight.setPhaseDuration("cluster_1707799581_314056954_5931861577",15)
+        if step == 381:
+            traci.trafficlight.setPhase("cluster_1707799581_314056954_5931861577", BC1_4235)
+            traci.trafficlight.setPhaseDuration("cluster_1707799581_314056954_5931861577",o2r)
+        if step == 385:
+            traci.trafficlight.setPhase("cluster_1707799581_314056954_5931861577", BC2_4235)
+            traci.trafficlight.setPhaseDuration("cluster_1707799581_314056954_5931861577",r2g)
+        if step == 387:
+            traci.trafficlight.setPhase("cluster_1707799581_314056954_5931861577", C_4235)
+            traci.trafficlight.setPhaseDuration("cluster_1707799581_314056954_5931861577",10)
+        if step == 397:
+            traci.trafficlight.setPhase("cluster_1707799581_314056954_5931861577", CB1_4235)
+            traci.trafficlight.setPhaseDuration("cluster_1707799581_314056954_5931861577",o2r)
+        if step == 401:
+            traci.trafficlight.setPhase("cluster_1707799581_314056954_5931861577", CB2_4235)
+            traci.trafficlight.setPhaseDuration("cluster_1707799581_314056954_5931861577",r2g)
+        if step == 403:
             traci.trafficlight.setPhase("cluster_1707799581_314056954_5931861577", B_4235)
             traci.trafficlight.setPhaseDuration("cluster_1707799581_314056954_5931861577",16)
-        if step == 256:
+        if step == 419:
             traci.trafficlight.setPhase("cluster_1707799581_314056954_5931861577", BA1_4235)
             traci.trafficlight.setPhaseDuration("cluster_1707799581_314056954_5931861577",o2r)
-        if step == 260:
+        if step == 423:
             traci.trafficlight.setPhase("cluster_1707799581_314056954_5931861577", BA2_4235)
             traci.trafficlight.setPhaseDuration("cluster_1707799581_314056954_5931861577",r2g)
-        if step == 262:
+        if step == 425:
             traci.trafficlight.setPhase("cluster_1707799581_314056954_5931861577", A_4235)
-            traci.trafficlight.setPhaseDuration("cluster_1707799581_314056954_5931861577",81)
-        if step == 343:
+            traci.trafficlight.setPhaseDuration("cluster_1707799581_314056954_5931861577",74)
+        if step == 499:
             traci.trafficlight.setPhase("cluster_1707799581_314056954_5931861577", AB1_4235)
             traci.trafficlight.setPhaseDuration("cluster_1707799581_314056954_5931861577",o2r)
-        if step == 347:
+        if step == 503:
             traci.trafficlight.setPhase("cluster_1707799581_314056954_5931861577", AB2_4235)
             traci.trafficlight.setPhaseDuration("cluster_1707799581_314056954_5931861577",r2g)
-        if step == 349:
+        if step == 505:
             traci.trafficlight.setPhase("cluster_1707799581_314056954_5931861577", B_4235)
             traci.trafficlight.setPhaseDuration("cluster_1707799581_314056954_5931861577",15)
-        if step == 364:
+        if step == 520:
             traci.trafficlight.setPhase("cluster_1707799581_314056954_5931861577", BC1_4235)
             traci.trafficlight.setPhaseDuration("cluster_1707799581_314056954_5931861577",o2r)
-        if step == 368:
+        if step == 524:
             traci.trafficlight.setPhase("cluster_1707799581_314056954_5931861577", BC2_4235)
             traci.trafficlight.setPhaseDuration("cluster_1707799581_314056954_5931861577",r2g)
-        if step == 370:
+        if step == 526:
             traci.trafficlight.setPhase("cluster_1707799581_314056954_5931861577", C_4235)
-            traci.trafficlight.setPhaseDuration("cluster_1707799581_314056954_5931861577",9)
-        if step == 379:
-            traci.trafficlight.setPhase("cluster_1707799581_314056954_5931861577", CB1_4235)
-            traci.trafficlight.setPhaseDuration("cluster_1707799581_314056954_5931861577",o2r)
-        if step == 383:
-            traci.trafficlight.setPhase("cluster_1707799581_314056954_5931861577", CB2_4235)
-            traci.trafficlight.setPhaseDuration("cluster_1707799581_314056954_5931861577",r2g)
-        if step == 385:
-            traci.trafficlight.setPhase("cluster_1707799581_314056954_5931861577", B_4235)
-            traci.trafficlight.setPhaseDuration("cluster_1707799581_314056954_5931861577",9)
-        if step == 394:
-            traci.trafficlight.setPhase("cluster_1707799581_314056954_5931861577", BA1_4235)
-            traci.trafficlight.setPhaseDuration("cluster_1707799581_314056954_5931861577",o2r)
-        if step == 398:
-            traci.trafficlight.setPhase("cluster_1707799581_314056954_5931861577", BA2_4235)
-            traci.trafficlight.setPhaseDuration("cluster_1707799581_314056954_5931861577",r2g)
-        if step == 400:
-            traci.trafficlight.setPhase("cluster_1707799581_314056954_5931861577", A_4235)
-            traci.trafficlight.setPhaseDuration("cluster_1707799581_314056954_5931861577",92)
-        if step == 492:
-            traci.trafficlight.setPhase("cluster_1707799581_314056954_5931861577", AB1_4235)
-            traci.trafficlight.setPhaseDuration("cluster_1707799581_314056954_5931861577",o2r)
-        if step == 496:
-            traci.trafficlight.setPhase("cluster_1707799581_314056954_5931861577", AB2_4235)
-            traci.trafficlight.setPhaseDuration("cluster_1707799581_314056954_5931861577",r2g)
-        if step == 498:
-            traci.trafficlight.setPhase("cluster_1707799581_314056954_5931861577", B_4235)
-            traci.trafficlight.setPhaseDuration("cluster_1707799581_314056954_5931861577",15)
-        if step == 513:
-            traci.trafficlight.setPhase("cluster_1707799581_314056954_5931861577", BC1_4235)
-            traci.trafficlight.setPhaseDuration("cluster_1707799581_314056954_5931861577",o2r)
-        if step == 517:
-            traci.trafficlight.setPhase("cluster_1707799581_314056954_5931861577", BC2_4235)
-            traci.trafficlight.setPhaseDuration("cluster_1707799581_314056954_5931861577",r2g)
-        if step == 519:
-            traci.trafficlight.setPhase("cluster_1707799581_314056954_5931861577", C_4235)
-            traci.trafficlight.setPhaseDuration("cluster_1707799581_314056954_5931861577",11)
-        if step == 530:
-            traci.trafficlight.setPhase("cluster_1707799581_314056954_5931861577", CB1_4235)
-            traci.trafficlight.setPhaseDuration("cluster_1707799581_314056954_5931861577",o2r)
+            traci.trafficlight.setPhaseDuration("cluster_1707799581_314056954_5931861577",8)
         if step == 534:
+            traci.trafficlight.setPhase("cluster_1707799581_314056954_5931861577", CB1_4235)
+            traci.trafficlight.setPhaseDuration("cluster_1707799581_314056954_5931861577",o2r)
+        if step == 538:
             traci.trafficlight.setPhase("cluster_1707799581_314056954_5931861577", CB2_4235)
             traci.trafficlight.setPhaseDuration("cluster_1707799581_314056954_5931861577",r2g)
-        if step == 536:
+        if step == 540:
             traci.trafficlight.setPhase("cluster_1707799581_314056954_5931861577", B_4235)
-            traci.trafficlight.setPhaseDuration("cluster_1707799581_314056954_5931861577",9)
-        if step == 545:
+            traci.trafficlight.setPhaseDuration("cluster_1707799581_314056954_5931861577",16)
+        if step == 556:
             traci.trafficlight.setPhase("cluster_1707799581_314056954_5931861577", BA1_4235)
             traci.trafficlight.setPhaseDuration("cluster_1707799581_314056954_5931861577",o2r)
-        if step == 549:
+        if step == 560:
             traci.trafficlight.setPhase("cluster_1707799581_314056954_5931861577", BA2_4235)
             traci.trafficlight.setPhaseDuration("cluster_1707799581_314056954_5931861577",r2g)
-        if step == 551:
+        if step == 562:
             traci.trafficlight.setPhase("cluster_1707799581_314056954_5931861577", A_4235)
-            traci.trafficlight.setPhaseDuration("cluster_1707799581_314056954_5931861577",49)
+            traci.trafficlight.setPhaseDuration("cluster_1707799581_314056954_5931861577",38)
         if step == 0:
-            traci.trafficlight.setPhase("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", D_4219)
-            traci.trafficlight.setPhaseDuration("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", 1)
-        if step == 1:
-            traci.trafficlight.setPhase("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", DE1_4219)
+            traci.trafficlight.setPhase("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", A_4219)
+            traci.trafficlight.setPhaseDuration("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", 6)
+        if step == 6:
+            traci.trafficlight.setPhase("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", AD1_4219)
             traci.trafficlight.setPhaseDuration("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", o2r)
-        if step == 5:
-            traci.trafficlight.setPhase("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", DE2_4219)
+        if step == 10:
+            traci.trafficlight.setPhase("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", AD2_4219)
             traci.trafficlight.setPhaseDuration("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", r2g)
-        if step == 7:
-            traci.trafficlight.setPhase("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", E_4219)
-            traci.trafficlight.setPhaseDuration("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", 5)
         if step == 12:
+            traci.trafficlight.setPhase("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", D_4219)
+            traci.trafficlight.setPhaseDuration("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", 20)
+        if step == 32:
+            traci.trafficlight.setPhase("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", DE1_4219)
+            traci.trafficlight.setPhaseDuration("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", o2r)
+        if step == 36:
+            traci.trafficlight.setPhase("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", DE2_4219)
+            traci.trafficlight.setPhaseDuration("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", r2g)
+        if step == 38:
+            traci.trafficlight.setPhase("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", E_4219)
+            traci.trafficlight.setPhaseDuration("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", 5)
+        if step == 43:
             traci.trafficlight.setPhase("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", EF1_4219)
             traci.trafficlight.setPhaseDuration("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", o2r)
-        if step == 16:
+        if step == 47:
             traci.trafficlight.setPhase("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", EF2_4219)
             traci.trafficlight.setPhaseDuration("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", r2g)
-        if step == 18:
-            traci.trafficlight.setPhase("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", F_4219)
-            traci.trafficlight.setPhaseDuration("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", 31)
         if step == 49:
-            traci.trafficlight.setPhase("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", FG1_4219)
-            traci.trafficlight.setPhaseDuration("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", o2r)
-        if step == 53:
-            traci.trafficlight.setPhase("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", FG2_4219)
-            traci.trafficlight.setPhaseDuration("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", r2g)
-        if step == 55:
-            traci.trafficlight.setPhase("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", G_4219)
-            traci.trafficlight.setPhaseDuration("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", 18)
-        if step == 73:
-            traci.trafficlight.setPhase("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", GA1_4219)
-            traci.trafficlight.setPhaseDuration("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", o2r)
-        if step == 77:
-            traci.trafficlight.setPhase("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", GA2_4219)
-            traci.trafficlight.setPhaseDuration("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", r2g)
-        if step == 79:
-            traci.trafficlight.setPhase("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", A_4219)
-            traci.trafficlight.setPhaseDuration("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", 36)
-        if step == 115:
-            traci.trafficlight.setPhase("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", AD1_4219)
-            traci.trafficlight.setPhaseDuration("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", o2r)
-        if step == 119:
-            traci.trafficlight.setPhase("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", AD2_4219)
-            traci.trafficlight.setPhaseDuration("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", r2g)
-        if step == 121:
-            traci.trafficlight.setPhase("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", D_4219)
-            traci.trafficlight.setPhaseDuration("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", 19)
-        if step == 140:
-            traci.trafficlight.setPhase("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", DE1_4219)
-            traci.trafficlight.setPhaseDuration("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", o2r)
-        if step == 144:
-            traci.trafficlight.setPhase("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", DE2_4219)
-            traci.trafficlight.setPhaseDuration("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", r2g)
-        if step == 146:
-            traci.trafficlight.setPhase("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", E_4219)
-            traci.trafficlight.setPhaseDuration("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", 5)
-        if step == 151:
-            traci.trafficlight.setPhase("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", EF1_4219)
-            traci.trafficlight.setPhaseDuration("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", o2r)
-        if step == 155:
-            traci.trafficlight.setPhase("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", EF2_4219)
-            traci.trafficlight.setPhaseDuration("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", r2g)
-        if step == 157:
-            traci.trafficlight.setPhase("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", F_4219)
-            traci.trafficlight.setPhaseDuration("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", 29)
-        if step == 186:
-            traci.trafficlight.setPhase("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", FG1_4219)
-            traci.trafficlight.setPhaseDuration("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", o2r)
-        if step == 190:
-            traci.trafficlight.setPhase("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", FG2_4219)
-            traci.trafficlight.setPhaseDuration("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", r2g)
-        if step == 192:
-            traci.trafficlight.setPhase("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", G_4219)
-            traci.trafficlight.setPhaseDuration("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", 18)
-        if step == 210:
-            traci.trafficlight.setPhase("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", GA1_4219)
-            traci.trafficlight.setPhaseDuration("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", o2r)
-        if step == 214:
-            traci.trafficlight.setPhase("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", GA2_4219)
-            traci.trafficlight.setPhaseDuration("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", r2g)
-        if step == 216:
-            traci.trafficlight.setPhase("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", A_4219)
-            traci.trafficlight.setPhaseDuration("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", 41)
-        if step == 257:
-            traci.trafficlight.setPhase("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", AD1_4219)
-            traci.trafficlight.setPhaseDuration("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", o2r)
-        if step == 261:
-            traci.trafficlight.setPhase("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", AD2_4219)
-            traci.trafficlight.setPhaseDuration("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", r2g)
-        if step == 263:
-            traci.trafficlight.setPhase("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", D_4219)
-            traci.trafficlight.setPhaseDuration("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", 19)
-        if step == 282:
-            traci.trafficlight.setPhase("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", DE1_4219)
-            traci.trafficlight.setPhaseDuration("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", o2r)
-        if step == 286:
-            traci.trafficlight.setPhase("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", DE2_4219)
-            traci.trafficlight.setPhaseDuration("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", r2g)
-        if step == 288:
-            traci.trafficlight.setPhase("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", E_4219)
-            traci.trafficlight.setPhaseDuration("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", 8)
-        if step == 296:
-            traci.trafficlight.setPhase("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", EF1_4219)
-            traci.trafficlight.setPhaseDuration("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", o2r)
-        if step == 300:
-            traci.trafficlight.setPhase("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", EF2_4219)
-            traci.trafficlight.setPhaseDuration("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", r2g)
-        if step == 302:
-            traci.trafficlight.setPhase("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", F_4219)
-            traci.trafficlight.setPhaseDuration("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", 30)
-        if step == 332:
-            traci.trafficlight.setPhase("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", FG1_4219)
-            traci.trafficlight.setPhaseDuration("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", o2r)
-        if step == 336:
-            traci.trafficlight.setPhase("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", FG2_4219)
-            traci.trafficlight.setPhaseDuration("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", r2g)
-        if step == 338:
-            traci.trafficlight.setPhase("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", G_4219)
-            traci.trafficlight.setPhaseDuration("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", 13)
-        if step == 351:
-            traci.trafficlight.setPhase("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", GA1_4219)
-            traci.trafficlight.setPhaseDuration("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", o2r)
-        if step == 355:
-            traci.trafficlight.setPhase("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", GA2_4219)
-            traci.trafficlight.setPhaseDuration("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", r2g)
-        if step == 357:
-            traci.trafficlight.setPhase("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", A_4219)
-            traci.trafficlight.setPhaseDuration("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", 42)
-        if step == 399:
-            traci.trafficlight.setPhase("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", AD1_4219)
-            traci.trafficlight.setPhaseDuration("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", o2r)
-        if step == 403:
-            traci.trafficlight.setPhase("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", AD2_4219)
-            traci.trafficlight.setPhaseDuration("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", r2g)
-        if step == 405:
-            traci.trafficlight.setPhase("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", D_4219)
-            traci.trafficlight.setPhaseDuration("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", 19)
-        if step == 424:
-            traci.trafficlight.setPhase("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", DE1_4219)
-            traci.trafficlight.setPhaseDuration("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", o2r)
-        if step == 428:
-            traci.trafficlight.setPhase("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", DE2_4219)
-            traci.trafficlight.setPhaseDuration("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", r2g)
-        if step == 430:
-            traci.trafficlight.setPhase("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", E_4219)
-            traci.trafficlight.setPhaseDuration("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", 5)
-        if step == 435:
-            traci.trafficlight.setPhase("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", EF1_4219)
-            traci.trafficlight.setPhaseDuration("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", o2r)
-        if step == 439:
-            traci.trafficlight.setPhase("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", EF2_4219)
-            traci.trafficlight.setPhaseDuration("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", r2g)
-        if step == 441:
             traci.trafficlight.setPhase("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", F_4219)
             traci.trafficlight.setPhaseDuration("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", 31)
-        if step == 472:
+        if step == 80:
             traci.trafficlight.setPhase("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", FG1_4219)
             traci.trafficlight.setPhaseDuration("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", o2r)
-        if step == 476:
+        if step == 84:
             traci.trafficlight.setPhase("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", FG2_4219)
             traci.trafficlight.setPhaseDuration("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", r2g)
-        if step == 478:
+        if step == 86:
             traci.trafficlight.setPhase("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", G_4219)
-            traci.trafficlight.setPhaseDuration("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", 13)
-        if step == 491:
+            traci.trafficlight.setPhaseDuration("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", 12)
+        if step == 98:
             traci.trafficlight.setPhase("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", GA1_4219)
             traci.trafficlight.setPhaseDuration("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", o2r)
-        if step == 495:
+        if step == 102:
             traci.trafficlight.setPhase("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", GA2_4219)
             traci.trafficlight.setPhaseDuration("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", r2g)
-        if step == 497:
+        if step == 104:
             traci.trafficlight.setPhase("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", A_4219)
-            traci.trafficlight.setPhaseDuration("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", 46)
-        if step == 543:
+            traci.trafficlight.setPhaseDuration("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", 29)
+        if step == 133:
             traci.trafficlight.setPhase("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", AD1_4219)
             traci.trafficlight.setPhaseDuration("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", o2r)
-        if step == 547:
+        if step == 137:
             traci.trafficlight.setPhase("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", AD2_4219)
             traci.trafficlight.setPhaseDuration("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", r2g)
-        if step == 549:
+        if step == 139:
+            traci.trafficlight.setPhase("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", D_4219)
+            traci.trafficlight.setPhaseDuration("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", 20)
+        if step == 159:
+            traci.trafficlight.setPhase("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", DE1_4219)
+            traci.trafficlight.setPhaseDuration("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", o2r)
+        if step == 163:
+            traci.trafficlight.setPhase("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", DE2_4219)
+            traci.trafficlight.setPhaseDuration("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", r2g)
+        if step == 165:
+            traci.trafficlight.setPhase("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", E_4219)
+            traci.trafficlight.setPhaseDuration("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", 5)
+        if step == 170:
+            traci.trafficlight.setPhase("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", EF1_4219)
+            traci.trafficlight.setPhaseDuration("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", o2r)
+        if step == 174:
+            traci.trafficlight.setPhase("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", EF2_4219)
+            traci.trafficlight.setPhaseDuration("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", r2g)
+        if step == 176:
+            traci.trafficlight.setPhase("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", F_4219)
+            traci.trafficlight.setPhaseDuration("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", 38)
+        if step == 214:
+            traci.trafficlight.setPhase("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", FG1_4219)
+            traci.trafficlight.setPhaseDuration("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", o2r)
+        if step == 218:
+            traci.trafficlight.setPhase("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", FG2_4219)
+            traci.trafficlight.setPhaseDuration("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", r2g)
+        if step == 220:
+            traci.trafficlight.setPhase("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", G_4219)
+            traci.trafficlight.setPhaseDuration("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", 13)
+        if step == 233:
+            traci.trafficlight.setPhase("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", GA1_4219)
+            traci.trafficlight.setPhaseDuration("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", o2r)
+        if step == 237:
+            traci.trafficlight.setPhase("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", GA2_4219)
+            traci.trafficlight.setPhaseDuration("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", r2g)
+        if step == 239:
+            traci.trafficlight.setPhase("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", A_4219)
+            traci.trafficlight.setPhaseDuration("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", 34)
+        if step == 273:
+            traci.trafficlight.setPhase("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", AD1_4219)
+            traci.trafficlight.setPhaseDuration("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", o2r)
+        if step == 277:
+            traci.trafficlight.setPhase("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", AD2_4219)
+            traci.trafficlight.setPhaseDuration("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", r2g)
+        if step == 279:
             traci.trafficlight.setPhase("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", D_4219)
             traci.trafficlight.setPhaseDuration("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", 22)
-        if step == 571:
+        if step == 301:
             traci.trafficlight.setPhase("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", DE1_4219)
             traci.trafficlight.setPhaseDuration("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", o2r)
-        if step == 575:
+        if step == 305:
             traci.trafficlight.setPhase("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", DE2_4219)
             traci.trafficlight.setPhaseDuration("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", r2g)
-        if step == 577:
+        if step == 307:
             traci.trafficlight.setPhase("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", E_4219)
             traci.trafficlight.setPhaseDuration("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", 5)
-        if step == 582:
+        if step == 312:
             traci.trafficlight.setPhase("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", EF1_4219)
             traci.trafficlight.setPhaseDuration("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", o2r)
-        if step == 586:
+        if step == 316:
             traci.trafficlight.setPhase("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", EF2_4219)
             traci.trafficlight.setPhaseDuration("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", r2g)
-        if step == 588:
+        if step == 318:
             traci.trafficlight.setPhase("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", F_4219)
-            traci.trafficlight.setPhaseDuration("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", 12)
-        if step == 0:
-            traci.trafficlight.setPhase("gneJ41", A_4220)
-            traci.trafficlight.setPhaseDuration("gneJ41", 73)
-        if step == 73:
-            traci.trafficlight.setPhase("gneJ41", AB1_4220)
-            traci.trafficlight.setPhaseDuration("gneJ41", o2r)
-        if step == 77:
-            traci.trafficlight.setPhase("gneJ41", AB2_4220)
-            traci.trafficlight.setPhaseDuration("gneJ41", r2g)
-        if step == 79:
-            traci.trafficlight.setPhase("gneJ41", B_4220)
-            traci.trafficlight.setPhaseDuration("gneJ41", 19)
-        if step == 98:
-            traci.trafficlight.setPhase("gneJ41", BD1_4220)
-            traci.trafficlight.setPhaseDuration("gneJ41", o2r)
-        if step == 102:
-            traci.trafficlight.setPhase("gneJ41", BD2_4220)
-            traci.trafficlight.setPhaseDuration("gneJ41", r2g)
-        if step == 104:
-            traci.trafficlight.setPhase("gneJ41", D_4220)
-            traci.trafficlight.setPhaseDuration("gneJ41", 24)
-        if step == 128:
-            traci.trafficlight.setPhase("gneJ41", DE1_4220)
-            traci.trafficlight.setPhaseDuration("gneJ41", o2r)
-        if step == 132:
-            traci.trafficlight.setPhase("gneJ41", DE2_4220)
-            traci.trafficlight.setPhaseDuration("gneJ41", r2g)
-        if step == 134:
-            traci.trafficlight.setPhase("gneJ41", E_4220)
-            traci.trafficlight.setPhaseDuration("gneJ41", 13)
-        if step == 147:
-            traci.trafficlight.setPhase("gneJ41", EA1_4220)
-            traci.trafficlight.setPhaseDuration("gneJ41", o2r)
-        if step == 151:
-            traci.trafficlight.setPhase("gneJ41", EA2_4220)
-            traci.trafficlight.setPhaseDuration("gneJ41", r2g)
-        if step == 153:
-            traci.trafficlight.setPhase("gneJ41", A_4220)
-            traci.trafficlight.setPhaseDuration("gneJ41", 56)
-        if step == 209:
-            traci.trafficlight.setPhase("gneJ41", AB1_4220)
-            traci.trafficlight.setPhaseDuration("gneJ41", o2r)
-        if step == 213:
-            traci.trafficlight.setPhase("gneJ41", AB2_4220)
-            traci.trafficlight.setPhaseDuration("gneJ41", r2g)
-        if step == 215:
-            traci.trafficlight.setPhase("gneJ41", B_4220)
-            traci.trafficlight.setPhaseDuration("gneJ41", 19)
-        if step == 234:
-            traci.trafficlight.setPhase("gneJ41", BD1_4220)
-            traci.trafficlight.setPhaseDuration("gneJ41", o2r)
-        if step == 238:
-            traci.trafficlight.setPhase("gneJ41", BD2_4220)
-            traci.trafficlight.setPhaseDuration("gneJ41", r2g)
-        if step == 240:
-            traci.trafficlight.setPhase("gneJ41", D_4220)
-            traci.trafficlight.setPhaseDuration("gneJ41", 22)
-        if step == 262:
-            traci.trafficlight.setPhase("gneJ41", DE1_4220)
-            traci.trafficlight.setPhaseDuration("gneJ41", o2r)
-        if step == 266:
-            traci.trafficlight.setPhase("gneJ41", DE2_4220)
-            traci.trafficlight.setPhaseDuration("gneJ41", r2g)
-        if step == 268:
-            traci.trafficlight.setPhase("gneJ41", E_4220)
-            traci.trafficlight.setPhaseDuration("gneJ41", 20)
-        if step == 288:
-            traci.trafficlight.setPhase("gneJ41", EA1_4220)
-            traci.trafficlight.setPhaseDuration("gneJ41", o2r)
-        if step == 292:
-            traci.trafficlight.setPhase("gneJ41", EA2_4220)
-            traci.trafficlight.setPhaseDuration("gneJ41", r2g)
-        if step == 294:
-            traci.trafficlight.setPhase("gneJ41", A_4220)
-            traci.trafficlight.setPhaseDuration("gneJ41", 55)
+            traci.trafficlight.setPhaseDuration("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", 31)
         if step == 349:
-            traci.trafficlight.setPhase("gneJ41", AB1_4220)
-            traci.trafficlight.setPhaseDuration("gneJ41", o2r)
+            traci.trafficlight.setPhase("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", FG1_4219)
+            traci.trafficlight.setPhaseDuration("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", o2r)
         if step == 353:
-            traci.trafficlight.setPhase("gneJ41", AB2_4220)
-            traci.trafficlight.setPhaseDuration("gneJ41", r2g)
+            traci.trafficlight.setPhase("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", FG2_4219)
+            traci.trafficlight.setPhaseDuration("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", r2g)
         if step == 355:
-            traci.trafficlight.setPhase("gneJ41", B_4220)
-            traci.trafficlight.setPhaseDuration("gneJ41", 17)
-        if step == 372:
-            traci.trafficlight.setPhase("gneJ41", BD1_4220)
-            traci.trafficlight.setPhaseDuration("gneJ41", o2r)
-        if step == 376:
-            traci.trafficlight.setPhase("gneJ41", BD2_4220)
-            traci.trafficlight.setPhaseDuration("gneJ41", r2g)
-        if step == 378:
+            traci.trafficlight.setPhase("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", G_4219)
+            traci.trafficlight.setPhaseDuration("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", 18)
+        if step == 373:
+            traci.trafficlight.setPhase("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", GA1_4219)
+            traci.trafficlight.setPhaseDuration("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", o2r)
+        if step == 377:
+            traci.trafficlight.setPhase("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", GA2_4219)
+            traci.trafficlight.setPhaseDuration("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", r2g)
+        if step == 379:
+            traci.trafficlight.setPhase("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", A_4219)
+            traci.trafficlight.setPhaseDuration("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", 36)
+        if step == 415:
+            traci.trafficlight.setPhase("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", AD1_4219)
+            traci.trafficlight.setPhaseDuration("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", o2r)
+        if step == 419:
+            traci.trafficlight.setPhase("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", AD2_4219)
+            traci.trafficlight.setPhaseDuration("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", r2g)
+        if step == 421:
+            traci.trafficlight.setPhase("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", D_4219)
+            traci.trafficlight.setPhaseDuration("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", 19)
+        if step == 440:
+            traci.trafficlight.setPhase("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", DE1_4219)
+            traci.trafficlight.setPhaseDuration("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", o2r)
+        if step == 444:
+            traci.trafficlight.setPhase("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", DE2_4219)
+            traci.trafficlight.setPhaseDuration("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", r2g)
+        if step == 446:
+            traci.trafficlight.setPhase("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", E_4219)
+            traci.trafficlight.setPhaseDuration("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", 5)
+        if step == 451:
+            traci.trafficlight.setPhase("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", EF1_4219)
+            traci.trafficlight.setPhaseDuration("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", o2r)
+        if step == 455:
+            traci.trafficlight.setPhase("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", EF2_4219)
+            traci.trafficlight.setPhaseDuration("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", r2g)
+        if step == 457:
+            traci.trafficlight.setPhase("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", F_4219)
+            traci.trafficlight.setPhaseDuration("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", 29)
+        if step == 486:
+            traci.trafficlight.setPhase("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", FG1_4219)
+            traci.trafficlight.setPhaseDuration("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", o2r)
+        if step == 490:
+            traci.trafficlight.setPhase("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", FG2_4219)
+            traci.trafficlight.setPhaseDuration("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", r2g)
+        if step == 492:
+            traci.trafficlight.setPhase("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", G_4219)
+            traci.trafficlight.setPhaseDuration("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", 18)
+        if step == 510:
+            traci.trafficlight.setPhase("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", GA1_4219)
+            traci.trafficlight.setPhaseDuration("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", o2r)
+        if step == 514:
+            traci.trafficlight.setPhase("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", GA2_4219)
+            traci.trafficlight.setPhaseDuration("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", r2g)
+        if step == 516:
+            traci.trafficlight.setPhase("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", A_4219)
+            traci.trafficlight.setPhaseDuration("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", 41)
+        if step == 557:
+            traci.trafficlight.setPhase("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", AD1_4219)
+            traci.trafficlight.setPhaseDuration("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", o2r)
+        if step == 561:
+            traci.trafficlight.setPhase("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", AD2_4219)
+            traci.trafficlight.setPhaseDuration("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", r2g)
+        if step == 563:
+            traci.trafficlight.setPhase("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", D_4219)
+            traci.trafficlight.setPhaseDuration("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", 19)
+        if step == 582:
+            traci.trafficlight.setPhase("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", DE1_4219)
+            traci.trafficlight.setPhaseDuration("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", o2r)
+        if step == 586:
+            traci.trafficlight.setPhase("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", DE2_4219)
+            traci.trafficlight.setPhaseDuration("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", r2g)
+        if step == 588:
+            traci.trafficlight.setPhase("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", E_4219)
+            traci.trafficlight.setPhaseDuration("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", 8)
+        if step == 596:
+            traci.trafficlight.setPhase("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", EF1_4219)
+            traci.trafficlight.setPhaseDuration("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", o2r)
+        if step == 0:
             traci.trafficlight.setPhase("gneJ41", D_4220)
-            traci.trafficlight.setPhaseDuration("gneJ41", 11)
-        if step == 389:
+            traci.trafficlight.setPhaseDuration("gneJ41", 17)
+        if step == 17:
             traci.trafficlight.setPhase("gneJ41", DE1_4220)
             traci.trafficlight.setPhaseDuration("gneJ41", o2r)
-        if step == 393:
+        if step == 21:
             traci.trafficlight.setPhase("gneJ41", DE2_4220)
             traci.trafficlight.setPhaseDuration("gneJ41", r2g)
-        if step == 395:
+        if step == 23:
             traci.trafficlight.setPhase("gneJ41", E_4220)
             traci.trafficlight.setPhaseDuration("gneJ41", 9)
-        if step == 404:
+        if step == 32:
             traci.trafficlight.setPhase("gneJ41", EA1_4220)
             traci.trafficlight.setPhaseDuration("gneJ41", o2r)
-        if step == 408:
+        if step == 36:
             traci.trafficlight.setPhase("gneJ41", EA2_4220)
             traci.trafficlight.setPhaseDuration("gneJ41", r2g)
-        if step == 410:
+        if step == 38:
             traci.trafficlight.setPhase("gneJ41", A_4220)
-            traci.trafficlight.setPhaseDuration("gneJ41", 77)
-        if step == 487:
+            traci.trafficlight.setPhaseDuration("gneJ41", 67)
+        if step == 105:
             traci.trafficlight.setPhase("gneJ41", AB1_4220)
             traci.trafficlight.setPhaseDuration("gneJ41", o2r)
-        if step == 491:
+        if step == 109:
             traci.trafficlight.setPhase("gneJ41", AB2_4220)
             traci.trafficlight.setPhaseDuration("gneJ41", r2g)
-        if step == 493:
+        if step == 111:
             traci.trafficlight.setPhase("gneJ41", B_4220)
-            traci.trafficlight.setPhaseDuration("gneJ41", 15)
-        if step == 508:
+            traci.trafficlight.setPhaseDuration("gneJ41", 19)
+        if step == 130:
             traci.trafficlight.setPhase("gneJ41", BD1_4220)
             traci.trafficlight.setPhaseDuration("gneJ41", o2r)
-        if step == 512:
+        if step == 134:
             traci.trafficlight.setPhase("gneJ41", BD2_4220)
             traci.trafficlight.setPhaseDuration("gneJ41", r2g)
-        if step == 514:
+        if step == 136:
             traci.trafficlight.setPhase("gneJ41", D_4220)
-            traci.trafficlight.setPhaseDuration("gneJ41", 17)
-        if step == 531:
+            traci.trafficlight.setPhaseDuration("gneJ41", 16)
+        if step == 152:
             traci.trafficlight.setPhase("gneJ41", DE1_4220)
             traci.trafficlight.setPhaseDuration("gneJ41", o2r)
-        if step == 535:
+        if step == 156:
             traci.trafficlight.setPhase("gneJ41", DE2_4220)
             traci.trafficlight.setPhaseDuration("gneJ41", r2g)
-        if step == 537:
+        if step == 158:
             traci.trafficlight.setPhase("gneJ41", E_4220)
-            traci.trafficlight.setPhaseDuration("gneJ41", 27)
-        if step == 564:
+            traci.trafficlight.setPhaseDuration("gneJ41", 11)
+        if step == 169:
             traci.trafficlight.setPhase("gneJ41", EA1_4220)
             traci.trafficlight.setPhaseDuration("gneJ41", o2r)
-        if step == 568:
+        if step == 173:
             traci.trafficlight.setPhase("gneJ41", EA2_4220)
             traci.trafficlight.setPhaseDuration("gneJ41", r2g)
-        if step == 570:
+        if step == 175:
             traci.trafficlight.setPhase("gneJ41", A_4220)
-            traci.trafficlight.setPhaseDuration("gneJ41", 30)
+            traci.trafficlight.setPhaseDuration("gneJ41", 63)
+        if step == 238:
+            traci.trafficlight.setPhase("gneJ41", AD1_4220)
+            traci.trafficlight.setPhaseDuration("gneJ41", o2r)
+        if step == 242:
+            traci.trafficlight.setPhase("gneJ41", AD2_4220)
+            traci.trafficlight.setPhaseDuration("gneJ41", r2g)
+        if step == 244:
+            traci.trafficlight.setPhase("gneJ41", D_4220)
+            traci.trafficlight.setPhaseDuration("gneJ41", 13)
+        if step == 257:
+            traci.trafficlight.setPhase("gneJ41", DE1_4220)
+            traci.trafficlight.setPhaseDuration("gneJ41", o2r)
+        if step == 261:
+            traci.trafficlight.setPhase("gneJ41", DE2_4220)
+            traci.trafficlight.setPhaseDuration("gneJ41", r2g)
+        if step == 263:
+            traci.trafficlight.setPhase("gneJ41", E_4220)
+            traci.trafficlight.setPhaseDuration("gneJ41", 9)
+        if step == 272:
+            traci.trafficlight.setPhase("gneJ41", EA1_4220)
+            traci.trafficlight.setPhaseDuration("gneJ41", o2r)
+        if step == 276:
+            traci.trafficlight.setPhase("gneJ41", EA2_4220)
+            traci.trafficlight.setPhaseDuration("gneJ41", r2g)
+        if step == 278:
+            traci.trafficlight.setPhase("gneJ41", A_4220)
+            traci.trafficlight.setPhaseDuration("gneJ41", 95)
+        if step == 373:
+            traci.trafficlight.setPhase("gneJ41", AB1_4220)
+            traci.trafficlight.setPhaseDuration("gneJ41", o2r)
+        if step == 377:
+            traci.trafficlight.setPhase("gneJ41", AB2_4220)
+            traci.trafficlight.setPhaseDuration("gneJ41", r2g)
+        if step == 379:
+            traci.trafficlight.setPhase("gneJ41", B_4220)
+            traci.trafficlight.setPhaseDuration("gneJ41", 19)
+        if step == 398:
+            traci.trafficlight.setPhase("gneJ41", BD1_4220)
+            traci.trafficlight.setPhaseDuration("gneJ41", o2r)
+        if step == 402:
+            traci.trafficlight.setPhase("gneJ41", BD2_4220)
+            traci.trafficlight.setPhaseDuration("gneJ41", r2g)
+        if step == 404:
+            traci.trafficlight.setPhase("gneJ41", D_4220)
+            traci.trafficlight.setPhaseDuration("gneJ41", 24)
+        if step == 428:
+            traci.trafficlight.setPhase("gneJ41", DE1_4220)
+            traci.trafficlight.setPhaseDuration("gneJ41", o2r)
+        if step == 432:
+            traci.trafficlight.setPhase("gneJ41", DE2_4220)
+            traci.trafficlight.setPhaseDuration("gneJ41", r2g)
+        if step == 434:
+            traci.trafficlight.setPhase("gneJ41", E_4220)
+            traci.trafficlight.setPhaseDuration("gneJ41", 13)
+        if step == 447:
+            traci.trafficlight.setPhase("gneJ41", EA1_4220)
+            traci.trafficlight.setPhaseDuration("gneJ41", o2r)
+        if step == 451:
+            traci.trafficlight.setPhase("gneJ41", EA2_4220)
+            traci.trafficlight.setPhaseDuration("gneJ41", r2g)
+        if step == 453:
+            traci.trafficlight.setPhase("gneJ41", A_4220)
+            traci.trafficlight.setPhaseDuration("gneJ41", 56)
+        if step == 509:
+            traci.trafficlight.setPhase("gneJ41", AB1_4220)
+            traci.trafficlight.setPhaseDuration("gneJ41", o2r)
+        if step == 513:
+            traci.trafficlight.setPhase("gneJ41", AB2_4220)
+            traci.trafficlight.setPhaseDuration("gneJ41", r2g)
+        if step == 515:
+            traci.trafficlight.setPhase("gneJ41", B_4220)
+            traci.trafficlight.setPhaseDuration("gneJ41", 19)
+        if step == 534:
+            traci.trafficlight.setPhase("gneJ41", BD1_4220)
+            traci.trafficlight.setPhaseDuration("gneJ41", o2r)
+        if step == 538:
+            traci.trafficlight.setPhase("gneJ41", BD2_4220)
+            traci.trafficlight.setPhaseDuration("gneJ41", r2g)
+        if step == 540:
+            traci.trafficlight.setPhase("gneJ41", D_4220)
+            traci.trafficlight.setPhaseDuration("gneJ41", 22)
+        if step == 562:
+            traci.trafficlight.setPhase("gneJ41", DE1_4220)
+            traci.trafficlight.setPhaseDuration("gneJ41", o2r)
+        if step == 566:
+            traci.trafficlight.setPhase("gneJ41", DE2_4220)
+            traci.trafficlight.setPhaseDuration("gneJ41", r2g)
+        if step == 568:
+            traci.trafficlight.setPhase("gneJ41", E_4220)
+            traci.trafficlight.setPhaseDuration("gneJ41", 20)
+        if step == 588:
+            traci.trafficlight.setPhase("gneJ41", EA1_4220)
+            traci.trafficlight.setPhaseDuration("gneJ41", o2r)
+        if step == 592:
+            traci.trafficlight.setPhase("gneJ41", EA2_4220)
+            traci.trafficlight.setPhaseDuration("gneJ41", r2g)
+        if step == 594:
+            traci.trafficlight.setPhase("gneJ41", A_4220)
+            traci.trafficlight.setPhaseDuration("gneJ41", 6)
         if step == 0:
-            traci.trafficlight.setPhase("cluster_25953432_313863435_313863521_314053282", D_4221)
-            traci.trafficlight.setPhaseDuration("cluster_25953432_313863435_313863521_314053282", 10)
-        if step == 10:
-            traci.trafficlight.setPhase("cluster_25953432_313863435_313863521_314053282", DE1_4221)
-            traci.trafficlight.setPhaseDuration("cluster_25953432_313863435_313863521_314053282", o2r)
-        if step == 14:
-            traci.trafficlight.setPhase("cluster_25953432_313863435_313863521_314053282", DE2_4221)
-            traci.trafficlight.setPhaseDuration("cluster_25953432_313863435_313863521_314053282", r2g)
-        if step == 16:
             traci.trafficlight.setPhase("cluster_25953432_313863435_313863521_314053282", E_4221)
-            traci.trafficlight.setPhaseDuration("cluster_25953432_313863435_313863521_314053282", 15)
-        if step == 31:
+            traci.trafficlight.setPhaseDuration("cluster_25953432_313863435_313863521_314053282", 9)
+        if step == 9:
             traci.trafficlight.setPhase("cluster_25953432_313863435_313863521_314053282", EF1_4221)
             traci.trafficlight.setPhaseDuration("cluster_25953432_313863435_313863521_314053282", o2r)
-        if step == 35:
+        if step == 13:
             traci.trafficlight.setPhase("cluster_25953432_313863435_313863521_314053282", EF2_4221)
             traci.trafficlight.setPhaseDuration("cluster_25953432_313863435_313863521_314053282", r2g)
-        if step == 37:
+        if step == 15:
             traci.trafficlight.setPhase("cluster_25953432_313863435_313863521_314053282", F_4221)
-            traci.trafficlight.setPhaseDuration("cluster_25953432_313863435_313863521_314053282", 14)
-        if step == 51:
+            traci.trafficlight.setPhaseDuration("cluster_25953432_313863435_313863521_314053282", 19)
+        if step == 34:
             traci.trafficlight.setPhase("cluster_25953432_313863435_313863521_314053282", FA1_4221)
             traci.trafficlight.setPhaseDuration("cluster_25953432_313863435_313863521_314053282", o2r)
-        if step == 55:
+        if step == 38:
             traci.trafficlight.setPhase("cluster_25953432_313863435_313863521_314053282", FA2_4221)
             traci.trafficlight.setPhaseDuration("cluster_25953432_313863435_313863521_314053282", r2g)
-        if step == 57:
+        if step == 40:
             traci.trafficlight.setPhase("cluster_25953432_313863435_313863521_314053282", A_4221)
-            traci.trafficlight.setPhaseDuration("cluster_25953432_313863435_313863521_314053282", 22)
-        if step == 79:
+            traci.trafficlight.setPhaseDuration("cluster_25953432_313863435_313863521_314053282", 20)
+        if step == 60:
             traci.trafficlight.setPhase("cluster_25953432_313863435_313863521_314053282", AD1_4221)
             traci.trafficlight.setPhaseDuration("cluster_25953432_313863435_313863521_314053282", o2r)
-        if step == 83:
+        if step == 64:
             traci.trafficlight.setPhase("cluster_25953432_313863435_313863521_314053282", AD2_4221)
             traci.trafficlight.setPhaseDuration("cluster_25953432_313863435_313863521_314053282", r2g)
-        if step == 85:
+        if step == 66:
             traci.trafficlight.setPhase("cluster_25953432_313863435_313863521_314053282", D_4221)
             traci.trafficlight.setPhaseDuration("cluster_25953432_313863435_313863521_314053282", 24)
-        if step == 109:
+        if step == 90:
             traci.trafficlight.setPhase("cluster_25953432_313863435_313863521_314053282", DE1_4221)
             traci.trafficlight.setPhaseDuration("cluster_25953432_313863435_313863521_314053282", o2r)
-        if step == 113:
+        if step == 94:
             traci.trafficlight.setPhase("cluster_25953432_313863435_313863521_314053282", DE2_4221)
             traci.trafficlight.setPhaseDuration("cluster_25953432_313863435_313863521_314053282", r2g)
-        if step == 115:
+        if step == 96:
             traci.trafficlight.setPhase("cluster_25953432_313863435_313863521_314053282", E_4221)
-            traci.trafficlight.setPhaseDuration("cluster_25953432_313863435_313863521_314053282", 11)
-        if step == 126:
+            traci.trafficlight.setPhaseDuration("cluster_25953432_313863435_313863521_314053282", 9)
+        if step == 105:
             traci.trafficlight.setPhase("cluster_25953432_313863435_313863521_314053282", EF1_4221)
             traci.trafficlight.setPhaseDuration("cluster_25953432_313863435_313863521_314053282", o2r)
-        if step == 130:
+        if step == 109:
             traci.trafficlight.setPhase("cluster_25953432_313863435_313863521_314053282", EF2_4221)
             traci.trafficlight.setPhaseDuration("cluster_25953432_313863435_313863521_314053282", r2g)
-        if step == 132:
+        if step == 111:
             traci.trafficlight.setPhase("cluster_25953432_313863435_313863521_314053282", F_4221)
-            traci.trafficlight.setPhaseDuration("cluster_25953432_313863435_313863521_314053282", 14)
-        if step == 146:
+            traci.trafficlight.setPhaseDuration("cluster_25953432_313863435_313863521_314053282", 19)
+        if step == 130:
             traci.trafficlight.setPhase("cluster_25953432_313863435_313863521_314053282", FA1_4221)
             traci.trafficlight.setPhaseDuration("cluster_25953432_313863435_313863521_314053282", o2r)
-        if step == 150:
+        if step == 134:
             traci.trafficlight.setPhase("cluster_25953432_313863435_313863521_314053282", FA2_4221)
             traci.trafficlight.setPhaseDuration("cluster_25953432_313863435_313863521_314053282", r2g)
-        if step == 152:
+        if step == 136:
             traci.trafficlight.setPhase("cluster_25953432_313863435_313863521_314053282", A_4221)
             traci.trafficlight.setPhaseDuration("cluster_25953432_313863435_313863521_314053282", 30)
-        if step == 182:
+        if step == 166:
             traci.trafficlight.setPhase("cluster_25953432_313863435_313863521_314053282", AD1_4221)
             traci.trafficlight.setPhaseDuration("cluster_25953432_313863435_313863521_314053282", o2r)
-        if step == 186:
+        if step == 170:
             traci.trafficlight.setPhase("cluster_25953432_313863435_313863521_314053282", AD2_4221)
             traci.trafficlight.setPhaseDuration("cluster_25953432_313863435_313863521_314053282", r2g)
-        if step == 188:
+        if step == 172:
             traci.trafficlight.setPhase("cluster_25953432_313863435_313863521_314053282", D_4221)
-            traci.trafficlight.setPhaseDuration("cluster_25953432_313863435_313863521_314053282", 26)
-        if step == 214:
+            traci.trafficlight.setPhaseDuration("cluster_25953432_313863435_313863521_314053282", 28)
+        if step == 200:
             traci.trafficlight.setPhase("cluster_25953432_313863435_313863521_314053282", DE1_4221)
             traci.trafficlight.setPhaseDuration("cluster_25953432_313863435_313863521_314053282", o2r)
-        if step == 218:
+        if step == 204:
             traci.trafficlight.setPhase("cluster_25953432_313863435_313863521_314053282", DE2_4221)
             traci.trafficlight.setPhaseDuration("cluster_25953432_313863435_313863521_314053282", r2g)
-        if step == 220:
+        if step == 206:
             traci.trafficlight.setPhase("cluster_25953432_313863435_313863521_314053282", E_4221)
-            traci.trafficlight.setPhaseDuration("cluster_25953432_313863435_313863521_314053282", 8)
-        if step == 228:
+            traci.trafficlight.setPhaseDuration("cluster_25953432_313863435_313863521_314053282", 19)
+        if step == 225:
             traci.trafficlight.setPhase("cluster_25953432_313863435_313863521_314053282", EF1_4221)
             traci.trafficlight.setPhaseDuration("cluster_25953432_313863435_313863521_314053282", o2r)
-        if step == 232:
+        if step == 229:
             traci.trafficlight.setPhase("cluster_25953432_313863435_313863521_314053282", EF2_4221)
             traci.trafficlight.setPhaseDuration("cluster_25953432_313863435_313863521_314053282", r2g)
-        if step == 234:
+        if step == 231:
             traci.trafficlight.setPhase("cluster_25953432_313863435_313863521_314053282", F_4221)
-            traci.trafficlight.setPhaseDuration("cluster_25953432_313863435_313863521_314053282", 18)
-        if step == 252:
+            traci.trafficlight.setPhaseDuration("cluster_25953432_313863435_313863521_314053282", 8)
+        if step == 239:
             traci.trafficlight.setPhase("cluster_25953432_313863435_313863521_314053282", FA1_4221)
             traci.trafficlight.setPhaseDuration("cluster_25953432_313863435_313863521_314053282", o2r)
-        if step == 256:
+        if step == 243:
             traci.trafficlight.setPhase("cluster_25953432_313863435_313863521_314053282", FA2_4221)
             traci.trafficlight.setPhaseDuration("cluster_25953432_313863435_313863521_314053282", r2g)
-        if step == 258:
+        if step == 245:
             traci.trafficlight.setPhase("cluster_25953432_313863435_313863521_314053282", A_4221)
-            traci.trafficlight.setPhaseDuration("cluster_25953432_313863435_313863521_314053282", 19)
+            traci.trafficlight.setPhaseDuration("cluster_25953432_313863435_313863521_314053282", 32)
         if step == 277:
             traci.trafficlight.setPhase("cluster_25953432_313863435_313863521_314053282", AD1_4221)
             traci.trafficlight.setPhaseDuration("cluster_25953432_313863435_313863521_314053282", o2r)
@@ -981,126 +993,123 @@ def run():
             traci.trafficlight.setPhaseDuration("cluster_25953432_313863435_313863521_314053282", r2g)
         if step == 283:
             traci.trafficlight.setPhase("cluster_25953432_313863435_313863521_314053282", D_4221)
-            traci.trafficlight.setPhaseDuration("cluster_25953432_313863435_313863521_314053282", 9)
-        if step == 292:
+            traci.trafficlight.setPhaseDuration("cluster_25953432_313863435_313863521_314053282", 27)
+        if step == 310:
             traci.trafficlight.setPhase("cluster_25953432_313863435_313863521_314053282", DE1_4221)
             traci.trafficlight.setPhaseDuration("cluster_25953432_313863435_313863521_314053282", o2r)
-        if step == 296:
+        if step == 314:
             traci.trafficlight.setPhase("cluster_25953432_313863435_313863521_314053282", DE2_4221)
             traci.trafficlight.setPhaseDuration("cluster_25953432_313863435_313863521_314053282", r2g)
-        if step == 298:
+        if step == 316:
             traci.trafficlight.setPhase("cluster_25953432_313863435_313863521_314053282", E_4221)
-            traci.trafficlight.setPhaseDuration("cluster_25953432_313863435_313863521_314053282", 11)
-        if step == 309:
-            traci.trafficlight.setPhase("cluster_25953432_313863435_313863521_314053282", EF1_4221)
-            traci.trafficlight.setPhaseDuration("cluster_25953432_313863435_313863521_314053282", o2r)
-        if step == 313:
-            traci.trafficlight.setPhase("cluster_25953432_313863435_313863521_314053282", EF2_4221)
-            traci.trafficlight.setPhaseDuration("cluster_25953432_313863435_313863521_314053282", r2g)
-        if step == 315:
-            traci.trafficlight.setPhase("cluster_25953432_313863435_313863521_314053282", F_4221)
-            traci.trafficlight.setPhaseDuration("cluster_25953432_313863435_313863521_314053282", 17)
-        if step == 332:
-            traci.trafficlight.setPhase("cluster_25953432_313863435_313863521_314053282", FA1_4221)
-            traci.trafficlight.setPhaseDuration("cluster_25953432_313863435_313863521_314053282", o2r)
-        if step == 336:
-            traci.trafficlight.setPhase("cluster_25953432_313863435_313863521_314053282", FA2_4221)
-            traci.trafficlight.setPhaseDuration("cluster_25953432_313863435_313863521_314053282", r2g)
-        if step == 338:
-            traci.trafficlight.setPhase("cluster_25953432_313863435_313863521_314053282", A_4221)
-            traci.trafficlight.setPhaseDuration("cluster_25953432_313863435_313863521_314053282", 30)
-        if step == 368:
-            traci.trafficlight.setPhase("cluster_25953432_313863435_313863521_314053282", AD1_4221)
-            traci.trafficlight.setPhaseDuration("cluster_25953432_313863435_313863521_314053282", o2r)
-        if step == 372:
-            traci.trafficlight.setPhase("cluster_25953432_313863435_313863521_314053282", AD2_4221)
-            traci.trafficlight.setPhaseDuration("cluster_25953432_313863435_313863521_314053282", r2g)
-        if step == 374:
-            traci.trafficlight.setPhase("cluster_25953432_313863435_313863521_314053282", D_4221)
-            traci.trafficlight.setPhaseDuration("cluster_25953432_313863435_313863521_314053282", 24)
-        if step == 398:
-            traci.trafficlight.setPhase("cluster_25953432_313863435_313863521_314053282", DE1_4221)
-            traci.trafficlight.setPhaseDuration("cluster_25953432_313863435_313863521_314053282", o2r)
-        if step == 402:
-            traci.trafficlight.setPhase("cluster_25953432_313863435_313863521_314053282", DE2_4221)
-            traci.trafficlight.setPhaseDuration("cluster_25953432_313863435_313863521_314053282", r2g)
-        if step == 404:
-            traci.trafficlight.setPhase("cluster_25953432_313863435_313863521_314053282", E_4221)
-            traci.trafficlight.setPhaseDuration("cluster_25953432_313863435_313863521_314053282", 12)
-        if step == 416:
-            traci.trafficlight.setPhase("cluster_25953432_313863435_313863521_314053282", EF1_4221)
-            traci.trafficlight.setPhaseDuration("cluster_25953432_313863435_313863521_314053282", o2r)
-        if step == 420:
-            traci.trafficlight.setPhase("cluster_25953432_313863435_313863521_314053282", EF2_4221)
-            traci.trafficlight.setPhaseDuration("cluster_25953432_313863435_313863521_314053282", r2g)
-        if step == 422:
-            traci.trafficlight.setPhase("cluster_25953432_313863435_313863521_314053282", F_4221)
             traci.trafficlight.setPhaseDuration("cluster_25953432_313863435_313863521_314053282", 15)
-        if step == 437:
+        if step == 331:
+            traci.trafficlight.setPhase("cluster_25953432_313863435_313863521_314053282", EF1_4221)
+            traci.trafficlight.setPhaseDuration("cluster_25953432_313863435_313863521_314053282", o2r)
+        if step == 335:
+            traci.trafficlight.setPhase("cluster_25953432_313863435_313863521_314053282", EF2_4221)
+            traci.trafficlight.setPhaseDuration("cluster_25953432_313863435_313863521_314053282", r2g)
+        if step == 337:
+            traci.trafficlight.setPhase("cluster_25953432_313863435_313863521_314053282", F_4221)
+            traci.trafficlight.setPhaseDuration("cluster_25953432_313863435_313863521_314053282", 14)
+        if step == 351:
             traci.trafficlight.setPhase("cluster_25953432_313863435_313863521_314053282", FA1_4221)
             traci.trafficlight.setPhaseDuration("cluster_25953432_313863435_313863521_314053282", o2r)
-        if step == 441:
+        if step == 355:
             traci.trafficlight.setPhase("cluster_25953432_313863435_313863521_314053282", FA2_4221)
             traci.trafficlight.setPhaseDuration("cluster_25953432_313863435_313863521_314053282", r2g)
-        if step == 443:
+        if step == 357:
             traci.trafficlight.setPhase("cluster_25953432_313863435_313863521_314053282", A_4221)
             traci.trafficlight.setPhaseDuration("cluster_25953432_313863435_313863521_314053282", 22)
-        if step == 465:
+        if step == 379:
             traci.trafficlight.setPhase("cluster_25953432_313863435_313863521_314053282", AD1_4221)
             traci.trafficlight.setPhaseDuration("cluster_25953432_313863435_313863521_314053282", o2r)
-        if step == 469:
+        if step == 383:
             traci.trafficlight.setPhase("cluster_25953432_313863435_313863521_314053282", AD2_4221)
             traci.trafficlight.setPhaseDuration("cluster_25953432_313863435_313863521_314053282", r2g)
-        if step == 471:
+        if step == 385:
             traci.trafficlight.setPhase("cluster_25953432_313863435_313863521_314053282", D_4221)
-            traci.trafficlight.setPhaseDuration("cluster_25953432_313863435_313863521_314053282", 26)
-        if step == 497:
+            traci.trafficlight.setPhaseDuration("cluster_25953432_313863435_313863521_314053282", 24)
+        if step == 409:
             traci.trafficlight.setPhase("cluster_25953432_313863435_313863521_314053282", DE1_4221)
             traci.trafficlight.setPhaseDuration("cluster_25953432_313863435_313863521_314053282", o2r)
-        if step == 501:
+        if step == 413:
             traci.trafficlight.setPhase("cluster_25953432_313863435_313863521_314053282", DE2_4221)
             traci.trafficlight.setPhaseDuration("cluster_25953432_313863435_313863521_314053282", r2g)
-        if step == 503:
+        if step == 415:
             traci.trafficlight.setPhase("cluster_25953432_313863435_313863521_314053282", E_4221)
-            traci.trafficlight.setPhaseDuration("cluster_25953432_313863435_313863521_314053282", 19)
-        if step == 522:
+            traci.trafficlight.setPhaseDuration("cluster_25953432_313863435_313863521_314053282", 11)
+        if step == 426:
             traci.trafficlight.setPhase("cluster_25953432_313863435_313863521_314053282", EF1_4221)
             traci.trafficlight.setPhaseDuration("cluster_25953432_313863435_313863521_314053282", o2r)
-        if step == 526:
+        if step == 430:
             traci.trafficlight.setPhase("cluster_25953432_313863435_313863521_314053282", EF2_4221)
             traci.trafficlight.setPhaseDuration("cluster_25953432_313863435_313863521_314053282", r2g)
-        if step == 528:
+        if step == 432:
             traci.trafficlight.setPhase("cluster_25953432_313863435_313863521_314053282", F_4221)
-            traci.trafficlight.setPhaseDuration("cluster_25953432_313863435_313863521_314053282", 8)
-        if step == 536:
+            traci.trafficlight.setPhaseDuration("cluster_25953432_313863435_313863521_314053282", 14)
+        if step == 446:
             traci.trafficlight.setPhase("cluster_25953432_313863435_313863521_314053282", FA1_4221)
             traci.trafficlight.setPhaseDuration("cluster_25953432_313863435_313863521_314053282", o2r)
-        if step == 540:
+        if step == 450:
             traci.trafficlight.setPhase("cluster_25953432_313863435_313863521_314053282", FA2_4221)
             traci.trafficlight.setPhaseDuration("cluster_25953432_313863435_313863521_314053282", r2g)
-        if step == 542:
+        if step == 452:
             traci.trafficlight.setPhase("cluster_25953432_313863435_313863521_314053282", A_4221)
-            traci.trafficlight.setPhaseDuration("cluster_25953432_313863435_313863521_314053282", 12)
-        if step == 554:
+            traci.trafficlight.setPhaseDuration("cluster_25953432_313863435_313863521_314053282", 30)
+        if step == 482:
             traci.trafficlight.setPhase("cluster_25953432_313863435_313863521_314053282", AD1_4221)
             traci.trafficlight.setPhaseDuration("cluster_25953432_313863435_313863521_314053282", o2r)
-        if step == 558:
+        if step == 486:
             traci.trafficlight.setPhase("cluster_25953432_313863435_313863521_314053282", AD2_4221)
             traci.trafficlight.setPhaseDuration("cluster_25953432_313863435_313863521_314053282", r2g)
-        if step == 560:
+        if step == 488:
             traci.trafficlight.setPhase("cluster_25953432_313863435_313863521_314053282", D_4221)
-            traci.trafficlight.setPhaseDuration("cluster_25953432_313863435_313863521_314053282", 25)
-        if step == 585:
+            traci.trafficlight.setPhaseDuration("cluster_25953432_313863435_313863521_314053282", 26)
+        if step == 514:
             traci.trafficlight.setPhase("cluster_25953432_313863435_313863521_314053282", DE1_4221)
             traci.trafficlight.setPhaseDuration("cluster_25953432_313863435_313863521_314053282", o2r)
-        if step == 589:
+        if step == 518:
             traci.trafficlight.setPhase("cluster_25953432_313863435_313863521_314053282", DE2_4221)
             traci.trafficlight.setPhaseDuration("cluster_25953432_313863435_313863521_314053282", r2g)
-        if step == 591:
+        if step == 520:
             traci.trafficlight.setPhase("cluster_25953432_313863435_313863521_314053282", E_4221)
-            traci.trafficlight.setPhaseDuration("cluster_25953432_313863435_313863521_314053282", 7)
-        if step == 598:
+            traci.trafficlight.setPhaseDuration("cluster_25953432_313863435_313863521_314053282", 8)
+        if step == 528:
             traci.trafficlight.setPhase("cluster_25953432_313863435_313863521_314053282", EF1_4221)
+            traci.trafficlight.setPhaseDuration("cluster_25953432_313863435_313863521_314053282", o2r)
+        if step == 532:
+            traci.trafficlight.setPhase("cluster_25953432_313863435_313863521_314053282", EF2_4221)
+            traci.trafficlight.setPhaseDuration("cluster_25953432_313863435_313863521_314053282", r2g)
+        if step == 534:
+            traci.trafficlight.setPhase("cluster_25953432_313863435_313863521_314053282", F_4221)
+            traci.trafficlight.setPhaseDuration("cluster_25953432_313863435_313863521_314053282", 18)
+        if step == 552:
+            traci.trafficlight.setPhase("cluster_25953432_313863435_313863521_314053282", FA1_4221)
+            traci.trafficlight.setPhaseDuration("cluster_25953432_313863435_313863521_314053282", o2r)
+        if step == 556:
+            traci.trafficlight.setPhase("cluster_25953432_313863435_313863521_314053282", FA2_4221)
+            traci.trafficlight.setPhaseDuration("cluster_25953432_313863435_313863521_314053282", r2g)
+        if step == 558:
+            traci.trafficlight.setPhase("cluster_25953432_313863435_313863521_314053282", A_4221)
+            traci.trafficlight.setPhaseDuration("cluster_25953432_313863435_313863521_314053282", 19)
+        if step == 577:
+            traci.trafficlight.setPhase("cluster_25953432_313863435_313863521_314053282", AD1_4221)
+            traci.trafficlight.setPhaseDuration("cluster_25953432_313863435_313863521_314053282", o2r)
+        if step == 581:
+            traci.trafficlight.setPhase("cluster_25953432_313863435_313863521_314053282", AD2_4221)
+            traci.trafficlight.setPhaseDuration("cluster_25953432_313863435_313863521_314053282", r2g)
+        if step == 583:
+            traci.trafficlight.setPhase("cluster_25953432_313863435_313863521_314053282", D_4221)
+            traci.trafficlight.setPhaseDuration("cluster_25953432_313863435_313863521_314053282", 9)
+        if step == 592:
+            traci.trafficlight.setPhase("cluster_25953432_313863435_313863521_314053282", DE1_4221)
+            traci.trafficlight.setPhaseDuration("cluster_25953432_313863435_313863521_314053282", o2r)
+        if step == 596:
+            traci.trafficlight.setPhase("cluster_25953432_313863435_313863521_314053282", DE2_4221)
+            traci.trafficlight.setPhaseDuration("cluster_25953432_313863435_313863521_314053282", r2g)
+        if step == 598:
+            traci.trafficlight.setPhase("cluster_25953432_313863435_313863521_314053282", E_4221)
             traci.trafficlight.setPhaseDuration("cluster_25953432_313863435_313863521_314053282", 2)
 
         # for each intersection

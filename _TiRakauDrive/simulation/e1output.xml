@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!-- generated on 07/13/20 17:18:18 by Eclipse SUMO GUI Version 1.5.0
+<!-- generated on 07/13/20 23:15:31 by Eclipse SUMO GUI Version 1.5.0
 <configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/sumoConfiguration.xsd">
 
     <input>
-        <net-file value="data/osm.net.xml"/>
-        <route-files value="data/osm.rou.xml"/>
-        <additional-files value="data/osm.det.xml"/>
+        <net-file value="simulation/osm.net.xml"/>
+        <route-files value="simulation/osm.rou.xml"/>
+        <additional-files value="simulation/osm.det.xml"/>
     </input>
 
     <output>
-        <tripinfo-output value="data/tripinfoEDF.xml"/>
+        <summary-output value="output/summary.xml"/>
+        <tripinfo-output value="output/tripinfoEDF.xml"/>
     </output>
 
     <time>
@@ -27,7 +28,7 @@
     </report>
 
     <traci_server>
-        <remote-port value="49281"/>
+        <remote-port value="50537"/>
     </traci_server>
 
 </configuration>

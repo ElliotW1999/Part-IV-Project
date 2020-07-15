@@ -374,7 +374,7 @@ def run():
     FE1_4221 = 64
     FE2_4221 = 65
     
-    while step <= 600:
+    while traci.simulation.getMinExpectedNumber() > 0:
         traci.simulationStep()
         if step == 0:
             traci.trafficlight.setPhase("cluster_1707799581_314056954_5931861577", B_4235)
@@ -1165,6 +1165,6 @@ if __name__ == "__main__":
 
     # this is the normal way of using traci. sumo is started as a
     # subprocess and then the python script connects and runs
-    traci.start([sumoBinary, "-c", "data/osm.sumocfg",
+    traci.start([sumoBinary, "-c", "simulation/osm.sumocfg",
                              "--tripinfo-output", "tripinfo.xml"])
     run()

@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!-- generated on 07/15/20 14:12:58 by Eclipse SUMO netedit Version 1.5.0
+<!-- generated on 07/15/20 14:24:29 by Eclipse SUMO netedit Version 1.5.0
 <configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/netconvertConfiguration.xsd">
 
     <input>
-        <sumo-net-file value="C:\Users\Elliot\Documents\GitHub\P4Project\_TiRakauDrive\data\osm.net.xml"/>
+        <sumo-net-file value="C:\Users\Elliot\Documents\GitHub\P4Project\_TiRakauDrive\simulation\osm.net.xml"/>
     </input>
 
     <output>
-        <output-file value="C:\Users\Elliot\Documents\GitHub\P4Project\_TiRakauDrive\data\osm.net.xml"/>
+        <output-file value="C:\Users\Elliot\Documents\GitHub\P4Project\_TiRakauDrive\simulation\osm.net.xml"/>
         <output.street-names value="true"/>
     </output>
 
@@ -1651,10 +1651,10 @@
     </edge>
 
     <tlLogic id="313863797" type="static" programID="0" offset="0">
-        <phase duration="41" state="GGrr"/>
-        <phase duration="4"  state="yyrr"/>
-        <phase duration="41" state="rrGG"/>
-        <phase duration="4"  state="rryy"/>
+        <phase duration="185" state="GGgg"/>
+        <phase duration="6"  state="yygg"/>
+        <phase duration="185" state="rrGG"/>
+        <phase duration="6"  state="rrgg"/>
     </tlLogic>
     <tlLogic id="5861321343" type="static" programID="0" offset="0">
         <phase duration="185" state="ggGG" name="A"/>

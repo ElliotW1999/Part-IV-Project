@@ -486,8 +486,9 @@ def run():
         # or time since last activation? 4s = 4^8
         # max expected demand group (one hot, 8 options, 3 bit(000-111))    * 
         # (and 2nd max?)
-        # Current phase (7 options, 3-bit)                                  *
-        # state space size = 3,670,016 or 16,384
+        # Current phase (7 options, 3-bit)               			        *
+        # -sum of exit lane detector_delays? would indicate the load on adjacent junctions          
+        # state space size = 4,194,000 or 16,384
         # can hard-code minimum activity time to reduce state size (but kind of goes against RL)
         
         #Actions:
@@ -496,7 +497,6 @@ def run():
         # -vehicles halting 
         # or -meanSpeedRelative, 
         # not -sum(detector_delay_s4219) as this won't give total time spent waiting? 
-        # -sum of exit lane detector_delays? would indicate the load on adjacent junctions
         #       during that state (divide by total steps between actions?)
         
         #Algorithm:

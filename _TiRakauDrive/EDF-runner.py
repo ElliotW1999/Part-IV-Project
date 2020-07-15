@@ -289,6 +289,7 @@ def run():
     
     MINIMUM_TRAFFIC_ACTIVITY = 3
     traci.trafficlight.setPhase("5861321343", 0)
+    traci.trafficlight.setPhase("313863797", 0) 
     
     while traci.simulation.getMinExpectedNumber() > 0:
         traci.simulationStep()

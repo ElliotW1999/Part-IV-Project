@@ -26,8 +26,6 @@ import os
 import sys
 import optparse
 import random
-array = (3, 4)
-print(array[0])
 # we need to import python modules from the $SUMO_HOME/tools directory
 if 'SUMO_HOME' in os.environ:
     tools = os.path.join(os.environ['SUMO_HOME'], 'tools')
@@ -148,12 +146,6 @@ def generate_routefile():
 def run():
     """execute the TraCI control loop"""
     step = 0
-    # we start with phase 2 where EW has green
-    #traci.trafficlight.setPhase("cluster_1707799581_314056954_5931861577", 4) # site 4235, phase C
-    #traci.trafficlight.setPhaseDuration("cluster_1707799581_314056954_5931861577",20)
-    #traci.trafficlight.setPhase("cluster_1707799581_314056954_5931861577", 0)
-    #traci.trafficlight.setPhaseDuration("cluster_1707799581_314056954_5931861577",2000000)
-    #traci.trafficlight.getPhaseDuration("cluster_1707799581_314056954_5931861577")
     o2r = 4 #orange to red delay time
     r2g = 2 #red to green delay time
     A_4235 = 0
@@ -1112,29 +1104,6 @@ def run():
             traci.trafficlight.setPhase("cluster_25953432_313863435_313863521_314053282", E_4221)
             traci.trafficlight.setPhaseDuration("cluster_25953432_313863435_313863521_314053282", 2)
 
-        # for each intersection
-        #   for each loop detector
-        #       getTimeSinceDetection
-        #   if active phase is not transition phase, and max(intersection_loopCounter) is not in current phase
-        #       transition to phase for max(intersection_loopCounter)
-
-
-        
-        #site4235_detectors = []
-        #lanesForPhases_s4235 = {    # key = phase, values = lanes with green lights
-        #    "1" : [1, 2, 3, 9, 10, 11],
-        #    "3" : [1, 2, 3, 4],
-        #    "5" : [6, 7],
-        #    "7" : [],
-        #}
-        #for i in range(1,12)
-        #    site4235_detectors.append(traci.inductionloop.getTimeSinceDetection("site4235_" + str(i)))
-        #site4235_phase = traci.trafficlight.getPhase("cluster_1707799581_314056954_5931861577") # I think phase indexing starts at 1
-        #if ((site4235_phase%3) == 1): # if not a transition phase
-        #    if  
-        
-        #if traci.trafficlight.getPhase("cluster_1707799581_314056954_5931861577") == 6:
-            #traci.trafficlight.setPhase("cluster_1707799581_314056954_5931861577", 3)
         step += 1
 
     traci.close()
@@ -1166,5 +1135,5 @@ if __name__ == "__main__":
     # this is the normal way of using traci. sumo is started as a
     # subprocess and then the python script connects and runs
     traci.start([sumoBinary, "-c", "simulation/osm.sumocfg",
-                             "--tripinfo-output", "tripinfo.xml"])
+                             "--tripinfo-output", "output/tripinfoSCATS.xml"])
     run()

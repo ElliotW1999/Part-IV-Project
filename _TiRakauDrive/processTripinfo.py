@@ -7,8 +7,9 @@ for line in tripdata:
     line = line.split(' ')
     if len(line) > 4:
         if line[4] == "<tripinfo":
-            timeLoss.append(float(line[17].split("\"")[1]))
-            timeStopped.append(float(line[14].split("\"")[1]))
+            timeLoss.append(float(line[20].split("\"")[1]))
+            timeStopped.append(float(line[17].split("\"")[1]))
+            
             
 binsvalues = []
 binsvalues.append(0)

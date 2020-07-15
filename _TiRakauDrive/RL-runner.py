@@ -477,15 +477,37 @@ def run():
             transitionCounter_s4220 = transitionCounter_s4220 + 1
             
         # ----------------------------------------------------------------------SITE 4219--------------------------------------------------------------------------------------------------
-        https://sumo.dlr.de/docs/Simulation/Output/Summary.html for each step dataq
+        #https://sumo.dlr.de/docs/Simulation/Output/Summary.html for each step reward
+        # e1 output can be used if timesteps can be changed to 1 per step
+        
+        # Files: rl-runner, stateValues.xml, actions.xml, summary.xml, episodeStates.xml, updateTable.xml
         #States:
-        # Loop detectors groups high/low (2^8) or last activation? 4s = 4^8
-        # max expected demand group (one hot, 8 options)
+        # Loop detectors groups high/low (2^8)                              *
+        # or time since last activation? 4s = 4^8
+        # max expected demand group (one hot, 8 options, 3 bit(000-111))    * 
+        # (and 2nd max?)
+        # Current phase (7 options, 3-bit)                                  *
+        # state space size = 3,670,016 or 16,384
+        # can hard-code minimum activity time to reduce state size (but kind of goes against RL)
+        
         #Actions:
-        # Do nothing, transition to current phase
+        # Do nothing, transition to new phase (must stay in new phase for >=1s, transitoining to phase B will affect the reward for state B)
         #Rewards:
-        # -vehicles halting (or meanSpeedRelative) between actions (per step?)
-        # 
+        # -vehicles halting 
+        # or -meanSpeedRelative, 
+        # not -sum(detector_delay_s4219) as this won't give total time spent waiting? 
+        # -sum of exit lane detector_delays? would indicate the load on adjacent junctions
+        #       during that state (divide by total steps between actions?)
+        
+        #Algorithm:
+        # Expected return of next move = Sum(nextMaxGroup&&nextPhase)[loopDetectorsOff->loopDetectorsOn]
+        # e-greedy policy for training: e = .05 = %chance of taking random move. 1-e = .95 = %chance of taking move with max expected reward 
+        
+        #TODO: 
+        # Record action taken at each time and save to actions.xml, record states at each time to episodeStates.xml
+        # use updateTable to get state-reward tuple, update states in stateValues
+        # in new file: 
+        #  use summary.xml and actions.xml to assign rewards to stateValues.xml
         
         
         DO THiS

@@ -121,7 +121,7 @@ def generate_routefile():
     ]
     
     
-    with open("data/osm.rou.xml", "w") as routes: 
+    with open("simulation/osm.rou.xml", "w") as routes: 
         print("""<routes>
         <vType id="type1" lcStrategic="100" lcKeepRight="100" lcSpeedGain="100" lcCooperative="1" lcSublane="100" />""", file=routes)
 
@@ -134,7 +134,7 @@ def generate_routefile():
         for i in range(2):
             for j in range(N):
                 for route in routesList:                                                        #print vehicle density for each interval for each route                   
-                    if random.uniform(0, 1) < (route[i+2]/300):#type currently does not work
+                    if random.uniform(0, 1) < (route[i+2]/3000):#type currently does not work
                         print('    <vehicle id="%s_%d" type="type1" route="r%s" depart="%d" />' % (
                             route[0], vehNr, route[0], (i*N)+j), file=routes)
                         vehNr += 1

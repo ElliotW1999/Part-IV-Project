@@ -130,11 +130,11 @@ def generate_routefile():
                     route[0], route[1]), file=routes)
 
         vehNr = 0
-        N = 300  # number of time steps per interval (5 min)
+        N = 30  # number of time steps per interval (5 min)
         for i in range(2):
             for j in range(N):
                 for route in routesList:                                                        #print vehicle density for each interval for each route                   
-                    if random.uniform(0, 1) < (route[i+2]/300):#type currently does not work
+                    if random.uniform(0, 1) < (route[i+2]/N):#type currently does not work
                         print('    <vehicle id="%s_%d" type="type1" route="r%s" depart="%d" />' % (
                             route[0], vehNr, route[0], (i*N)+j), file=routes)
                         vehNr += 1
@@ -511,6 +511,7 @@ def run():
         
         
         DO THiS
+        to kipi - route distributions
         # ----------------------------------------------------------------------SITE 4235--------------------------------------------------------------------------------------------------
         site4235_phase = traci.trafficlight.getPhase("cluster_1707799581_314056954_5931861577") # phase indexing starts at 0 
         for i in range(1,site4235_LOOP_COUNT):                                                  # for each loop detector

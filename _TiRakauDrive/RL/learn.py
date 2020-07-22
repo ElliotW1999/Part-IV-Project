@@ -76,7 +76,6 @@ updatestateActionValues = open("stateActionValues.csv", "w")
 
         
 learningRate = .05
-currentPhase = 0
 sARSNumber = 0 #points to number in list
 maxGroup = 4 #TODO should not be hardcoded
 rowNo = 0
@@ -117,7 +116,7 @@ for row in stateActionValues: #modifies the visited stateActions by finding the 
     else:                                                           #reprint what was read.        
         updatestateActionValues.write(str(rowValues[0] )+"," )
         for i in range(0,7):
-            value = float(rowValues[i+1])                       # get the current value of the state/action pair
+            value = float(rowValues[i+1])                           # get the current value of the state/action pair
             updatestateActionValues.write(str(value)+",")
     updatestateActionValues.write("\n")
     rowNo += 1

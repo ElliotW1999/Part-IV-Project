@@ -134,7 +134,7 @@ def generate_routefile():
         for i in range(2):
             for j in range(N):
                 for route in routesList:                                                        #print vehicle density for each interval for each route                   
-                    if random.uniform(0, 1) < (route[i+2]/3000):#type currently does not work
+                    if random.uniform(0, 1) < (route[i+2]/300):#type currently does not work
                         print('    <vehicle id="%s_%d" type="type1" route="r%s" depart="%d" />' % (
                             route[0], vehNr, route[0], (i*N)+j), file=routes)
                         vehNr += 1
@@ -367,7 +367,8 @@ def run():
     FE1_4221 = 64
     FE2_4221 = 65
     
-    while traci.simulation.getMinExpectedNumber() > 0:
+    #while traci.simulation.getMinExpectedNumber() > 0:
+    while step < 600:
         traci.simulationStep()
         if step == 0:
             traci.trafficlight.setPhase("cluster_1707799581_314056954_5931861577", B_4235)

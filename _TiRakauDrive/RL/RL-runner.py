@@ -291,7 +291,7 @@ def run():
     traci.trafficlight.setPhase("5861321343", 0)  
     
     #RL stuff
-    e = .05
+    e = .00
     stateActionValuesFile = open("stateActionValues.csv", "r")
     stateActionValues = stateActionValuesFile.readlines()
     stateActionValuesFile.close()
@@ -299,6 +299,8 @@ def run():
     takeMove = True
     transitionCounter_s4219 = 0
     currentActivePhase = 6
+    transition_s2419 = chr(65+currentActivePhase) + "-" + chr(65+currentActivePhase) + "-1"                         # eg. A-A-1 
+            
     
     while step <= 600:
         traci.simulationStep()
@@ -512,15 +514,6 @@ def run():
         # Expected return of next move = Sum(nextMaxGroup&&nextPhase)[loopDetectorsOff->loopDetectorsOn]
         # e-greedy policy for training: e = .05 = %chance of taking random move. 1-e = .95 = %chance of taking move with max expected reward 
         
-        #TODO: 
-        # Record action taken at each time and save to actions.xml, record states at each time to episodeStates.xml
-        # use updateTable to get state-reward tuple, update states in stateActionValues
-        # in new file: 
-        #  use summary.xml and actions.xml to assign rewards to stateActionValues.xml
-        # loss curves
-        # automate whole process
-        # stateActionValues.csv: cols will have different loop detector group activations + sum (257)
-        # rows will be for current phase and max expected demand group (56)
         currentPhase_s4219 = traci.trafficlight.getPhase("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525") 
             
         currentLoopsState = []   

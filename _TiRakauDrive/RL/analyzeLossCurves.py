@@ -58,6 +58,9 @@ plt.xlabel('episode number')
 plt.ylabel('Time loss (s)')
 plt.show()
 
+print(sum(timeLoss))
+print(sum(timeStopped))
+print(len(timeLoss))
 
 
 

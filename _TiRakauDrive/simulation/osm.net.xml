@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!-- generated on 07/15/20 14:24:29 by Eclipse SUMO netedit Version 1.5.0
+<!-- generated on 07/16/20 13:29:45 by Eclipse SUMO netedit Version 1.5.0
 <configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/netconvertConfiguration.xsd">
 
     <input>
@@ -232,10 +232,10 @@
         <lane id=":314060705_0_0" index="0" disallow="tram rail_urban rail rail_electric rail_fast ship" speed="19.44" length="34.79" shape="612.76,892.82 615.57,904.51 617.13,914.35 617.83,922.00 618.03,927.12"/>
     </edge>
     <edge id=":314060705_1" function="internal">
-        <lane id=":314060705_1_0" index="0" disallow="tram rail_urban rail rail_electric rail_fast ship" speed="22.22" length="27.46" shape="612.76,892.82 620.01,919.07"/>
-        <lane id=":314060705_1_1" index="1" disallow="tram rail_urban rail rail_electric rail_fast ship" speed="22.22" length="27.46" shape="615.84,891.94 623.13,918.34"/>
-        <lane id=":314060705_1_2" index="2" disallow="tram rail_urban rail rail_electric rail_fast ship" speed="22.22" length="27.46" shape="618.92,891.07 626.24,917.62"/>
-        <lane id=":314060705_1_3" index="3" disallow="tram rail_urban rail rail_electric rail_fast ship" speed="22.22" length="27.46" shape="621.99,890.19 629.36,916.89"/>
+        <lane id=":314060705_1_0" index="0" disallow="tram rail_urban rail rail_electric rail_fast ship" speed="22.22" length="28.64" shape="612.76,892.82 620.28,920.22"/>
+        <lane id=":314060705_1_1" index="1" disallow="tram rail_urban rail rail_electric rail_fast ship" speed="22.22" length="28.64" shape="615.84,891.94 623.40,919.49"/>
+        <lane id=":314060705_1_2" index="2" disallow="tram rail_urban rail rail_electric rail_fast ship" speed="22.22" length="28.64" shape="618.92,891.07 626.51,918.76"/>
+        <lane id=":314060705_1_3" index="3" disallow="tram rail_urban rail rail_electric rail_fast ship" speed="22.22" length="28.64" shape="621.99,890.19 629.63,918.04"/>
     </edge>
     <edge id=":314060709_0" function="internal">
         <lane id=":314060709_0_0" index="0" disallow="tram rail_urban rail rail_electric rail_fast ship" speed="16.66" length="37.04" shape="609.06,943.76 603.44,945.29 594.73,947.63 584.12,949.83 572.81,950.95"/>
@@ -642,10 +642,10 @@
         <lane id=":gneJ7_0_1" index="1" disallow="tram rail_urban rail rail_electric rail_fast ship" speed="16.66" length="7.97" shape="1002.24,855.60 1000.04,856.30 998.66,857.16 997.29,858.08 995.12,858.93"/>
     </edge>
     <edge id=":gneJ9_0" function="internal">
-        <lane id=":gneJ9_0_0" index="0" disallow="tram rail_urban rail rail_electric rail_fast ship" speed="19.44" length="4.88" shape="620.06,919.26 618.95,914.52"/>
-        <lane id=":gneJ9_0_1" index="1" disallow="tram rail_urban rail rail_electric rail_fast ship" speed="19.44" length="4.88" shape="623.17,918.54 622.07,913.79"/>
-        <lane id=":gneJ9_0_2" index="2" disallow="tram rail_urban rail rail_electric rail_fast ship" speed="19.44" length="4.88" shape="626.29,917.81 625.18,913.06"/>
-        <lane id=":gneJ9_0_3" index="3" disallow="tram rail_urban rail rail_electric rail_fast ship" speed="19.44" length="4.88" shape="629.41,917.08 628.30,912.33"/>
+        <lane id=":gneJ9_0_0" index="0" disallow="tram rail_urban rail rail_electric rail_fast ship" speed="19.44" length="6.06" shape="620.33,920.41 618.95,914.52"/>
+        <lane id=":gneJ9_0_1" index="1" disallow="tram rail_urban rail rail_electric rail_fast ship" speed="19.44" length="6.06" shape="623.44,919.69 622.07,913.79"/>
+        <lane id=":gneJ9_0_2" index="2" disallow="tram rail_urban rail rail_electric rail_fast ship" speed="19.44" length="6.06" shape="626.56,918.96 625.18,913.06"/>
+        <lane id=":gneJ9_0_3" index="3" disallow="tram rail_urban rail rail_electric rail_fast ship" speed="19.44" length="6.06" shape="629.67,918.23 628.30,912.33"/>
     </edge>
 
     <edge id="-112543664" from="5861321353" to="137486772" name="Chapel Road" priority="11" type="highway.secondary">
@@ -768,16 +768,16 @@
         </lane>
     </edge>
     <edge id="122089525" from="314060705" to="gneJ9" name="Te Irirangi Drive" priority="12" type="highway.primary" spreadType="center">
-        <lane id="122089525_0" index="0" disallow="tram rail_urban rail rail_electric rail_fast ship" speed="22.22" length="0.20" shape="620.01,919.07 620.06,919.26">
+        <lane id="122089525_0" index="0" disallow="tram rail_urban rail rail_electric rail_fast ship" speed="22.22" length="0.20" shape="620.28,920.22 620.33,920.41">
             <param key="origId" value="122089525"/>
         </lane>
-        <lane id="122089525_1" index="1" disallow="tram rail_urban rail rail_electric rail_fast ship" speed="22.22" length="0.20" shape="623.13,918.34 623.17,918.54">
+        <lane id="122089525_1" index="1" disallow="tram rail_urban rail rail_electric rail_fast ship" speed="22.22" length="0.20" shape="623.40,919.49 623.44,919.69">
             <param key="origId" value="122089525"/>
         </lane>
-        <lane id="122089525_2" index="2" disallow="tram rail_urban rail rail_electric rail_fast ship" speed="22.22" length="0.20" shape="626.24,917.62 626.29,917.81">
+        <lane id="122089525_2" index="2" disallow="tram rail_urban rail rail_electric rail_fast ship" speed="22.22" length="0.20" shape="626.51,918.76 626.56,918.96">
             <param key="origId" value="122089525"/>
         </lane>
-        <lane id="122089525_3" index="3" disallow="tram rail_urban rail rail_electric rail_fast ship" speed="22.22" length="0.20" shape="629.36,916.89 629.41,917.08">
+        <lane id="122089525_3" index="3" disallow="tram rail_urban rail rail_electric rail_fast ship" speed="22.22" length="0.20" shape="629.63,918.04 629.67,918.23">
             <param key="origId" value="122089525"/>
         </lane>
         <param key="origTo" value="314061758"/>
@@ -1426,17 +1426,17 @@
         </lane>
         <param key="ref" value="5"/>
     </edge>
-    <edge id="620377515" from="768511617" to="314060705" name="Te Irirangi Drive" priority="12" type="highway.primary" spreadType="center" shape="597.96,833.76 606.13,851.93 621.99,907.74">
-        <lane id="620377515_0" index="0" disallow="tram rail_urban rail rail_electric rail_fast ship" speed="22.22" length="61.07" shape="593.58,835.73 601.61,853.58 612.76,892.82">
+    <edge id="620377515" from="768511617" to="314060705" name="Te Irirangi Drive" priority="12" type="highway.primary" spreadType="center" shape="541.56,699.21 606.13,851.93 621.99,907.74">
+        <lane id="620377515_0" index="0" disallow="tram rail_urban rail rail_electric rail_fast ship" speed="22.22" length="206.99" shape="537.12,701.04 601.59,853.53 612.76,892.82">
             <param key="origId" value="620377515"/>
         </lane>
-        <lane id="620377515_1" index="1" disallow="tram rail_urban rail rail_electric rail_fast ship" speed="22.22" length="61.07" shape="596.50,834.41 604.62,852.48 615.84,891.94">
+        <lane id="620377515_1" index="1" disallow="tram rail_urban rail rail_electric rail_fast ship" speed="22.22" length="206.99" shape="540.07,699.80 604.62,852.46 615.84,891.94">
             <param key="origId" value="620377515"/>
         </lane>
-        <lane id="620377515_2" index="2" disallow="tram rail_urban rail rail_electric rail_fast ship" speed="22.22" length="61.07" shape="599.42,833.10 607.64,851.38 618.92,891.07">
+        <lane id="620377515_2" index="2" disallow="tram rail_urban rail rail_electric rail_fast ship" speed="22.22" length="206.99" shape="543.02,698.55 607.64,851.40 618.92,891.07">
             <param key="origId" value="620377515"/>
         </lane>
-        <lane id="620377515_3" index="3" disallow="tram rail_urban rail rail_electric rail_fast ship" speed="22.22" length="61.07" shape="602.34,831.79 610.65,850.28 621.99,890.19">
+        <lane id="620377515_3" index="3" disallow="tram rail_urban rail rail_electric rail_fast ship" speed="22.22" length="206.99" shape="545.97,697.30 610.67,850.33 621.99,890.19">
             <param key="origId" value="620377515"/>
         </lane>
         <param key="ref" value="30"/>
@@ -2007,7 +2007,7 @@
         <request index="3" response="0000" foes="0000" cont="0"/>
     </junction>
     <junction id="314056963" type="dead_end" x="103.35" y="880.93" incLanes="619523287#1_0 619523287#1_1 619523287#1_2" intLanes="" shape="102.14,876.29 104.56,885.57"/>
-    <junction id="314060705" type="priority" x="615.79" y="879.85" incLanes="620377515_0 620377515_1 620377515_2 620377515_3" intLanes=":314060705_0_0 :314060705_1_0 :314060705_1_1 :314060705_1_2 :314060705_1_3" shape="632.09,921.56 619.63,924.47 619.62,926.89 616.43,927.35 616.26,919.99 615.98,914.53 615.47,910.06 614.59,905.63 613.22,900.34 611.22,893.26 623.53,889.76">
+    <junction id="314060705" type="priority" x="615.79" y="879.85" incLanes="620377515_0 620377515_1 620377515_2 620377515_3" intLanes=":314060705_0_0 :314060705_1_0 :314060705_1_1 :314060705_1_2 :314060705_1_3" shape="632.63,923.86 620.17,926.77 619.62,926.89 616.43,927.35 616.26,919.99 615.98,914.53 615.47,910.06 614.59,905.63 613.22,900.34 611.22,893.26 623.53,889.76">
         <request index="0" response="00000" foes="00000" cont="0"/>
         <request index="1" response="00000" foes="00000" cont="0"/>
         <request index="2" response="00000" foes="00000" cont="0"/>
@@ -2191,7 +2191,7 @@
         <request index="1" response="00" foes="00" cont="0"/>
     </junction>
     <junction id="768510376" type="dead_end" x="363.43" y="803.17" incLanes="628341438#1_0" intLanes="" shape="363.43,803.17 366.22,804.75 363.43,803.17"/>
-    <junction id="768511617" type="dead_end" x="599.42" y="833.10" incLanes="" intLanes="" shape="603.80,831.13 592.12,836.38"/>
+    <junction id="768511617" type="dead_end" x="543.02" y="698.55" incLanes="" intLanes="" shape="547.44,696.68 535.65,701.67"/>
     <junction id="804893114" type="priority" x="781.25" y="887.20" incLanes="620377513_0 gneE79_0 gneE47_0" intLanes=":804893114_0_0 :804893114_1_0 :804893114_2_0 :804893114_2_1" shape="792.77,897.66 790.09,899.74 788.51,899.05 788.04,899.15 787.78,899.54 787.73,900.23 787.89,901.22 778.56,903.45 778.12,900.37 778.30,898.03 778.75,896.05 779.14,894.09 779.14,891.79 778.42,888.80 784.47,886.71 785.46,889.52 786.33,891.61 787.29,893.23 788.54,894.62 790.30,896.01">
         <request index="0" response="0000" foes="0010" cont="0"/>
         <request index="1" response="0001" foes="0001" cont="0"/>

@@ -121,7 +121,7 @@ def generate_routefile():
     ]
     
     
-    with open("data/osm.rou.xml", "w") as routes: 
+    with open("../simulation/osm.rou.xml", "w") as routes: 
         print("""<routes>
         <vType id="type1" lcStrategic="100" lcKeepRight="100" lcSpeedGain="100" lcCooperative="1" lcSublane="100" />""", file=routes)
 
@@ -130,7 +130,7 @@ def generate_routefile():
                     route[0], route[1]), file=routes)
 
         vehNr = 0
-        N = 30  # number of time steps per interval (5 min)
+        N = 300  # number of time steps per interval (5 min)
         for i in range(2):
             for j in range(N):
                 for route in routesList:                                                        #print vehicle density for each interval for each route                   
@@ -288,9 +288,19 @@ def run():
     next_phase_s4221 = 0
     
     MINIMUM_TRAFFIC_ACTIVITY = 3
-    traci.trafficlight.setPhase("5861321343", 0)
+    traci.trafficlight.setPhase("5861321343", 0)  
     
-    while traci.simulation.getMinExpectedNumber() > 0:
+    #RL stuff
+    e = .05
+    stateActionValuesFile = open("stateActionValues.csv", "r")
+    stateActionValues = stateActionValuesFile.readlines()
+    stateActionValuesFile.close()
+    saveStateActions = open("stateActions.csv", "w")
+    takeMove = True
+    transitionCounter_s4219 = 0
+    currentActivePhase = 6
+    
+    while step <= 600:
         traci.simulationStep()
         # add in other traffic lights
         #static edf algo
@@ -353,7 +363,6 @@ def run():
                             next_phase_s4221 = i
                             
                 prev_phase_s4221 = phase_s4221
-                print(prev_phase_s4221)
                 transition = chr(65+phase_s4221) + "-" + chr(65+next_phase_s4221) + "-1"                         # eg. A-C-1
                 if phase_s4221 != next_phase_s4221:
                     
@@ -447,7 +456,7 @@ def run():
                             next_phase_s4220 = i
                             
                 prev_phase_s4220 = phase_s4220
-                transition = chr(65+phase_s4220) + "-" + chr(65+next_phase_s4220) + "-1"                         # eg. A-C-1
+                transition_s4220 = chr(65+phase_s4220) + "-" + chr(65+next_phase_s4220) + "-1"                         # eg. A-C-1
                 if phase_s4220 != next_phase_s4220:
                     
                     
@@ -455,7 +464,7 @@ def run():
                     names = str(logics[0].getPhases()).split("name='")
                     for i in range(1,len(names)):
                         
-                        if str(names[i].split("'")[0]) == str(transition):
+                        if str(names[i].split("'")[0]) == str(transition_s4220):
                             transitionID = i-1
                     traci.trafficlight.setPhase("gneJ41", transitionID)              #change to transition
                     
@@ -480,13 +489,13 @@ def run():
         #https://sumo.dlr.de/docs/Simulation/Output/Summary.html for each step reward
         # e1 output can be used if timesteps can be changed to 1 per step
         
-        # Files: rl-runner, stateValues.xml, actions.xml, summary.xml, episodeStates.xml, updateTable.xml
+        # Files: rl-runner, stateActionValues.xml, actions.xml, summary.xml, episodeStates.xml, updateTable.xml
         #States:
         # Loop detectors groups high/low (2^8)                              *
         # or time since last activation? 4s = 4^8
-        # max expected demand group (one hot, 8 options, 3 bit(000-111))    * 
-        # (and 2nd max?)
-        # Current phase (7 options, 3-bit)               			        *
+        # max expected demand group (9 options)                             * 
+        # (and 2nd max? (8 options))
+        # Current phase (7 options)                                 *
         # -sum of exit lane detector_delays? would indicate the load on adjacent junctions          
         # state space size = 4,194,000 or 16,384
         # can hard-code minimum activity time to reduce state size (but kind of goes against RL)
@@ -505,13 +514,113 @@ def run():
         
         #TODO: 
         # Record action taken at each time and save to actions.xml, record states at each time to episodeStates.xml
-        # use updateTable to get state-reward tuple, update states in stateValues
+        # use updateTable to get state-reward tuple, update states in stateActionValues
         # in new file: 
-        #  use summary.xml and actions.xml to assign rewards to stateValues.xml
+        #  use summary.xml and actions.xml to assign rewards to stateActionValues.xml
+        # loss curves
+        # automate whole process
+        # stateActionValues.csv: cols will have different loop detector group activations + sum (257)
+        # rows will be for current phase and max expected demand group (56)
+        currentPhase_s4219 = traci.trafficlight.getPhase("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525") 
+            
+        currentLoopsState = []   
+        groupActivity_s4219 = []   
+        for i in range(0, len(lanesForGroups_s4219)):
+            if i in lanesForGroupsForPhases_s4219[currentActivePhase]: # if group in current phase
+         
+                for lane in lanesForGroups_s4219[i]:                   # reset delay for each lane
+                    detector_delay_s4219[lane] = 0
+                    groupActivity_s4219.append(int(traci.inductionloop.getTimeSinceDetection("site4219_" + str(lane))))
+                    
+            else:
+                for lane in lanesForGroups_s4219[i]:                   
+                    if int(traci.inductionloop.getTimeSinceDetection("site4219_" + str(lane))) == 0:      # if vehicle waiting on any lane in group
+                        detector_delay_s4219[lane] += 1                     # increment delay time
+        
+       
+        
+        if min(groupActivity_s4219) < MINIMUM_TRAFFIC_ACTIVITY:
+            carsFlowing = 1
+        else:
+            carsFlowing = 0
+        
+        earliestDeadline_s4219 = detector_delay_s4219.index(max(detector_delay_s4219))
+        for group in lanesForGroups_s4219:
+            trafficWaiting = False
+            if earliestDeadline_s4219 in lanesForGroups_s4219[group]:
+                earliestDeadlineGroup_s4219 = group
+            for lane in lanesForGroups_s4219[group]:
+                if detector_delay_s4219[lane] > 0:      # if vehicle waiting on any lane in group
+                    trafficWaiting = True
+            if trafficWaiting == True:
+                currentLoopsState.append(1)
+            else:
+                currentLoopsState.append(0)
+        temp =  ""
+        for loop in currentLoopsState:
+            temp += str(loop)
+        currentLoopsState = temp
         
         
-        DO THiS
-        to kipi - route distributions
+        if takeMove:
+            transitionCounter_s4219 = 0
+            if random.random() < e: # take random move
+                move = random.randint(0,6)
+            else: # for the expected max demand group, find the values of all the phases for that group
+                if step <= 300:
+                    maxGroup = 4
+                else:
+                    maxGroup = 4
+                # group 4 is currently max for both timesteps, ^this method needs to change (automating routeslist would help for this)
+                # can this be more efficient? put stateActionValues into panda dataFrame >
+                moveValue = -9999
+                i = 0
+                currentState = str(ord(transition_s2419[0])-65) + str(earliestDeadlineGroup_s4219) + currentLoopsState + str(carsFlowing)
+                stateInDec = (int(currentState[0])*1024*9) + (int(currentState[1],9)*1024) + int(currentState[2:12],2)  #convert the state to its row no equivalent
+                actions = stateActionValues[stateInDec].split(",",8)[1:8]
+                i = 0
+                for action in actions:
+                    actions[i] = float(action)
+                    i += 1
+                move = actions.index(max(actions))
+ 
+                
+            transition_s2419 = chr(65+currentPhase_s4219) + "-" + chr(65+move) + "-1"                         # eg. A-C-1 
+                
+            if move != currentPhase_s4219:
+                logics = traci.trafficlight.getAllProgramLogics("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525") 
+                names = str(logics[0].getPhases()).split("name='")
+                for i in range(1,len(names)):
+                    if str(names[i].split("'")[0]) == str(transition_s2419):
+                        transitionID_s4219 = i-1
+                
+                traci.trafficlight.setPhase("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", transitionID_s4219)              #change to transition
+                
+                takeMove = False                                                                # do not take moves while transitioning phase
+                
+                leftTurn_phase = traci.trafficlight.getPhase("5861321343")
+                if (move == 0 or move == 2 or move == 3) and leftTurn_phase == 0: # if traffic is turning left and should not in next phase, switch to red light
+                    traci.trafficlight.setPhase("5861321343", 1) 
+                elif (move == 1 or move == 4 or move == 5 or move == 6) and leftTurn_phase == 2: # if traffic can turn left, switch to green light
+                    traci.trafficlight.setPhase("5861321343", 3)
+                
+                
+            #otherwise, do nothing. Reset duration of phase?
+            #saveStateActions.write(transition_s2419 +","+ currentLoopsState +","+ str(currentActivePhase) +"\n")#TODO: add max group
+       
+        else:
+            #need to account for left turn traffic light
+       
+            transitionCounter_s4219 += 1
+            if transitionCounter_s4219 == YELLOW_PHASE + RED_PHASE - 1:
+                takeMove = True
+                currentActivePhase = move
+                traci.trafficlight.setPhase("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", move) #change to next phase
+                        
+        #in order: current phase, index of longest waiting group, loop states[8 bits], activity in current phase[1 bit], action                
+        saveStateActions.write(str(ord(transition_s2419[0])-65) + str(earliestDeadlineGroup_s4219) + currentLoopsState + str(carsFlowing) +","+ str(move)+"\n")#TODO: add max group 
+                  
+                    
         # ----------------------------------------------------------------------SITE 4235--------------------------------------------------------------------------------------------------
         site4235_phase = traci.trafficlight.getPhase("cluster_1707799581_314056954_5931861577") # phase indexing starts at 0 
         for i in range(1,site4235_LOOP_COUNT):                                                  # for each loop detector
@@ -588,7 +697,7 @@ def run():
 def get_options():
     optParser = optparse.OptionParser()
     optParser.add_option("--nogui", action="store_true",
-                         default=False, help="run the commandline version of sumo")
+                         default=True, help="run the commandline version of sumo")
     options, args = optParser.parse_args()
     return options
 
@@ -609,6 +718,7 @@ if __name__ == "__main__":
 
     # this is the normal way of using traci. sumo is started as a
     # subprocess and then the python script connects and runs
-    traci.start([sumoBinary, "-c", "simulation/osm.sumocfg",
-                             "--tripinfo-output", "output/tripinfoEDF.xml", "--no-internal-links", "--summary", "output/summary.xml"])
+    #"--no-step-log", "true", 
+    traci.start([sumoBinary, "-c", "../simulation/osm.sumocfg", "--no-step-log", "true", 
+                             "--tripinfo-output", "tripinfoRL.xml", "--no-internal-links", "--summary", "summary.xml"])
     run()

@@ -569,6 +569,7 @@ def run():
                 moveValue = -9999
                 i = 0
                 currentState = str(ord(transition_s2419[0])-65) + str(earliestDeadlineGroup_s4219) + currentLoopsState + str(carsFlowing)
+                #print(currentState)
                 stateInDec = (int(currentState[0])*1024*9) + (int(currentState[1],9)*1024) + int(currentState[2:12],2)  #convert the state to its row no equivalent
                 actions = stateActionValues[stateInDec].split(",",8)[1:8]
                 i = 0
@@ -690,7 +691,7 @@ def run():
 def get_options():
     optParser = optparse.OptionParser()
     optParser.add_option("--nogui", action="store_true",
-                         default=True, help="run the commandline version of sumo")
+                         default=False, help="run the commandline version of sumo")
     options, args = optParser.parse_args()
     return options
 

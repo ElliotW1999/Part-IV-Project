@@ -144,7 +144,7 @@ def generate_routefile():
                 
 
 # needs work
-def run():
+def run(isTesting):
     """execute the TraCI control loop"""
     step = 0
     YELLOW_PHASE = 4
@@ -291,7 +291,10 @@ def run():
     traci.trafficlight.setPhase("5861321343", 0)  
     
     #RL stuff
-    e = .00
+    if isTesting:
+        e = .00
+    else:
+        e = .05
     stateActionValuesFile = open("stateActionValues.csv", "r")
     stateActionValues = stateActionValuesFile.readlines()
     stateActionValuesFile.close()
@@ -691,13 +694,14 @@ def run():
 def get_options():
     optParser = optparse.OptionParser()
     optParser.add_option("--nogui", action="store_true",
-                         default=False, help="run the commandline version of sumo")
+                         default=True, help="run the commandline version of sumo")
     options, args = optParser.parse_args()
     return options
 
 
 # this is the main entry point of this script
 if __name__ == "__main__":
+    isTesting = sys.argv[1]
     options = get_options()
 
     # this script has been called from the command line. It will start sumo as a
@@ -715,4 +719,4 @@ if __name__ == "__main__":
     #"--no-step-log", "true", 
     traci.start([sumoBinary, "-c", "../simulation/osm.sumocfg", "--no-step-log", "true", 
                              "--tripinfo-output", "tripinfoRL.xml", "--no-internal-links", "--summary", "summary.xml"])
-    run()
+    run(isTesting)

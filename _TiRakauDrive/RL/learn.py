@@ -9,15 +9,8 @@ meanWaitingTimes = []
 steps = costs.getElementsByTagName('step') #vehicles halted 
 for step in steps: 
     stepCosts.append(int(step.attributes['halting'].value)) #600 quantities of vehicles halting
-    meanWaitingTimes.append(float(step.attributes['meanWaitingTime'].value)) # for loss curves
+    meanWaitingTimes.append(float(step.attributes['meanWaitingTime'].value)) # for loss curves, TODO remove
     
-    
-lossCurve = open("generateLossCurves.csv", "a+")
-lossCurve.write( str(sum(stepCosts)))
-lossCurve.write( " ")
-lossCurve.write( str(sum(meanWaitingTimes)))
-lossCurve.write( "\n")
-lossCurve.close()
 
 stateActionsFile = open("stateActions.csv", "r")
 
@@ -91,7 +84,7 @@ for row in stateActionValues: #modifies the visited stateActions by finding the 
         while i < 7:  
             value = float(rowValues[i+1])                               # get the current value of the state/action pair
             if i == int(SARS[sARSNumber][1]) and rowNo == stateInDec:   # if action has been observed
-                reward = -100*SARS[sARSNumber][2]                       #value is -vehicles halting (we want to maximize the reward, hence minimize vehicle halting)
+                reward = -10*SARS[sARSNumber][2]                       #value is -vehicles halting (we want to maximize the reward, hence minimize vehicle halting)
                 nextStateValue = (SARS[sARSNumber][3])
                 nextStateDec = (int(nextStateValue[0])*1024*9) + (int(nextStateValue[1],9)*1024) + int(nextStateValue[2:12],2)
                 nextState = stateActionValues[nextStateDec]

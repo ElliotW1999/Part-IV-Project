@@ -1,11 +1,11 @@
 test = open("stateActionValues.csv", "w")
 
-for i in range(0, 7):
-    for k in range(0, 9):
-        for j in range (0, 512):
-            x = format(j, '09b')
-            for m in range(0, 2):
-                test.write(str(i)+str(k)+str(x)+str(m)+"    ,") #remove?
+for m in range(0, 10):
+    for i in range(0, 7):
+        for k in range(0, 9):
+            for j in range (0, 512):
+                x = format(j, '09b')
+                test.write(str(m)+str(i)+str(k)+str(x)+"    ,") #remove?
                 for l in range(0, 7):
                     test.write("0.0,")
                 test.write("\n")

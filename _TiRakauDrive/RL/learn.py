@@ -69,6 +69,7 @@ updatestateActionValues = open("stateActionValues.csv", "w")
 
         
 learningRate = .05
+gamma = .9 # discount factor
 sARSNumber = 0 #points to number in list
 maxGroup = 4 #TODO should not be hardcoded
 rowNo = 0
@@ -77,25 +78,26 @@ rowNo = 0
 for row in stateActionValues: #modifies the visited stateActions by finding the row and col of the stateActions
     rowValues = row.split(",",8)   
     currentState = SARS[sARSNumber][0]
-    stateInDec = (int(currentState[0])*1024*9) + (int(currentState[1],9)*1024) + int(currentState[2:12],2)  #convert the state to its row no equivalent
+    stateInDec = (int(currentState[0])*512*9*7) + (int(currentState[1])*512*9) + (int(currentState[2],9)*512) + int(currentState[3:12],2)  #convert the state to its row no equivalent
     if rowNo == stateInDec:                                             # if state has been observed in SARS list
         updatestateActionValues.write(str(rowValues[0] )+"," )          #don't forget to print the state
         i = 0
         while i < 7:  
             value = float(rowValues[i+1])                               # get the current value of the state/action pair
             if i == int(SARS[sARSNumber][1]) and rowNo == stateInDec:   # if action has been observed
-                reward = -10*SARS[sARSNumber][2]                       #value is -vehicles halting (we want to maximize the reward, hence minimize vehicle halting)
+                reward = -1*SARS[sARSNumber][2]                       #value is -vehicles halting (we want to maximize the reward, hence minimize vehicle halting)
                 nextStateValue = (SARS[sARSNumber][3])
-                nextStateDec = (int(nextStateValue[0])*1024*9) + (int(nextStateValue[1],9)*1024) + int(nextStateValue[2:12],2)
+                nextStateDec = (int(nextStateValue[0])*512*9*7) + (int(nextStateValue[1])*512*9) + (int(nextStateValue[2],9)*512) + int(nextStateValue[3:12],2)  
+
                 nextState = stateActionValues[nextStateDec]
                 nextStateActions = [float(qValue) for qValue in nextState.split(",",8)[1:8]]
                 maxAction = max(nextStateActions)
-                update = value + (reward + maxAction - value)*learningRate                         #q-learning update, *maxAction by gamma?
+                update = value + (reward + (gamma*maxAction) - value)*learningRate                         #q-learning update, *maxAction by gamma?
 
                 updatestateActionValues.write(str(update )+",")
                 sARSNumber += 1
                 currentState = SARS[sARSNumber][0]
-                stateInDec = (int(currentState[0])*1024*9) + (int(currentState[1],9)*1024) + int(currentState[2:12],2)  #convert the state to its row no equivalent
+                stateInDec = (int(currentState[0])*512*9*7) + (int(currentState[1])*512*9) + (int(currentState[2],9)*512) + int(currentState[3:12],2)  #convert the state to its row no equivalent
     
                 #if next SARS state and action is same as last, stay on the same, else increment 
                 if int(SARS[sARSNumber][1]) != i or int(SARS[sARSNumber][0]) != int(SARS[sARSNumber-1][0]):

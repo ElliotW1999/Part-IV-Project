@@ -1,4 +1,5 @@
 import matplotlib.pyplot as plt
+import numpy 
 
 tripdata = open("tripinfoRL.xml", "r")
 timeLoss = []
@@ -58,8 +59,11 @@ plt.xlabel('episode number')
 plt.ylabel('Time loss (s)')
 plt.show()
 
-print(sum(timeLoss))
-print(sum(timeStopped))
+print(numpy.mean(timeLoss))
+print(numpy.std(timeLoss))
+
+print(numpy.mean(timeStopped))
+print(numpy.std(timeStopped))
 print(len(timeLoss))
 
 

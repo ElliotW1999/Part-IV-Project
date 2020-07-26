@@ -292,9 +292,9 @@ def run(isTesting):
     
     #RL stuff
     if isTesting:
-        e = .00
+        e = .0
     else:
-        e = .05
+        e = .02
     stateActionValuesFile = open("stateActionValues.csv", "r")
     stateActionValues = stateActionValuesFile.readlines()
     stateActionValuesFile.close()
@@ -526,7 +526,6 @@ def run(isTesting):
          
                 for lane in lanesForGroups_s4219[i]:                   # reset delay for each lane
                     detector_delay_s4219[lane] = 0
-                    groupActivity_s4219.append(int(traci.inductionloop.getTimeSinceDetection("site4219_" + str(lane))))
                     
             else:
                 for lane in lanesForGroups_s4219[i]:                   
@@ -534,11 +533,13 @@ def run(isTesting):
                         detector_delay_s4219[lane] += 1                     # increment delay time
         
        
-        
-        if min(groupActivity_s4219) < MINIMUM_TRAFFIC_ACTIVITY:
-            carsFlowing = 1
-        else:
-            carsFlowing = 0
+        for group in lanesForGroupsForPhases_s4219[currentActivePhase]:
+            for lane in lanesForGroups_s4219[group]:
+                groupActivity_s4219.append(int(traci.inductionloop.getTimeSinceDetection("site4219_" + str(lane))))
+                    
+        carsFlowing = max(groupActivity_s4219)
+        carsFlowing = min(carsFlowing, 9)
+            
         
         earliestDeadline_s4219 = detector_delay_s4219.index(max(detector_delay_s4219))
         for group in lanesForGroups_s4219:
@@ -556,12 +557,14 @@ def run(isTesting):
         for loop in currentLoopsState:
             temp += str(loop)
         currentLoopsState = temp
-        
-        
+        currentState = str(carsFlowing) + str(ord(transition_s2419[0])-65) + str(earliestDeadlineGroup_s4219) + currentLoopsState 
+                
+                
         if takeMove:
             transitionCounter_s4219 = 0
             if random.random() < e: # take random move
                 move = random.randint(0,6)
+                
             else: # for the expected max demand group, find the values of all the phases for that group
                 if step <= 300:
                     maxGroup = 4
@@ -571,9 +574,8 @@ def run(isTesting):
                 # can this be more efficient? put stateActionValues into panda dataFrame >
                 moveValue = -9999
                 i = 0
-                currentState = str(ord(transition_s2419[0])-65) + str(earliestDeadlineGroup_s4219) + currentLoopsState + str(carsFlowing)
-                #print(currentState)
-                stateInDec = (int(currentState[0])*1024*9) + (int(currentState[1],9)*1024) + int(currentState[2:12],2)  #convert the state to its row no equivalent
+                
+                stateInDec = (int(currentState[0])*512*9*7) + (int(currentState[1])*512*9) + (int(currentState[2],9)*512) + int(currentState[3:12],2)  #convert the state to its row no equivalent
                 actions = stateActionValues[stateInDec].split(",",8)[1:8]
                 i = 0
                 for action in actions:
@@ -613,9 +615,10 @@ def run(isTesting):
                 takeMove = True
                 currentActivePhase = move
                 traci.trafficlight.setPhase("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", move) #change to next phase
+        currentState = str(carsFlowing) + str(ord(transition_s2419[0])-65) + str(earliestDeadlineGroup_s4219) + currentLoopsState 
                         
         #in order: current phase, index of longest waiting group, loop states[8 bits], activity in current phase[1 bit], action                
-        saveStateActions.write(str(ord(transition_s2419[0])-65) + str(earliestDeadlineGroup_s4219) + currentLoopsState + str(carsFlowing) +","+ str(move)+"\n")#TODO: add max group 
+        saveStateActions.write(currentState +","+ str(move)+"\n")#TODO: add max group 
                   
                     
         # ----------------------------------------------------------------------SITE 4235--------------------------------------------------------------------------------------------------

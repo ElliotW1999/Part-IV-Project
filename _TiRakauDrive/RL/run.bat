@@ -1,8 +1,8 @@
 @echo off
 for /F "tokens=2" %%i in ('date /t') do set startdate=%%i
 set starttime=%time%
-for /l %%y in (1, 1, 2) do (
-    for /l %%x in (1, 1, 50) do (
+for /l %%y in (1, 1, 500) do (
+    for /l %%x in (1, 1, 10) do (
         C:\Users\Elliot\Anaconda3\envs\PartIvProject\python.exe RL-runner.py 0
         C:\Users\Elliot\Anaconda3\envs\PartIvProject\python.exe learn.py
     )

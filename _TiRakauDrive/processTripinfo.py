@@ -1,4 +1,5 @@
 import matplotlib.pyplot as plt
+import numpy
 
 tripdata = open("output/tripinfoSCATS.xml", "r")
 timeLoss = []
@@ -34,6 +35,10 @@ plt.xlabel('Time (s)')
 plt.ylabel('Number of vehs')
 plt.hist(timeLoss, bins=binsvalues)
 plt.show()
-print(sum(timeLoss))
-print(sum(timeStopped))
+
+print(numpy.mean(timeLoss))
+print(numpy.std(timeLoss))
+
+print(numpy.mean(timeStopped))
+print(numpy.std(timeStopped))
 print(len(timeLoss))

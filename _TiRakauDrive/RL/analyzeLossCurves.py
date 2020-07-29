@@ -46,6 +46,8 @@ for line in lossCurves:
     lossPerEpisode.append(int(line[0]))
 
 avgLoss = []
+for i in range (0, 9):
+    avgLoss.append(lossPerEpisode[1])
 i = 0
 for i in range(10, len(lossPerEpisode)-1):
     x =( lossPerEpisode[i] + lossPerEpisode[i-1] + lossPerEpisode[i-2] + lossPerEpisode[i-3] + lossPerEpisode[i-4] + lossPerEpisode[i-5] + lossPerEpisode[i-6] + lossPerEpisode[i-7] + lossPerEpisode[i-8] + lossPerEpisode[i-9] )/10

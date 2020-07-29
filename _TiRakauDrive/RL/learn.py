@@ -35,8 +35,10 @@ while i < len(stateActionValueTuple)-1:
     rewardAverage = stateActionValueTuple[i][2]
     counter = 1
     # squash all the transition steps into 1 reward
-    if stateActionValueTuple[i][0][0] == stateActionValueTuple[i+1][0][0] and stateActionValueTuple[i][1] == stateActionValueTuple[i+1][1] and stateActionValueTuple[i][0][0] != stateActionValueTuple[i][1]:
-        while stateActionValueTuple[i][0][0] == stateActionValueTuple[i+1][0][0] and stateActionValueTuple[i][1] == stateActionValueTuple[i+1][1] and stateActionValueTuple[i][0][0] != stateActionValueTuple[i][1]:
+    # stateActionValueTuple[i][0][1] = current phase
+    # stateActionValueTuple[i][1] = 
+    if stateActionValueTuple[i][0][1] == stateActionValueTuple[i+1][0][1] and stateActionValueTuple[i][1] == stateActionValueTuple[i+1][1] and stateActionValueTuple[i][0][1] != stateActionValueTuple[i][1]:
+        while stateActionValueTuple[i][0][1] == stateActionValueTuple[i+1][0][1] and stateActionValueTuple[i][1] == stateActionValueTuple[i+1][1] and stateActionValueTuple[i][0][1] != stateActionValueTuple[i][1]:
             i += 1
             counter += 1
 

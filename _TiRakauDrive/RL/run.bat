@@ -15,3 +15,4 @@ set endtime=%time%
 echo start time is %startdate%:%starttime%
 echo end time is %enddate%:%endtime%
 pause
+

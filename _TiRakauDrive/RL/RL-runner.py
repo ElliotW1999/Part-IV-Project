@@ -291,10 +291,10 @@ def run(isTesting):
     traci.trafficlight.setPhase("5861321343", 0)  
     
     #RL stuff
-    if isTesting:
+    if isTesting == 1:
         e = .0
     else:
-        e = .02
+        e = .7
     stateActionValuesFile = open("stateActionValues.csv", "r")
     stateActionValues = stateActionValuesFile.readlines()
     stateActionValuesFile.close()

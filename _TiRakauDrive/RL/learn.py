@@ -9,7 +9,7 @@ meanWaitingTimes = []
 steps = costs.getElementsByTagName('step') #vehicles halted 
 for step in steps: 
     stepCosts.append(int(step.attributes['halting'].value)) #600 quantities of vehicles halting
-    meanWaitingTimes.append(float(step.attributes['meanWaitingTime'].value)) # for loss curves, TODO remove
+    meanWaitingTimes.append(float(step.attributes['meanTravelTime'].value)) # for loss curves, TODO remove
     
 
 stateActionsFile = open("stateActions.csv", "r")
@@ -34,9 +34,11 @@ i = 0
 while i < len(stateActionValueTuple)-1:
     rewardAverage = stateActionValueTuple[i][2]
     counter = 1
-    # squash all the transition steps into 1 reward
-    # stateActionValueTuple[i][0][1] = current phase
-    # stateActionValueTuple[i][1] = 
+    # IMPORTANT check this again if state is changed
+    # squash all the transition steps into 1 reward, if current phase is next step phase, action is next step action and action is not the same as state
+    # stateActionValueTuple[i][0][1] = current phase, stateActionValueTuple[i+1][0][1] = next step phase
+    # stateActionValueTuple[i][1] = action, stateActionValueTuple[i+1][1] = next step action
+    
     if stateActionValueTuple[i][0][1] == stateActionValueTuple[i+1][0][1] and stateActionValueTuple[i][1] == stateActionValueTuple[i+1][1] and stateActionValueTuple[i][0][1] != stateActionValueTuple[i][1]:
         while stateActionValueTuple[i][0][1] == stateActionValueTuple[i+1][0][1] and stateActionValueTuple[i][1] == stateActionValueTuple[i+1][1] and stateActionValueTuple[i][0][1] != stateActionValueTuple[i][1]:
             i += 1

@@ -43,7 +43,7 @@ lossPerEpisode= []
 i = 0
 for line in lossCurves:
     line = line.split(" ")
-    lossPerEpisode.append(int(line[0]))
+    lossPerEpisode.append(float(line[0]))
 
 avgLoss = []
 for i in range (0, 9):
@@ -64,7 +64,7 @@ plt.show()
 delta = []
 learningUpdates = open("learningUpdates.csv", "r")
 for line in learningUpdates:
-    delta.append(numpy.linalg.norm(float(line)))
+    delta.append(float(line))
     
 
 

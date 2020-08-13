@@ -2,6 +2,7 @@ from xml.dom import minidom
 #import pandas as pd
 import operator
 import time
+import numpy 
 
 costs = minidom.parse("summary.xml")
 stepCosts = []
@@ -72,8 +73,8 @@ stateActionValuesFile.close()
 updatestateActionValues = open("stateActionValues.csv", "w")
 
         
-learningRate = .05
-gamma = .9 # discount factor
+learningRate = .03
+gamma = 1 # discount factor
 sARSNumber = 0 #points to number in list
 maxGroup = 4 #TODO should not be hardcoded
 rowNo = 0
@@ -97,7 +98,7 @@ for row in stateActionValues: #modifies the visited stateActions by finding the 
                 nextStateActions = [float(qValue) for qValue in nextState.split(",",8)[1:8]]
                 maxAction = max(nextStateActions)
                 update = value + (reward + (gamma*maxAction) - value)*learningRate                         #q-learning update, *maxAction by gamma?
-                delta = delta + update - value
+                delta = delta + numpy.linalg.norm(update - value)
                 updatestateActionValues.write(str(update )+",")
                 sARSNumber += 1
                 currentState = SARS[sARSNumber][0]

@@ -292,9 +292,9 @@ def run(isTesting):
     
     #RL stuff
     if isTesting == "1":
-        e = 0
+        e = 0.0
     else:
-        e = 0.5
+        e = 0.1
     stateActionValuesFile = open("stateActionValues.csv", "r")
     stateActionValues = stateActionValuesFile.readlines()
     stateActionValuesFile.close()
@@ -607,7 +607,7 @@ def run(isTesting):
         
         
         #in order: current phase, index of longest waiting group, loop states[8 bits], activity in current phase[1 bit], action 
-
+        #print(currentState +","+ str(move))
         saveStateActions.write(currentState +","+ str(move)+"\n")#TODO: add max group 
   
         # ----------------------------------------------------------------------SITE 4235--------------------------------------------------------------------------------------------------

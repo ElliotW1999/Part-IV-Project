@@ -5,7 +5,7 @@ stepCosts = []
 meanWaitingTimes = []
 steps = costs.getElementsByTagName('step') #vehicles halted 
 for step in steps: 
-    stepCosts.append(int(step.attributes['halting'].value)) #600 quantities of vehicles halting
+    stepCosts.append(float(step.attributes['meanSpeed'].value)) #600 quantities of vehicles halting
     meanWaitingTimes.append(float(step.attributes['meanWaitingTime'].value)) # for loss curves
     
     

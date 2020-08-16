@@ -43,7 +43,7 @@ lossPerEpisode= []
 i = 0
 for line in lossCurves:
     line = line.split(" ")
-    lossPerEpisode.append(int(line[0]))
+    lossPerEpisode.append(float(line[0])/600)
 
 avgLoss = []
 for i in range (0, 9):
@@ -56,9 +56,9 @@ for i in range(10, len(lossPerEpisode)-1):
 
 plt.plot( lossPerEpisode)
 plt.plot( avgLoss)
-plt.title('Loss per episode')
+plt.title('Reward per episode')
 plt.xlabel('episode number')
-plt.ylabel('Time loss (s)')
+plt.ylabel('Mean speed (m/s)')
 plt.show()
 
 delta = []

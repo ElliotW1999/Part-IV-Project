@@ -26,6 +26,7 @@ import os
 import sys
 import optparse
 import random
+import datetime
 # we need to import python modules from the $SUMO_HOME/tools directory
 if 'SUMO_HOME' in os.environ:
     tools = os.path.join(os.environ['SUMO_HOME'], 'tools')
@@ -292,9 +293,11 @@ def run(isTesting):
     
     #RL stuff
     if isTesting == "1":
-        e = 0
+        e = 0.0
     else:
         e = 0.5
+    rng = str(datetime.datetime.now().time())[6:8]
+    random.seed(rng)
     stateActionValuesFile = open("stateActionValues.csv", "r")
     stateActionValues = stateActionValuesFile.readlines()
     stateActionValuesFile.close()
@@ -303,7 +306,7 @@ def run(isTesting):
     transitionCounter_s4219 = 0
     currentActivePhase = traci.trafficlight.getPhase("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525")
     transition_s2419 = chr(65+currentActivePhase) + "-" + chr(65+currentActivePhase) + "-1"                         # eg. A-A-1 
-            
+    move = currentActivePhase
     
     while step <= 600:
         traci.simulationStep()
@@ -516,12 +519,11 @@ def run(isTesting):
         #Algorithm:
         # Expected return of next move = Sum(nextMaxGroup&&nextPhase)[loopDetectorsOff->loopDetectorsOn]
         # e-greedy policy for training: e = .05 = %chance of taking random move. 1-e = .95 = %chance of taking move with max expected reward 
-        
         currentPhase_s4219 = traci.trafficlight.getPhase("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525") 
              
         groupActivity_s4219 = []   
         for i in range(0, len(lanesForGroups_s4219)):
-            if i in lanesForGroupsForPhases_s4219[currentActivePhase]: # if group in current phase
+            if i in lanesForGroupsForPhases_s4219[move]: # if group in current phase
          
                 for lane in lanesForGroups_s4219[i]:                   # reset delay for each lane
                     detector_delay_s4219[lane] = 0
@@ -532,7 +534,7 @@ def run(isTesting):
                         detector_delay_s4219[lane] += 1                     # increment delay time
         
 
-        for group in lanesForGroupsForPhases_s4219[currentActivePhase]: 
+        for group in lanesForGroupsForPhases_s4219[move]: 
             for lane in lanesForGroups_s4219[group]: #if getTimeSinceDetection > 0?
                 groupActivity_s4219.append(int(traci.inductionloop.getTimeSinceDetection("site4219_" + str(lane))))
         
@@ -545,12 +547,14 @@ def run(isTesting):
             if earliestDeadline_s4219 in lanesForGroups_s4219[group]:
                 earliestDeadlineGroup_s4219 = group
 
-                
         currentState = str(carsFlowing) + str(currentActivePhase) + str(earliestDeadlineGroup_s4219)  
+               
             
-        if takeMove:
+        if takeMove:                        # when takeMove is true, the move is made on the same timestep
+            #print("take move")
             transitionCounter_s4219 = 0
             if random.random() < e: # take random move
+               
                 move = random.randint(0,6)
                 
             else: # for the expected max demand group, find the values of all the phases for that group
@@ -564,7 +568,9 @@ def run(isTesting):
                 i = 0
                 
                 stateInDec = (int(currentState[0])*9*7) + (int(currentState[1])*9) + int(currentState[2],9)  #convert the state to its row no equivalent
+                #print(stateInDec)
                 actions = stateActionValues[stateInDec].split(",",8)[1:8]
+                #print(actions)
                 i = 0
                 for action in actions:
                     actions[i] = float(action)
@@ -598,15 +604,16 @@ def run(isTesting):
             #need to account for left turn traffic light
        
             transitionCounter_s4219 += 1
-            if transitionCounter_s4219 == YELLOW_PHASE + RED_PHASE - 2:
+            if transitionCounter_s4219 == YELLOW_PHASE + RED_PHASE:
                 currentActivePhase = move
-            if transitionCounter_s4219 == YELLOW_PHASE + RED_PHASE - 1:
                 takeMove = True
                 traci.trafficlight.setPhase("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", move) #change to next phase
         
         
+        currentState = str(carsFlowing) + str(currentActivePhase) + str(earliestDeadlineGroup_s4219)  
         
         #in order: current phase, index of longest waiting group, loop states[8 bits], activity in current phase[1 bit], action 
+        #print(currentState +","+ str(move))
 
         saveStateActions.write(currentState +","+ str(move)+"\n")#TODO: add max group 
   

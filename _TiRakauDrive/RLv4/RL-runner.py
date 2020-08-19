@@ -26,6 +26,7 @@ import os
 import sys
 import optparse
 import random
+import datetime
 # we need to import python modules from the $SUMO_HOME/tools directory
 if 'SUMO_HOME' in os.environ:
     tools = os.path.join(os.environ['SUMO_HOME'], 'tools')
@@ -294,7 +295,9 @@ def run(isTesting):
     if isTesting == "1":
         e = 0.0
     else:
-        e = 0.1
+        e = 0.5
+    rng = str(datetime.datetime.now().time())[6:8]
+    random.seed(rng)
     stateActionValuesFile = open("stateActionValues.csv", "r")
     stateActionValues = stateActionValuesFile.readlines()
     stateActionValuesFile.close()
@@ -516,7 +519,6 @@ def run(isTesting):
         #Algorithm:
         # Expected return of next move = Sum(nextMaxGroup&&nextPhase)[loopDetectorsOff->loopDetectorsOn]
         # e-greedy policy for training: e = .05 = %chance of taking random move. 1-e = .95 = %chance of taking move with max expected reward 
-        
         currentPhase_s4219 = traci.trafficlight.getPhase("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525") 
              
         groupActivity_s4219 = []   
@@ -549,9 +551,10 @@ def run(isTesting):
                
             
         if takeMove:                        # when takeMove is true, the move is made on the same timestep
-            print("take move")
+            #print("take move")
             transitionCounter_s4219 = 0
             if random.random() < e: # take random move
+               
                 move = random.randint(0,6)
                 
             else: # for the expected max demand group, find the values of all the phases for that group
@@ -565,9 +568,9 @@ def run(isTesting):
                 i = 0
                 
                 stateInDec = (int(currentState[0])*9*7) + (int(currentState[1])*9) + int(currentState[2],9)  #convert the state to its row no equivalent
-                print(stateInDec)
+                #print(stateInDec)
                 actions = stateActionValues[stateInDec].split(",",8)[1:8]
-                print(actions)
+                #print(actions)
                 i = 0
                 for action in actions:
                     actions[i] = float(action)
@@ -610,8 +613,8 @@ def run(isTesting):
         currentState = str(carsFlowing) + str(currentActivePhase) + str(earliestDeadlineGroup_s4219)  
         
         #in order: current phase, index of longest waiting group, loop states[8 bits], activity in current phase[1 bit], action 
-        print(currentState +","+ str(move))
-        print(step)
+        #print(currentState +","+ str(move))
+
         saveStateActions.write(currentState +","+ str(move)+"\n")#TODO: add max group 
   
         # ----------------------------------------------------------------------SITE 4235--------------------------------------------------------------------------------------------------
@@ -690,7 +693,7 @@ def run(isTesting):
 def get_options():
     optParser = optparse.OptionParser()
     optParser.add_option("--nogui", action="store_true",
-                         default=False, help="run the commandline version of sumo")
+                         default=True, help="run the commandline version of sumo")
     options, args = optParser.parse_args()
     return options
 

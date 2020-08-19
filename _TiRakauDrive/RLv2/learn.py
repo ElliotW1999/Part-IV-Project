@@ -9,7 +9,7 @@ stepCosts = []
 meanWaitingTimes = []
 steps = costs.getElementsByTagName('step') #vehicles halted 
 for step in steps: 
-    stepCosts.append(float(step.attributes['meanSpeed'].value)) #600 quantities of vehicles halting
+    stepCosts.append(float(step.attributes['meanSpeed'].value)/int(step.attributes['running'].value)) #600 quantities of vehicles halting
     meanWaitingTimes.append(float(step.attributes['meanTravelTime'].value)) # for loss curves, TODO remove
     
     
@@ -77,8 +77,8 @@ stateActionValuesFile.close()
 updatestateActionValues = open("stateActionValues.csv", "w")
 
         
-learningRate = .05
-gamma = 0.9 # discount factor
+learningRate = .04
+gamma = 0.64 # discount factor
 sARSNumber = 0 #points to number in list
 maxGroup = 4 #TODO should not be hardcoded
 rowNo = 0

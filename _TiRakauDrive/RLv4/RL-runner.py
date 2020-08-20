@@ -295,7 +295,7 @@ def run(isTesting):
     if isTesting == "1":
         e = 0.0
     else:
-        e = 0.5
+        e = 0.1
     rng = str(datetime.datetime.now().time())[6:8]
     random.seed(rng)
     stateActionValuesFile = open("stateActionValues.csv", "r")
@@ -693,7 +693,7 @@ def run(isTesting):
 def get_options():
     optParser = optparse.OptionParser()
     optParser.add_option("--nogui", action="store_true",
-                         default=True, help="run the commandline version of sumo")
+                         default=False, help="run the commandline version of sumo")
     options, args = optParser.parse_args()
     return options
 

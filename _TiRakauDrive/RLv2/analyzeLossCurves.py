@@ -65,10 +65,23 @@ delta = []
 learningUpdates = open("learningUpdates.csv", "r")
 for line in learningUpdates:
     delta.append(numpy.linalg.norm(float(line)))
-    
+
+avgDelta = []
+for i in range (0, 9):
+    avgDelta.append(delta[1])
+i = 0
+for i in range(50, len(delta)-1):
+    x= 0
+    for j in range(0, 50):
+        x = x + delta[i-j]
+    x = x/50  
+    avgDelta.append(x)
+
 
 
 plt.plot( delta)
+plt.plot( avgDelta)
+
 plt.title('learning Updates per episode')
 plt.xlabel('episode number')
 plt.ylabel('change in Q values')

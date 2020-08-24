@@ -1,2 +1,2 @@
-gamma = .64
+gamma = .32
 initialization = 0

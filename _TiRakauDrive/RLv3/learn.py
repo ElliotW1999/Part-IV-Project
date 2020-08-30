@@ -77,7 +77,7 @@ stateActionValuesFile.close()
 updatestateActionValues = open("stateActionValues.csv", "w")
 
         
-learningRate = .05
+learningRate = .02
 gamma = 0.32 # discount factor
 sARSNumber = 0 #points to number in list
 maxGroup = 4 #TODO should not be hardcoded

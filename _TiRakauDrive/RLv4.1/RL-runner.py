@@ -296,7 +296,7 @@ def run(isTesting):
     if isTesting == "1":
         e = 0.0
     else:
-        e = 0.5
+        e = 0.1
     rng = str(datetime.datetime.now().time())[6:8]
     random.seed(rng)
     stateActionValuesFile = open("stateActionValues.csv", "r")

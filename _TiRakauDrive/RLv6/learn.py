@@ -53,8 +53,6 @@ while i < len(stateActionValueTuple)-1:
     # add State, action, reward, new state
     SARS.append([stateActionValueTuple[i-counter][0], stateActionValueTuple[i-counter][1], rewardAverage/float(counter), stateActionValueTuple[i][0] ])
     
-        
-nextMoveReward.pop(0)
 i = len(SARS)-1
 while i > 0:
     SARS[i][2] = 100*(SARS[i][2] - SARS[i-1][2])/SARS[i][2] #reward is change in mean speed (current move mean speed - prev move mean speed)/ current move mean speed

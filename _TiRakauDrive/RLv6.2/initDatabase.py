@@ -1,5 +1,6 @@
 import sqlite3
 from sqlite3 import Error
+import os
 
 
 def create_connection(db_file):
@@ -33,4 +34,4 @@ def create_connection(db_file):
 
 
 if __name__ == '__main__':
-    create_connection(r"C:\Users\Elliot\Documents\GitHub\P4Project\_TiRakauDrive\RLv4.2\QTable.db")
+    create_connection(os.getcwd()+"\QTable.db")

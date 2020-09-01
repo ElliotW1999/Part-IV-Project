@@ -78,7 +78,7 @@ except Error as e:
     print(e)
 cur = conn.cursor()
         
-learningRate = .03
+learningRate = .05
 gamma = 0.32 # discount factor
 sARSNumber = 0 #points to number in list
 maxGroup = 4 #TODO should not be hardcoded
@@ -100,7 +100,7 @@ for transition in SARS:
     maxAction = max(nextStateActions)
     
     update = value + (reward + (gamma*maxAction) - value)*learningRate                         #q-learning update, *maxAction by gamma?
-    delta = delta + numpy.linalg.norm(update - value)   
+    delta = delta + numpy.linalg.norm(reward + (gamma*maxAction) - value)   
     
     cur.execute("UPDATE States SET Move" +str(int(transition[1])+1)+ "= " +str(update)+ " WHERE rowid = " +str(stateInDec)) 
 conn.commit()

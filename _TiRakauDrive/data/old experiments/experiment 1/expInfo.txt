@@ -1,0 +1,6 @@
+gamma = .32
+alpha = [.05 .04 .03 .02] for 2000 eps each
+epsilon = [.95 .5 .1 .01] for "		"
+0 initialization
+
+found that vehicles were backed up on N/Southbound, adapted map to fix

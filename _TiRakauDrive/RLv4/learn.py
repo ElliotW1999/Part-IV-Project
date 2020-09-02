@@ -26,7 +26,7 @@ for stateAction in stateActionsFile: # loops active, newLight (optional)
 stateActionsFile.close()
 
 
-stateActionValueTuple = [(states[step], actions[step], stepCosts[step]) for step in range(0, len(stepCosts))]
+stateActionValueTuple = [(states[step], actions[step], stepCosts[step]) for step in range(60, len(stepCosts))]
 
 #stateActionValueTuple.append(['111111111111', -1, -1])
 tupleNumber = 0
@@ -52,7 +52,9 @@ while i < len(stateActionValueTuple)-1:
     i += 1
     # add State, action, reward, new state
     SARS.append([stateActionValueTuple[i-counter][0], stateActionValueTuple[i-counter][1], rewardAverage/float(counter), stateActionValueTuple[i][0] ])
+
 SARS.pop()          #remove mid transition SARS 
+SARS.pop(0)          
 
 
 SARS = (sorted(SARS, key=operator.itemgetter(0,1,3)))
@@ -77,7 +79,7 @@ stateActionValuesFile.close()
 updatestateActionValues = open("stateActionValues.csv", "w")
 
         
-learningRate = .03
+learningRate = .02
 gamma = 0.32 # discount factor
 sARSNumber = 0 #points to number in list
 maxGroup = 4 #TODO should not be hardcoded

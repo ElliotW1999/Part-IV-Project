@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!-- generated on 08/27/20 12:00:44 by Eclipse SUMO GUI Version 1.5.0
+<!-- generated on 08/31/20 20:18:04 by Eclipse SUMO GUI Version 1.5.0
 <configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/sumoConfiguration.xsd">
 
     <input>
@@ -12,7 +12,7 @@
     <output>
         <queue-output value="output/queue.xml"/>
         <summary-output value="output/summary.xml"/>
-        <tripinfo-output value="output/tripinfoEDF.xml"/>
+        <tripinfo-output value="output/tripinfoQL.xml"/>
     </output>
 
     <time>
@@ -29,7 +29,7 @@
     </report>
 
     <traci_server>
-        <remote-port value="50082"/>
+        <remote-port value="53042"/>
     </traci_server>
 
 </configuration>

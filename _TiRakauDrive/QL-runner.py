@@ -542,7 +542,7 @@ def run():
         Phase_B_4235_Density = traci.lane.getLastStepVehicleNumber("619523288_0") + traci.lane.getLastStepVehicleNumber("619523288_1") + traci.lane.getLastStepVehicleNumber("619523288_2") + traci.lane.getLastStepVehicleNumber("619523288_3") + traci.lane.getLastStepVehicleNumber("619523290#1_0") + traci.lane.getLastStepVehicleNumber("619523290#1_1") + traci.lane.getLastStepVehicleNumber("619523290#1_2") + traci.lane.getLastStepVehicleNumber("619523290#1_3")
         Phase_C_4235_Density = traci.lane.getLastStepVehicleNumber("122089583#1-AddedOffRampEdge_0") + traci.lane.getLastStepVehicleNumber("619523286_0") + traci.lane.getLastStepVehicleNumber("gneE6_0") + traci.lane.getLastStepVehicleNumber("-61645695_1") + traci.lane.getLastStepVehicleNumber("-628341438#0_0") + traci.lane.getLastStepVehicleNumber("-628341438#1_0")
         Density_List_4235 = [Phase_A_4235_Density,Phase_B_4235_Density,Phase_C_4235_Density]
-        
+        print('Phase_A_4235_Density is: ' + str(Phase_A_4235_Density))
         
         if cycle_4235 == 0:
         
@@ -1823,5 +1823,5 @@ if __name__ == "__main__":
     # this is the normal way of using traci. sumo is started as a
     # subprocess and then the python script connects and runs
     traci.start([sumoBinary, "-c", "simulation/osm.sumocfg",
-                             "--tripinfo-output", "output/tripinfoEDF.xml", "--no-internal-links", "--summary", "output/summary.xml", "--queue-output","output/queue.xml"])
+                             "--tripinfo-output", "output/tripinfoQL.xml", "--no-internal-links", "--summary", "output/summary.xml", "--queue-output","output/queue.xml"])
     run()

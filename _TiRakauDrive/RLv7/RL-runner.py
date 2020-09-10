@@ -205,6 +205,7 @@ def run(isTesting):
     secondDeadlineGroup_s4219 = 0
     waitTime_s4219 = 0
     activeTraffic_s4219 = []
+    site4235_next_phase = 0
     for i in range(0, len(lanesForGroups_s4219)): # initiliaze array of 99s
         activeTraffic_s4219.append(99)
         
@@ -298,7 +299,7 @@ def run(isTesting):
     if isTesting == "1":
         e = 0.0
     else:
-        e = 0.1
+        e = 0.75
     rng = str(datetime.datetime.now().time())[6:8]
     random.seed(rng)
     
@@ -565,7 +566,7 @@ def run(isTesting):
             if secondDeadline_s4219 in lanesForGroups_s4219[group]:
                 secondDeadlineGroup_s4219 = group
                    
-        currentState = str(secondDeadlineGroup_s4219) + str(carsFlowing) + str(currentActivePhase) + str(earliestDeadlineGroup_s4219)  
+        currentState = str(next_phase_s4220) + str(secondDeadlineGroup_s4219) + str(carsFlowing) + str(currentActivePhase) + str(earliestDeadlineGroup_s4219)  
                
             
         if takeMove:                        # when takeMove is true, the move is made on the same timestep
@@ -585,7 +586,7 @@ def run(isTesting):
                 moveValue = -9999
                 i = 0
                 
-                stateInDec = (int(currentState[0])*10*9*7) + (int(currentState[1])*9*7) + (int(currentState[2])*9) + int(currentState[3],9)+1  #convert the state to its row no equivalent
+                stateInDec = (int(currentState[0])*9*10*9*7) + (int(currentState[1])*10*9*7) + (int(currentState[2])*9*7) + (int(currentState[3])*9) + int(currentState[4],9)+1  #convert the state to its row no equivalent
                 cur.execute("SELECT * FROM States WHERE rowid = " +str(stateInDec) )
                 nextStateActions = cur.fetchone()
                 move = nextStateActions.index(max(nextStateActions))
@@ -622,7 +623,7 @@ def run(isTesting):
                 takeMove = True
                 traci.trafficlight.setPhase("cluster_25977365_314059191_314060044_314061754_314061758_314062509_314062525", move) #change to next phase
 
-        currentState = str(secondDeadlineGroup_s4219) + str(carsFlowing) + str(currentActivePhase) + str(earliestDeadlineGroup_s4219)  
+        currentState = str(next_phase_s4220) + str(secondDeadlineGroup_s4219) + str(carsFlowing) + str(currentActivePhase) + str(earliestDeadlineGroup_s4219)  
         
         #in order: current phase, index of longest waiting group, loop states[8 bits], activity in current phase[1 bit], action 
         #print(currentState +","+ str(move))

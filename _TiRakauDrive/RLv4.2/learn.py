@@ -74,7 +74,7 @@ except Error as e:
     print(e)
 cur = conn.cursor()
         
-learningRate = .03
+learningRate = .01
 gamma = 0.32 # discount factor
 sARSNumber = 0 #points to number in list
 maxGroup = 4 #TODO should not be hardcoded
@@ -96,7 +96,7 @@ for transition in SARS:
     maxAction = max(nextStateActions)
     
     update = value + (reward + (gamma*maxAction) - value)*learningRate                         #q-learning update, *maxAction by gamma?
-    delta = delta + numpy.linalg.norm(update - value)   
+    delta = delta + numpy.linalg.norm(reward + (gamma*maxAction) - value)   
     
     cur.execute("UPDATE States SET Move" +str(int(transition[1])+1)+ "= " +str(update)+ " WHERE rowid = " +str(stateInDec)) 
 conn.commit()
@@ -104,62 +104,3 @@ conn.commit()
 learningUpdates = open("learningUpdates.csv", "a+")
 learningUpdates.write(str(delta) + "\n")
 learningUpdates.close()
-
-if 1 == 2:
-    print('no bueno')
-    for row in stateActionValues: #modifies the visited stateActions by finding the row and col of the stateActions
-        rowValues = row.split(",",8)   
-        currentState = SARS[sARSNumber][0]
-        stateInDec = (int(currentState[0])*10*9*7) + (int(currentState[1])*9*7) + (int(currentState[2])*9) + (int(currentState[3],9)) #convert the state to its row no equivalent
-        if rowNo == stateInDec:                                             # if state has been observed in SARS list
-            updatestateActionValues.write(str(rowValues[0] )+"," )          #don't forget to print the state
-            i = 0
-            while i < 7:  
-                value = float(rowValues[i+1])                               # get the current value of the state/action pair
-                if i == int(SARS[sARSNumber][1]) and rowNo == stateInDec:   # if action has been observed
-                    reward = SARS[sARSNumber][2]                       #value is -vehicles halting (we want to maximize the reward, hence minimize vehicle halting)
-                    nextStateValue = (SARS[sARSNumber][3])
-                    nextStateDec = (int(nextStateValue[0])*10*9*7) + (int(nextStateValue[1])*9*7) + (int(nextStateValue[2])*9) + (int(nextStateValue[3],9))
-                    nextState = stateActionValues[nextStateDec]
-                    nextStateActions = [float(qValue) for qValue in nextState.split(",",8)[1:8]]
-                    maxAction = max(nextStateActions)
-                    update = value + (reward + (gamma*maxAction) - value)*learningRate                         #q-learning update, *maxAction by gamma?
-                    delta = delta + numpy.linalg.norm(update - value)   
-                    sARSNumber += 1
-                    currentState = SARS[sARSNumber][0]
-                    stateInDec = (int(currentState[0])*10*9*7) + (int(currentState[1])*9*7) + (int(currentState[2])*9) + (int(currentState[3],9))  #convert the state to its row no equivalent
-        
-                    #if next SARS state and action is same as last, stay on the same, else increment 
-                    if int(SARS[sARSNumber][1]) != i or int(SARS[sARSNumber][0]) != int(SARS[sARSNumber-1][0]):
-                        i += 1
-                        updatestateActionValues.write(str(update )+",")
-
-                
-                else:
-                    updatestateActionValues.write(str(value)+",")
-                    i += 1
-                
-        else:                                                           #reprint what was read.        
-            updatestateActionValues.write(str(rowValues[0] )+"," )
-            for i in range(0,7):
-                value = float(rowValues[i+1])                           # get the current value of the state/action pair
-                updatestateActionValues.write(str(value)+",")
-        updatestateActionValues.write("\n")
-        rowNo += 1
-           
-
-
-     
-
-
-    #stateActionValues = pd.read_csv("stateActionValues.csv", index_col=0)
-    # cols are loop activations
-    # rows are [activePhase][maxGroup]
-
-    #print( list(stateActionValues['stateAction']).index(11)  ) # 10
-    #row = list(stateActionValues['stateAction']).index(11)
-    #col = '00000000'
-    #stateActionValues.at[row, col] = 1
-    #stateActionValues.to_csv('stateActionValues.csv')
-    #print(stateActionValues['00000000'] )
-    

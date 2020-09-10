@@ -87,13 +87,13 @@ delta = 0
 
 for transition in SARS:
     currentState = transition[0]
-    stateInDec = (int(currentState[0])*10*9*7) + (int(currentState[1])*9*7) + (int(currentState[2])*9) + (int(currentState[3],9) +1) #convert the state to its row no equivalent
+    stateInDec = (int(currentState[0])*9*10*9*7) + (int(currentState[1])*10*9*7) + (int(currentState[2])*9*7) + (int(currentState[3])*9) + int(currentState[4],9)+1  #convert the state to its row no equivalent
     cur.execute("SELECT Move"+str(int(transition[1])+1)+" FROM States WHERE rowid = " +str(stateInDec) )
     value = cur.fetchone()[0]
     reward = transition[2]
     
     nextStateValue = transition[3]
-    nextStateDec = (int(nextStateValue[0])*10*9*7) + (int(nextStateValue[1])*9*7) + (int(nextStateValue[2])*9) + (int(nextStateValue[3],9) +1)
+    nextStateDec = (int(nextStateValue[0])*9*10*9*7) + (int(nextStateValue[1])*10*9*7) + (int(nextStateValue[2])*9*7) + (int(nextStateValue[3])*9) + int(nextStateValue[4],9)+1  #convert the state to its row no equivalent
     cur.execute("SELECT * FROM States WHERE rowid = " +str(nextStateDec) )
     nextStateActions = cur.fetchone()
     maxAction = max(nextStateActions)

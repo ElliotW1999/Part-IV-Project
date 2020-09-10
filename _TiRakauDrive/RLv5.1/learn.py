@@ -6,12 +6,13 @@ import numpy
 import sqlite3
 import os
 from sqlite3 import Error
+
 costs = minidom.parse("summary.xml")
 stepCosts = []
 meanWaitingTimes = []
 steps = costs.getElementsByTagName('step') #vehicles halted 
 for step in steps: 
-    stepCosts.append(float(step.attributes['meanSpeed'].value)) #600 quantities of vehicles halting
+    stepCosts.append(float(step.attributes['meanSpeed'].value)/int(step.attributes['running'].value)) #600 quantities of vehicles halting
     meanWaitingTimes.append(float(step.attributes['meanTravelTime'].value)) # for loss curves, TODO remove
     
     
@@ -26,11 +27,14 @@ for stateAction in stateActionsFile: # loops active, newLight (optional)
     actions.append(stateAction[1])
     
 stateActionsFile.close()
-stateActionValueTuple = [(states[step], actions[step], stepCosts[step]) for step in range(60, len(stepCosts))]
 
 
+stateActionValueTuple = [(states[step], actions[step], stepCosts[step]) for step in range(50, len(stepCosts))]
+
+#stateActionValueTuple.append(['111111111111', -1, -1])
 tupleNumber = 0
 SARS = [] 
+nextMoveReward = []
 i = 0
 while i < len(stateActionValueTuple)-1:
     rewardAverage = stateActionValueTuple[i][2]
@@ -45,14 +49,20 @@ while i < len(stateActionValueTuple)-1:
         while i < len(stateActionValueTuple)-2 and stateActionValueTuple[i][0][1] == stateActionValueTuple[i+1][0][1] and stateActionValueTuple[i][1] == stateActionValueTuple[i+1][1] and stateActionValueTuple[i][0][1] != stateActionValueTuple[i][1]:
             i += 1
             counter += 1
+
             rewardAverage += stateActionValueTuple[i][2]
+
+
     i += 1
     # add State, action, reward, new state
-    SARS.append([stateActionValueTuple[i-counter][0], stateActionValueTuple[i-counter][1], rewardAverage/float(counter), stateActionValueTuple[i][0] ])    
-i = len(SARS)-1
-while i > 0:
-    SARS[i][2] = 100*(SARS[i][2] - SARS[i-1][2])/SARS[i][2] #reward is change in mean speed (current move mean speed - prev move mean speed)/ current move mean speed
-    i -= 1
+    SARS.append([stateActionValueTuple[i-counter][0], stateActionValueTuple[i-counter][1], rewardAverage/float(counter), stateActionValueTuple[i][0] ])
+    
+    nextMoveReward.append(rewardAverage/float(counter)) #reward is change in mean speed (next move mean speed - current move mean speed)
+nextMoveReward.pop(0)
+i = 0 
+while i < len(SARS)-1:
+    SARS[i][2] = 100*(nextMoveReward[i] - SARS[i][2])/SARS[i][2]
+    i += 1
 SARS.pop()          #remove mid transition SARS 
 SARS.pop(0)          
 SARS = (sorted(SARS, key=operator.itemgetter(0,1,3)))
@@ -83,7 +93,7 @@ sARSNumber = 0 #points to number in list
 maxGroup = 4 #TODO should not be hardcoded
 rowNo = 0
 delta = 0
-
+rewards = 0
 
 for transition in SARS:
     currentState = transition[0]
@@ -100,12 +110,16 @@ for transition in SARS:
     
     update = value + (reward + (gamma*maxAction) - value)*learningRate                         #q-learning update, *maxAction by gamma?
     delta = delta + numpy.linalg.norm(reward + (gamma*maxAction) - value)   
+    rewards += value
     
     cur.execute("UPDATE States SET Move" +str(int(transition[1])+1)+ "= " +str(update)+ " WHERE rowid = " +str(stateInDec)) 
 conn.commit()
+rewards = (rewards/len(SARS))*10
 
 learningUpdates = open("learningUpdates.csv", "a+")
 learningUpdates.write(str(delta) + "\n")
 learningUpdates.close()
 
-    
+rewardFile = open("totalReward.csv", "a+")
+rewardFile.write(str(rewards) + "\n")
+rewardFile.close()

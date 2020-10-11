@@ -1,15 +1,14 @@
 import matplotlib.pyplot as plt
 import numpy
+from xml.dom import minidom
 
-tripdata = open("output/tripinfoEDF.xml", "r")
+tripdata = minidom.parse("output/tripinfoEDF.xml")
 timeLoss = []
 timeStopped = []
-for line in tripdata:
-    line = line.split(' ')
-    if len(line) > 4:
-        if line[4] == "<tripinfo":
-            timeLoss.append(float(line[20].split("\"")[1]))
-            timeStopped.append(float(line[17].split("\"")[1]))
+trips = tripdata.getElementsByTagName('tripinfo') #vehicles trips 
+for trip in trips:
+    timeLoss.append(float(trip.attributes['timeLoss'].value))
+    timeStopped.append(float(trip.attributes['waitingTime'].value))
             
             
 binsvalues = []
@@ -42,3 +41,14 @@ print(numpy.std(timeLoss))
 print(numpy.mean(timeStopped))
 print(numpy.std(timeStopped))
 print(len(timeLoss))
+
+from xml.dom import minidom
+
+costs = minidom.parse("output/summary.xml")
+stepCosts = []
+meanWaitingTimes = []
+steps = costs.getElementsByTagName('step') #vehicles halted 
+for step in steps: 
+    stepCosts.append(float(step.attributes['meanSpeed'].value)) #600 quantities of vehicles halting
+    
+print(str(sum(stepCosts)/600))

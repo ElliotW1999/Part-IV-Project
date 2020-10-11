@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- generated on 09/21/20 16:53:06 by Eclipse SUMO Version 1.5.0
+<configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/sumoConfiguration.xsd">
+
+    <input>
+        <net-file value="../simulation/osm.net.xml"/>
+        <route-files value="../simulation/osm.rou.xml"/>
+        <additional-files value="../simulation/osm.det.xml"/>
+    </input>
+
+    <output>
+        <summary-output value="summary.xml"/>
+        <tripinfo-output value="tripinfoRL.xml"/>
+    </output>
+
+    <time>
+        <begin value="0"/>
+    </time>
+
+    <processing>
+        <no-internal-links value="true"/>
+    </processing>
+
+    <report>
+        <verbose value="true"/>
+        <no-step-log value="true"/>
+    </report>
+
+    <traci_server>
+        <remote-port value="49354"/>
+    </traci_server>
+
+</configuration>
+-->
+
+<summary xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/summary_file.xsd">
+    <step time="0.00" loaded="4" inserted="2" running="2" waiting="1" ended="0" arrived="0" collisions="0" teleports="0" halting="2" meanWaitingTime="0.00" meanTravelTime="-1.00" meanSpeed="0.00" meanSpeedRelative="0.00" duration="-1526212616"/>
+    <step time="1.00" loaded="464" inserted="2" running="2" waiting="3" ended="0" arrived="0" collisions="0" teleports="0" halting="0" meanWaitingTime="0.00" meanTravelTime="-1.00" meanSpeed="2.31" meanSpeedRelative="0.15" duration="-1526212609"/>
+</summary>

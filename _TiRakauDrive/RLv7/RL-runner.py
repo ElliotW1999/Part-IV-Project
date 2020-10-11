@@ -299,7 +299,7 @@ def run(isTesting):
     if isTesting == "1":
         e = 0.0
     else:
-        e = 0.75
+        e = 0.35
     rng = str(datetime.datetime.now().time())[6:8]
     random.seed(rng)
     

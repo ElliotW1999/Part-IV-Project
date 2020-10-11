@@ -37,18 +37,20 @@ while i < len(stateActionValueTuple)-1:
     counter = 1
     # IMPORTANT check this again if state is changed
     # squash all the transition steps into 1 reward, if current phase is next step phase, action is next step action and action is not the same as state
-    # stateActionValueTuple[i][0][1] = current phase, stateActionValueTuple[i+1][0][1] = next step phase
+    # stateActionValueTuple[i][0][3] = current phase, stateActionValueTuple[i+1][0][3] = next step phase
     # stateActionValueTuple[i][1] = action, stateActionValueTuple[i+1][1] = next step action
     
  
-    if stateActionValueTuple[i][0][1] == stateActionValueTuple[i+1][0][1] and stateActionValueTuple[i][1] == stateActionValueTuple[i+1][1] and stateActionValueTuple[i][0][1] != stateActionValueTuple[i][1]:
-        while i < len(stateActionValueTuple)-2 and stateActionValueTuple[i][0][1] == stateActionValueTuple[i+1][0][1] and stateActionValueTuple[i][1] == stateActionValueTuple[i+1][1] and stateActionValueTuple[i][0][1] != stateActionValueTuple[i][1]:
+    if stateActionValueTuple[i][0][3] == stateActionValueTuple[i+1][0][3] and stateActionValueTuple[i][1] == stateActionValueTuple[i+1][1] and stateActionValueTuple[i][0][3] != stateActionValueTuple[i][1]:
+        while i < len(stateActionValueTuple)-2 and stateActionValueTuple[i][0][3] == stateActionValueTuple[i+1][0][3] and stateActionValueTuple[i][1] == stateActionValueTuple[i+1][1] and stateActionValueTuple[i][0][3] != stateActionValueTuple[i][1]:
             i += 1
             counter += 1
             rewardAverage += stateActionValueTuple[i][2]
     i += 1
     # add State, action, reward, new state
     SARS.append([stateActionValueTuple[i-counter][0], stateActionValueTuple[i-counter][1], rewardAverage/float(counter), stateActionValueTuple[i][0] ])    
+    
+
 i = len(SARS)-1
 while i > 0:
     SARS[i][2] = 100*(SARS[i][2] - SARS[i-1][2])/SARS[i][2] #reward is change in mean speed (current move mean speed - prev move mean speed)/ current move mean speed
@@ -108,4 +110,4 @@ learningUpdates = open("learningUpdates.csv", "a+")
 learningUpdates.write(str(delta) + "\n")
 learningUpdates.close()
 
-    
+        

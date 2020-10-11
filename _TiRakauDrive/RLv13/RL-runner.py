@@ -302,7 +302,11 @@ def run(isTesting):
     random.seed(rng)
     
     # make this a function
+<<<<<<< HEAD
     #db_file = r"C:\Users\Elliot\Documents\GitHub\P4Project\_TiRakauDrive\RLv4.2\QTable.db"
+=======
+    #db_file = r"C:\Users\Elliot\Documents\GitHub\P4Project\_TiRakauDrive\RLv4.2\QTable.db"    
+>>>>>>> 829bdf6fd3805b9151f095bd2d21307c99880617
     db_file = os.getcwd()+"\QTable.db"
     #print(db_file)
     conn = None
@@ -588,6 +592,7 @@ def run(isTesting):
             stateInDec = (int(currentState[0])*9*10*9*7) + (int(currentState[1])*10*9*7) + (int(currentState[2])*9*7) + (int(currentState[3])*9) + int(currentState[4],9)+1  #convert the state to its row no equivalent
             cur.execute("SELECT * FROM States WHERE rowid = " +str(stateInDec) )
             nextStateActions = cur.fetchone()
+<<<<<<< HEAD
             cur2.execute("SELECT * FROM States WHERE rowid = " +str(stateInDec) )
             timesVisited = np.array(cur2.fetchone())
             ntArray = np.sqrt((2*math.log(t)) / timesVisited)
@@ -595,6 +600,16 @@ def run(isTesting):
             #print("UCB = " + str(ntArray))
             #print(t)
             nextStateActions += ntArray
+=======
+            if isTesting == "0":
+                cur2.execute("SELECT * FROM States WHERE rowid = " +str(stateInDec) )
+                timesVisited = np.array(cur2.fetchone())
+                ntArray = np.sqrt((2*math.log(t)) / timesVisited)
+                #print("qvals = " + str(nextStateActions))
+                #print("UCB = " + str(ntArray))
+                #print(t)
+                nextStateActions += ntArray
+>>>>>>> 829bdf6fd3805b9151f095bd2d21307c99880617
             move = np.argmax(nextStateActions)
                 
                

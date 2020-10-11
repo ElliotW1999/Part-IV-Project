@@ -18,7 +18,11 @@ def create_connection(db_file):
                             #x = format(j, '09b')
                             #x = (str(n)+str(m)+str(i)+str(k)) #remove?
                             sqlite_insert_with_param  = """INSERT INTO States (Move1, Move2, Move3, Move4, Move5, Move6, Move7) VALUES (?, ?, ?, ?, ?, ?, ?);"""
+<<<<<<< HEAD
                             data_tuple = (1, 1, 1, 1, 1, 1, 1)
+=======
+                            data_tuple = (float(0.0), float(0.0), float(0.0), float(0.0), float(0.0), float(0.0), float(0.0))
+>>>>>>> 829bdf6fd3805b9151f095bd2d21307c99880617
    
                             cursor.execute(sqlite_insert_with_param, data_tuple)
         conn.commit()
@@ -34,4 +38,8 @@ def create_connection(db_file):
 
 
 if __name__ == '__main__':
+<<<<<<< HEAD
     create_connection(os.getcwd()+"\UCB.db")
+=======
+    create_connection(os.getcwd()+"\QTable.db")
+>>>>>>> 829bdf6fd3805b9151f095bd2d21307c99880617

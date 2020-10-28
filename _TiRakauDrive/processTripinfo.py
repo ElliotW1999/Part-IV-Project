@@ -1,7 +1,7 @@
 import matplotlib.pyplot as plt
 import numpy
 
-tripdata = open("output/tripinfoEDF.xml", "r")
+tripdata = open("output/tripinfoQL.xml", "r")
 timeLoss = []
 timeStopped = []
 for line in tripdata:

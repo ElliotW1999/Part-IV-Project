@@ -37,8 +37,8 @@ from sumolib import checkBinary  # noqa
 import traci  # noqa
 
 # needs work
-def generate_routefile():
-    random.seed(42)  # make tests reproducible
+def generate_routefile(seedNo):
+    random.seed(int(seedNo))  # make tests reproducible
     
     # demand per second from different directions
     # TODO: refactor all routes into 1 route matrix (noOfRoutes x noOfTimesteps) using numpy 
@@ -118,6 +118,7 @@ def generate_routefile():
         ("4221w4235w", "-28573015#6 -28573015#5 -28573015#4 -28573015#3 -28573015#2 -28573015#1 -28573015#0 28573025 28573025.46 28573025.65 624439627 547793365 158617319 gneE77 gneE75 619526565 547625727 122089526 122089583#0 122089583#1 122089583#1-AddedOffRampEdge 619523286 619523287#0 619523287#0.17 619523287#1", 2., 2.),
         ("4220s4235w", "gneE10.441 gneE73 gneE75 619526565 547625727 122089526 122089583#0 122089583#1 122089583#1-AddedOffRampEdge 619523286 619523287#0 619523287#0.17 619523287#1", 12., 10.),
         ("4220n4235w", "gneE47 gneE47.434 gneE78 gneE75 619526565 547625727 122089526 122089583#0 122089583#1 122089583#1-AddedOffRampEdge 619523286 619523287#0 619523287#0.17 619523287#1", 4., 7.)
+    
     ]
     
     
@@ -292,7 +293,7 @@ def run():
     traci.trafficlight.setPhase("5861321343", 0)
     traci.trafficlight.setPhase("313863797", 0) 
     
-    while step < 600:
+    while step <= 600:
     #while traci.simulation.getMinExpectedNumber() > 0:
         traci.simulationStep()
         # add in other traffic lights
@@ -662,13 +663,14 @@ def run():
 def get_options():
     optParser = optparse.OptionParser()
     optParser.add_option("--nogui", action="store_true",
-                         default=False, help="run the commandline version of sumo")
+                         default=True, help="run the commandline version of sumo")
     options, args = optParser.parse_args()
     return options
 
 
 # this is the main entry point of this script
 if __name__ == "__main__":
+    seedNo = sys.argv[1]
     options = get_options()
 
     # this script has been called from the command line. It will start sumo as a
@@ -679,7 +681,7 @@ if __name__ == "__main__":
         sumoBinary = checkBinary('sumo-gui')
 
     # first, generate the route file for this simulation
-    generate_routefile()
+    generate_routefile(seedNo)
 
     # this is the normal way of using traci. sumo is started as a
     # subprocess and then the python script connects and runs

@@ -8,14 +8,14 @@ meanSpeeds = []
 i = 0
 for line in lossCurves:
     line = line.split(" ")
-    vehiclesProcessed.append(float(line[1])/600)
+    vehiclesProcessed.append(float(line[2])/600)
     meanSpeeds.append(float(line[0])/600)
 
 
 
 plt.scatter(vehiclesProcessed, meanSpeeds)
-plt.title('Reward per episode')
-plt.xlabel('vehicles Processed per episode')
+plt.title('Reward per step')
+plt.xlabel('vehicles Processed per step')
 plt.ylabel('Mean speed (m/s)')
 plt.show()
 

@@ -310,7 +310,6 @@ def run():
                 if i in lanesForGroupsForPhases_s4221[phase_s4221]: 
                     groupActivity = []
                     for lane in lanesForGroups_s4221[i]:
-                        print("Lane is " + str(lane))
                         groupActivity.append(int(traci.inductionloop.getTimeSinceDetection("site4221_" + str(lane))))
                         detector_delay_s4221[lane] = 0
                         activeTraffic_s4221[i] = min(groupActivity)
@@ -601,7 +600,6 @@ def run():
                 if i != 1 and i != 2 and i != 3:                                                # ignore non conflicting traffic
                     if int(traci.inductionloop.getTimeSinceDetection("site4235_" + str(i))) < activeTraffic:
                         activeTraffic = int(traci.inductionloop.getTimeSinceDetection("site4235_" + str(i)))
-                        print("site4235_" + str(i))
                              
             if activeTraffic > MINIMUM_TRAFFIC_ACTIVITY:                                                              # if no traffic through active lanes, switch to transition phase for max(loopDetectorDelay)
                 activeTraffic = 0 
@@ -686,5 +684,5 @@ if __name__ == "__main__":
     # this is the normal way of using traci. sumo is started as a
     # subprocess and then the python script connects and runs
     traci.start([sumoBinary, "-c", "simulation/osm.sumocfg",
-                             "--tripinfo-output", "output/tripinfoEDF.xml", "--no-internal-links", "--summary", "output/summary.xml"])
+                             "--tripinfo-output", "output/tripinfo.xml", "--no-internal-links", "--summary", "output/summary.xml"])
     run()

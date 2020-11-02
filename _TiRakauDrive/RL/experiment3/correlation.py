@@ -8,8 +8,11 @@ meanSpeeds = []
 i = 0
 for line in lossCurves:
     line = line.split(" ")
-    vehiclesProcessed.append(float(line[1])/600)
-    meanSpeeds.append(float(line[0])/600)
+    if (i < 3000):
+        vehiclesProcessed.append(float(line[2])/600)
+        meanSpeeds.append(float(line[0])/600)
+        
+    i += 1
 
 
 
